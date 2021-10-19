@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
+
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> Home</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> Archive</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> About</a>
+        
+          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> RSS</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="search"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Python-100-Days-master/Day01-15/09.面向对象进阶" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:53.674Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/Day01-15/09.%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="面向对象进阶"><a href="#面向对象进阶" class="headerlink" title="面向对象进阶"></a>面向对象进阶</h2><p>在前面的章节我们已经了解了面向对象的入门知识，知道了如何定义类，如何创建对象以及如何给对象发消息。为了能够更好的使用面向对象编程思想进行程序开发，我们还需要对Python中的面向对象编程进行更为深入的了解。</p>
+<h3 id="property装饰器"><a href="#property装饰器" class="headerlink" title="@property装饰器"></a>@property装饰器</h3><p>之前我们讨论过Python中属性和方法访问权限的问题，虽然我们不建议将属性设置为私有的，但是如果直接将属性暴露给外界也是有问题的，比如我们没有办法检查赋给属性的值是否有效。我们之前的建议是将属性命名以单下划线开头，通过这种方式来暗示属性是受保护的，不建议外界直接访问，那么如果想访问属性可以通过属性的getter（访问器）和setter（修改器）方法进行对应的操作。如果要做到这点，就可以考虑使用@property包装器来包装getter和setter方法，使得对属性的访问既安全又方便，代码如下所示。</p>
+<pre><code class="Python">class Person(object):
+
+    def __init__(self, name, age):
+        self._name = name
+        self._age = age
+
+    # 访问器 - getter方法
+    @property
+    def name(self):
+        return self._name
+
+    # 访问器 - getter方法
+    @property
+    def age(self):
+        return self._age
+
+    # 修改器 - setter方法
+    @age.setter
+    def age(self, age):
+        self._age = age
+
+    def play(self):
+        if self._age &lt;= 16:
+            print(&#39;%s正在玩飞行棋.&#39; % self._name)
+        else:
+            print(&#39;%s正在玩斗地主.&#39; % self._name)
+
+
+def main():
+    person = Person(&#39;王大锤&#39;, 12)
+    person.play()
+    person.age = 22
+    person.play()
+    # person.name = &#39;白元芳&#39;  # AttributeError: can&#39;t set attribute
+
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<h3 id="slots-魔法"><a href="#slots-魔法" class="headerlink" title="__slots__魔法"></a>__slots__魔法</h3><p>我们讲到这里，不知道大家是否已经意识到，Python是一门<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%8A%A8%E6%80%81%E8%AF%AD%E8%A8%80">动态语言</a>。通常，动态语言允许我们在程序运行时给对象绑定新的属性或方法，当然也可以对已经绑定的属性和方法进行解绑定。但是如果我们需要限定自定义类型的对象只能绑定某些属性，可以通过在类中定义__slots__变量来进行限定。需要注意的是__slots__的限定只对当前类的对象生效，对子类并不起任何作用。</p>
+<pre><code class="Python">class Person(object):
+
+    # 限定Person对象只能绑定_name, _age和_gender属性
+    __slots__ = (&#39;_name&#39;, &#39;_age&#39;, &#39;_gender&#39;)
+
+    def __init__(self, name, age):
+        self._name = name
+        self._age = age
+
+    @property
+    def name(self):
+        return self._name
+
+    @property
+    def age(self):
+        return self._age
+
+    @age.setter
+    def age(self, age):
+        self._age = age
+
+    def play(self):
+        if self._age &lt;= 16:
+            print(&#39;%s正在玩飞行棋.&#39; % self._name)
+        else:
+            print(&#39;%s正在玩斗地主.&#39; % self._name)
+
+
+def main():
+    person = Person(&#39;王大锤&#39;, 22)
+    person.play()
+    person._gender = &#39;男&#39;
+    # AttributeError: &#39;Person&#39; object has no attribute &#39;_is_gay&#39;
+    # person._is_gay = True
+</code></pre>
+<h3 id="静态方法和类方法"><a href="#静态方法和类方法" class="headerlink" title="静态方法和类方法"></a>静态方法和类方法</h3><p>之前，我们在类中定义的方法都是对象方法，也就是说这些方法都是发送给对象的消息。实际上，我们写在类中的方法并不需要都是对象方法，例如我们定义一个“三角形”类，通过传入三条边长来构造三角形，并提供计算周长和面积的方法，但是传入的三条边长未必能构造出三角形对象，因此我们可以先写一个方法来验证三条边长是否可以构成三角形，这个方法很显然就不是对象方法，因为在调用这个方法时三角形对象尚未创建出来（因为都不知道三条边能不能构成三角形），所以这个方法是属于三角形类而并不属于三角形对象的。我们可以使用静态方法来解决这类问题，代码如下所示。</p>
+<pre><code class="Python">from math import sqrt
+
+
+class Triangle(object):
+
+    def __init__(self, a, b, c):
+        self._a = a
+        self._b = b
+        self._c = c
+
+    @staticmethod
+    def is_valid(a, b, c):
+        return a + b &gt; c and b + c &gt; a and a + c &gt; b
+
+    def perimeter(self):
+        return self._a + self._b + self._c
+
+    def area(self):
+        half = self.perimeter() / 2
+        return sqrt(half * (half - self._a) *
+                    (half - self._b) * (half - self._c))
+
+
+def main():
+    a, b, c = 3, 4, 5
+    # 静态方法和类方法都是通过给类发消息来调用的
+    if Triangle.is_valid(a, b, c):
+        t = Triangle(a, b, c)
+        print(t.perimeter())
+        # 也可以通过给类发消息来调用对象方法但是要传入接收消息的对象作为参数
+        # print(Triangle.perimeter(t))
+        print(t.area())
+        # print(Triangle.area(t))
+    else:
+        print(&#39;无法构成三角形.&#39;)
+
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<p>和静态方法比较类似，Python还可以在类中定义类方法，类方法的第一个参数约定名为cls，它代表的是当前类相关的信息的对象（类本身也是一个对象，有的地方也称之为类的元数据对象），通过这个参数我们可以获取和类相关的信息并且可以创建出类的对象，代码如下所示。</p>
+<pre><code class="Python">from time import time, localtime, sleep
+
+
+class Clock(object):
+    &quot;&quot;&quot;数字时钟&quot;&quot;&quot;
+
+    def __init__(self, hour=0, minute=0, second=0):
+        self._hour = hour
+        self._minute = minute
+        self._second = second
+
+    @classmethod
+    def now(cls):
+        ctime = localtime(time())
+        return cls(ctime.tm_hour, ctime.tm_min, ctime.tm_sec)
+
+    def run(self):
+        &quot;&quot;&quot;走字&quot;&quot;&quot;
+        self._second += 1
+        if self._second == 60:
+            self._second = 0
+            self._minute += 1
+            if self._minute == 60:
+                self._minute = 0
+                self._hour += 1
+                if self._hour == 24:
+                    self._hour = 0
+
+    def show(self):
+        &quot;&quot;&quot;显示时间&quot;&quot;&quot;
+        return &#39;%02d:%02d:%02d&#39; % \
+               (self._hour, self._minute, self._second)
+
+
+def main():
+    # 通过类方法创建对象并获取系统时间
+    clock = Clock.now()
+    while True:
+        print(clock.show())
+        sleep(1)
+        clock.run()
+
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<h3 id="类之间的关系"><a href="#类之间的关系" class="headerlink" title="类之间的关系"></a>类之间的关系</h3><p>简单的说，类和类之间的关系有三种：is-a、has-a和use-a关系。</p>
+<ul>
+<li>is-a关系也叫继承或泛化，比如学生和人的关系、手机和电子产品的关系都属于继承关系。</li>
+<li>has-a关系通常称之为关联，比如部门和员工的关系，汽车和引擎的关系都属于关联关系；关联关系如果是整体和部分的关联，那么我们称之为聚合关系；如果整体进一步负责了部分的生命周期（整体和部分是不可分割的，同时同在也同时消亡），那么这种就是最强的关联关系，我们称之为合成关系。</li>
+<li>use-a关系通常称之为依赖，比如司机有一个驾驶的行为（方法），其中（的参数）使用到了汽车，那么司机和汽车的关系就是依赖关系。</li>
+</ul>
+<p>我们可以使用一种叫做<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%BB%9F%E4%B8%80%E5%BB%BA%E6%A8%A1%E8%AF%AD%E8%A8%80">UML</a>（统一建模语言）的东西来进行面向对象建模，其中一项重要的工作就是把类和类之间的关系用标准化的图形符号描述出来。关于UML我们在这里不做详细的介绍，有兴趣的读者可以自行阅读<a target="_blank" rel="noopener" href="https://e.jd.com/30392949.html">《UML面向对象设计基础》</a>一书。</p>
+<p><img src="./res/uml-components.png"></p>
+<p><img src="./res/uml-example.png"></p>
+<p>利用类之间的这些关系，我们可以在已有类的基础上来完成某些操作，也可以在已有类的基础上创建新的类，这些都是实现代码复用的重要手段。复用现有的代码不仅可以减少开发的工作量，也有利于代码的管理和维护，这是我们在日常工作中都会使用到的技术手段。</p>
+<h3 id="继承和多态"><a href="#继承和多态" class="headerlink" title="继承和多态"></a>继承和多态</h3><p>刚才我们提到了，可以在已有类的基础上创建新类，这其中的一种做法就是让一个类从另一个类那里将属性和方法直接继承下来，从而减少重复代码的编写。提供继承信息的我们称之为父类，也叫超类或基类；得到继承信息的我们称之为子类，也叫派生类或衍生类。子类除了继承父类提供的属性和方法，还可以定义自己特有的属性和方法，所以子类比父类拥有的更多的能力，在实际开发中，我们经常会用子类对象去替换掉一个父类对象，这是面向对象编程中一个常见的行为，对应的原则称之为<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99">里氏替换原则</a>。下面我们先看一个继承的例子。</p>
+<pre><code class="Python">class Person(object):
+    &quot;&quot;&quot;人&quot;&quot;&quot;
+
+    def __init__(self, name, age):
+        self._name = name
+        self._age = age
+
+    @property
+    def name(self):
+        return self._name
+
+    @property
+    def age(self):
+        return self._age
+
+    @age.setter
+    def age(self, age):
+        self._age = age
+
+    def play(self):
+        print(&#39;%s正在愉快的玩耍.&#39; % self._name)
+
+    def watch_av(self):
+        if self._age &gt;= 18:
+            print(&#39;%s正在观看爱情动作片.&#39; % self._name)
+        else:
+            print(&#39;%s只能观看《熊出没》.&#39; % self._name)
+
+
+class Student(Person):
+    &quot;&quot;&quot;学生&quot;&quot;&quot;
+
+    def __init__(self, name, age, grade):
+        super().__init__(name, age)
+        self._grade = grade
+
+    @property
+    def grade(self):
+        return self._grade
+
+    @grade.setter
+    def grade(self, grade):
+        self._grade = grade
+
+    def study(self, course):
+        print(&#39;%s的%s正在学习%s.&#39; % (self._grade, self._name, course))
+
+
+class Teacher(Person):
+    &quot;&quot;&quot;老师&quot;&quot;&quot;
+
+    def __init__(self, name, age, title):
+        super().__init__(name, age)
+        self._title = title
+
+    @property
+    def title(self):
+        return self._title
+
+    @title.setter
+    def title(self, title):
+        self._title = title
+
+    def teach(self, course):
+        print(&#39;%s%s正在讲%s.&#39; % (self._name, self._title, course))
+
+
+def main():
+    stu = Student(&#39;王大锤&#39;, 15, &#39;初三&#39;)
+    stu.study(&#39;数学&#39;)
+    stu.watch_av()
+    t = Teacher(&#39;骆昊&#39;, 38, &#39;砖家&#39;)
+    t.teach(&#39;Python程序设计&#39;)
+    t.watch_av()
+
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<p>子类在继承了父类的方法后，可以对父类已有的方法给出新的实现版本，这个动作称之为方法重写（override）。通过方法重写我们可以让父类的同一个行为在子类中拥有不同的实现版本，当我们调用这个经过子类重写的方法时，不同的子类对象会表现出不同的行为，这个就是多态（poly-morphism）。</p>
+<pre><code class="Python">from abc import ABCMeta, abstractmethod
+
+
+class Pet(object, metaclass=ABCMeta):
+    &quot;&quot;&quot;宠物&quot;&quot;&quot;
+
+    def __init__(self, nickname):
+        self._nickname = nickname
+
+    @abstractmethod
+    def make_voice(self):
+        &quot;&quot;&quot;发出声音&quot;&quot;&quot;
+        pass
+
+
+class Dog(Pet):
+    &quot;&quot;&quot;狗&quot;&quot;&quot;
+
+    def make_voice(self):
+        print(&#39;%s: 汪汪汪...&#39; % self._nickname)
+
+
+class Cat(Pet):
+    &quot;&quot;&quot;猫&quot;&quot;&quot;
+
+    def make_voice(self):
+        print(&#39;%s: 喵...喵...&#39; % self._nickname)
+
+
+def main():
+    pets = [Dog(&#39;旺财&#39;), Cat(&#39;凯蒂&#39;), Dog(&#39;大黄&#39;)]
+    for pet in pets:
+        pet.make_voice()
+
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<p>在上面的代码中，我们将<code>Pet</code>类处理成了一个抽象类，所谓抽象类就是不能够创建对象的类，这种类的存在就是专门为了让其他类去继承它。Python从语法层面并没有像Java或C#那样提供对抽象类的支持，但是我们可以通过<code>abc</code>模块的<code>ABCMeta</code>元类和<code>abstractmethod</code>包装器来达到抽象类的效果，如果一个类中存在抽象方法那么这个类就不能够实例化（创建对象）。上面的代码中，<code>Dog</code>和<code>Cat</code>两个子类分别对<code>Pet</code>类中的<code>make_voice</code>抽象方法进行了重写并给出了不同的实现版本，当我们在<code>main</code>函数中调用该方法时，这个方法就表现出了多态行为（同样的方法做了不同的事情）。</p>
+<h3 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h3><h4 id="案例1：奥特曼打小怪兽。"><a href="#案例1：奥特曼打小怪兽。" class="headerlink" title="案例1：奥特曼打小怪兽。"></a>案例1：奥特曼打小怪兽。</h4><pre><code class="Python">from abc import ABCMeta, abstractmethod
+from random import randint, randrange
+
+
+class Fighter(object, metaclass=ABCMeta):
+    &quot;&quot;&quot;战斗者&quot;&quot;&quot;
+
+    # 通过__slots__魔法限定对象可以绑定的成员变量
+    __slots__ = (&#39;_name&#39;, &#39;_hp&#39;)
+
+    def __init__(self, name, hp):
+        &quot;&quot;&quot;初始化方法
+
+        :param name: 名字
+        :param hp: 生命值
+        &quot;&quot;&quot;
+        self._name = name
+        self._hp = hp
+
+    @property
+    def name(self):
+        return self._name
+
+    @property
+    def hp(self):
+        return self._hp
+
+    @hp.setter
+    def hp(self, hp):
+        self._hp = hp if hp &gt;= 0 else 0
+
+    @property
+    def alive(self):
+        return self._hp &gt; 0
+
+    @abstractmethod
+    def attack(self, other):
+        &quot;&quot;&quot;攻击
+
+        :param other: 被攻击的对象
+        &quot;&quot;&quot;
+        pass
+
+
+class Ultraman(Fighter):
+    &quot;&quot;&quot;奥特曼&quot;&quot;&quot;
+
+    __slots__ = (&#39;_name&#39;, &#39;_hp&#39;, &#39;_mp&#39;)
+
+    def __init__(self, name, hp, mp):
+        &quot;&quot;&quot;初始化方法
+
+        :param name: 名字
+        :param hp: 生命值
+        :param mp: 魔法值
+        &quot;&quot;&quot;
+        super().__init__(name, hp)
+        self._mp = mp
+
+    def attack(self, other):
+        other.hp -= randint(15, 25)
+
+    def huge_attack(self, other):
+        &quot;&quot;&quot;究极必杀技(打掉对方至少50点或四分之三的血)
+
+        :param other: 被攻击的对象
+
+        :return: 使用成功返回True否则返回False
+        &quot;&quot;&quot;
+        if self._mp &gt;= 50:
+            self._mp -= 50
+            injury = other.hp * 3 // 4
+            injury = injury if injury &gt;= 50 else 50
+            other.hp -= injury
+            return True
+        else:
+            self.attack(other)
+            return False
+
+    def magic_attack(self, others):
+        &quot;&quot;&quot;魔法攻击
+
+        :param others: 被攻击的群体
+
+        :return: 使用魔法成功返回True否则返回False
+        &quot;&quot;&quot;
+        if self._mp &gt;= 20:
+            self._mp -= 20
+            for temp in others:
+                if temp.alive:
+                    temp.hp -= randint(10, 15)
+            return True
+        else:
+            return False
+
+    def resume(self):
+        &quot;&quot;&quot;恢复魔法值&quot;&quot;&quot;
+        incr_point = randint(1, 10)
+        self._mp += incr_point
+        return incr_point
+
+    def __str__(self):
+        return &#39;~~~%s奥特曼~~~\n&#39; % self._name + \
+            &#39;生命值: %d\n&#39; % self._hp + \
+            &#39;魔法值: %d\n&#39; % self._mp
+
+
+class Monster(Fighter):
+    &quot;&quot;&quot;小怪兽&quot;&quot;&quot;
+
+    __slots__ = (&#39;_name&#39;, &#39;_hp&#39;)
+
+    def attack(self, other):
+        other.hp -= randint(10, 20)
+
+    def __str__(self):
+        return &#39;~~~%s小怪兽~~~\n&#39; % self._name + \
+            &#39;生命值: %d\n&#39; % self._hp
+
+
+def is_any_alive(monsters):
+    &quot;&quot;&quot;判断有没有小怪兽是活着的&quot;&quot;&quot;
+    for monster in monsters:
+        if monster.alive &gt; 0:
+            return True
+    return False
+
+
+def select_alive_one(monsters):
+    &quot;&quot;&quot;选中一只活着的小怪兽&quot;&quot;&quot;
+    monsters_len = len(monsters)
+    while True:
+        index = randrange(monsters_len)
+        monster = monsters[index]
+        if monster.alive &gt; 0:
+            return monster
+
+
+def display_info(ultraman, monsters):
+    &quot;&quot;&quot;显示奥特曼和小怪兽的信息&quot;&quot;&quot;
+    print(ultraman)
+    for monster in monsters:
+        print(monster, end=&#39;&#39;)
+
+
+def main():
+    u = Ultraman(&#39;骆昊&#39;, 1000, 120)
+    m1 = Monster(&#39;狄仁杰&#39;, 250)
+    m2 = Monster(&#39;白元芳&#39;, 500)
+    m3 = Monster(&#39;王大锤&#39;, 750)
+    ms = [m1, m2, m3]
+    fight_round = 1
+    while u.alive and is_any_alive(ms):
+        print(&#39;========第%02d回合========&#39; % fight_round)
+        m = select_alive_one(ms)  # 选中一只小怪兽
+        skill = randint(1, 10)   # 通过随机数选择使用哪种技能
+        if skill &lt;= 6:  # 60%的概率使用普通攻击
+            print(&#39;%s使用普通攻击打了%s.&#39; % (u.name, m.name))
+            u.attack(m)
+            print(&#39;%s的魔法值恢复了%d点.&#39; % (u.name, u.resume()))
+        elif skill &lt;= 9:  # 30%的概率使用魔法攻击(可能因魔法值不足而失败)
+            if u.magic_attack(ms):
+                print(&#39;%s使用了魔法攻击.&#39; % u.name)
+            else:
+                print(&#39;%s使用魔法失败.&#39; % u.name)
+        else:  # 10%的概率使用究极必杀技(如果魔法值不足则使用普通攻击)
+            if u.huge_attack(m):
+                print(&#39;%s使用究极必杀技虐了%s.&#39; % (u.name, m.name))
+            else:
+                print(&#39;%s使用普通攻击打了%s.&#39; % (u.name, m.name))
+                print(&#39;%s的魔法值恢复了%d点.&#39; % (u.name, u.resume()))
+        if m.alive &gt; 0:  # 如果选中的小怪兽没有死就回击奥特曼
+            print(&#39;%s回击了%s.&#39; % (m.name, u.name))
+            m.attack(u)
+        display_info(u, ms)  # 每个回合结束后显示奥特曼和小怪兽的信息
+        fight_round += 1
+    print(&#39;\n========战斗结束!========\n&#39;)
+    if u.alive &gt; 0:
+        print(&#39;%s奥特曼胜利!&#39; % u.name)
+    else:
+        print(&#39;小怪兽胜利!&#39;)
+
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<h4 id="案例2：扑克游戏。"><a href="#案例2：扑克游戏。" class="headerlink" title="案例2：扑克游戏。"></a>案例2：扑克游戏。</h4><pre><code class="Python">import random
+
+
+class Card(object):
+    &quot;&quot;&quot;一张牌&quot;&quot;&quot;
+
+    def __init__(self, suite, face):
+        self._suite = suite
+        self._face = face
+
+    @property
+    def face(self):
+        return self._face
+
+    @property
+    def suite(self):
+        return self._suite
+
+    def __str__(self):
+        if self._face == 1:
+            face_str = &#39;A&#39;
+        elif self._face == 11:
+            face_str = &#39;J&#39;
+        elif self._face == 12:
+            face_str = &#39;Q&#39;
+        elif self._face == 13:
+            face_str = &#39;K&#39;
+        else:
+            face_str = str(self._face)
+        return &#39;%s%s&#39; % (self._suite, face_str)
+    
+    def __repr__(self):
+        return self.__str__()
+
+
+class Poker(object):
+    &quot;&quot;&quot;一副牌&quot;&quot;&quot;
+
+    def __init__(self):
+        self._cards = [Card(suite, face) 
+                       for suite in &#39;♠♥♣♦&#39;
+                       for face in range(1, 14)]
+        self._current = 0
+
+    @property
+    def cards(self):
+        return self._cards
+
+    def shuffle(self):
+        &quot;&quot;&quot;洗牌(随机乱序)&quot;&quot;&quot;
+        self._current = 0
+        random.shuffle(self._cards)
+
+    @property
+    def next(self):
+        &quot;&quot;&quot;发牌&quot;&quot;&quot;
+        card = self._cards[self._current]
+        self._current += 1
+        return card
+
+    @property
+    def has_next(self):
+        &quot;&quot;&quot;还有没有牌&quot;&quot;&quot;
+        return self._current &lt; len(self._cards)
+
+
+class Player(object):
+    &quot;&quot;&quot;玩家&quot;&quot;&quot;
+
+    def __init__(self, name):
+        self._name = name
+        self._cards_on_hand = []
+
+    @property
+    def name(self):
+        return self._name
+
+    @property
+    def cards_on_hand(self):
+        return self._cards_on_hand
+
+    def get(self, card):
+        &quot;&quot;&quot;摸牌&quot;&quot;&quot;
+        self._cards_on_hand.append(card)
+
+    def arrange(self, card_key):
+        &quot;&quot;&quot;玩家整理手上的牌&quot;&quot;&quot;
+        self._cards_on_hand.sort(key=card_key)
+
+
+# 排序规则-先根据花色再根据点数排序
+def get_key(card):
+    return (card.suite, card.face)
+
+
+def main():
+    p = Poker()
+    p.shuffle()
+    players = [Player(&#39;东邪&#39;), Player(&#39;西毒&#39;), Player(&#39;南帝&#39;), Player(&#39;北丐&#39;)]
+    for _ in range(13):
+        for player in players:
+            player.get(p.next)
+    for player in players:
+        print(player.name + &#39;:&#39;, end=&#39; &#39;)
+        player.arrange(get_key)
+        print(player.cards_on_hand)
+
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<blockquote>
+<p><strong>说明：</strong> 大家可以自己尝试在上面代码的基础上写一个简单的扑克游戏，例如21点(Black Jack)，游戏的规则可以自己在网上找一找。</p>
+</blockquote>
+<h4 id="案例3：工资结算系统。"><a href="#案例3：工资结算系统。" class="headerlink" title="案例3：工资结算系统。"></a>案例3：工资结算系统。</h4><pre><code class="Python">&quot;&quot;&quot;
+某公司有三种类型的员工 分别是部门经理、程序员和销售员
+需要设计一个工资结算系统 根据提供的员工信息来计算月薪
+部门经理的月薪是每月固定15000元
+程序员的月薪按本月工作时间计算 每小时150元
+销售员的月薪是1200元的底薪加上销售额5%的提成
+&quot;&quot;&quot;
+from abc import ABCMeta, abstractmethod
+
+
+class Employee(object, metaclass=ABCMeta):
+    &quot;&quot;&quot;员工&quot;&quot;&quot;
+
+    def __init__(self, name):
+        &quot;&quot;&quot;
+        初始化方法
+
+        :param name: 姓名
+        &quot;&quot;&quot;
+        self._name = name
+
+    @property
+    def name(self):
+        return self._name
+
+    @abstractmethod
+    def get_salary(self):
+        &quot;&quot;&quot;
+        获得月薪
+
+        :return: 月薪
+        &quot;&quot;&quot;
+        pass
+
+
+class Manager(Employee):
+    &quot;&quot;&quot;部门经理&quot;&quot;&quot;
+
+    def get_salary(self):
+        return 15000.0
+
+
+class Programmer(Employee):
+    &quot;&quot;&quot;程序员&quot;&quot;&quot;
+
+    def __init__(self, name, working_hour=0):
+        super().__init__(name)
+        self._working_hour = working_hour
+
+    @property
+    def working_hour(self):
+        return self._working_hour
+
+    @working_hour.setter
+    def working_hour(self, working_hour):
+        self._working_hour = working_hour if working_hour &gt; 0 else 0
+
+    def get_salary(self):
+        return 150.0 * self._working_hour
+
+
+class Salesman(Employee):
+    &quot;&quot;&quot;销售员&quot;&quot;&quot;
+
+    def __init__(self, name, sales=0):
+        super().__init__(name)
+        self._sales = sales
+
+    @property
+    def sales(self):
+        return self._sales
+
+    @sales.setter
+    def sales(self, sales):
+        self._sales = sales if sales &gt; 0 else 0
+
+    def get_salary(self):
+        return 1200.0 + self._sales * 0.05
+
+
+def main():
+    emps = [
+        Manager(&#39;刘备&#39;), Programmer(&#39;诸葛亮&#39;),
+        Manager(&#39;曹操&#39;), Salesman(&#39;荀彧&#39;),
+        Salesman(&#39;吕布&#39;), Programmer(&#39;张辽&#39;),
+        Programmer(&#39;赵云&#39;)
+    ]
+    for emp in emps:
+        if isinstance(emp, Programmer):
+            emp.working_hour = int(input(&#39;请输入%s本月工作时间: &#39; % emp.name))
+        elif isinstance(emp, Salesman):
+            emp.sales = float(input(&#39;请输入%s本月销售额: &#39; % emp.name))
+        # 同样是接收get_salary这个消息但是不同的员工表现出了不同的行为(多态)
+        print(&#39;%s本月工资为: ￥%s元&#39; %
+              (emp.name, emp.get_salary()))
+
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6"><span class="toc-text">面向对象进阶</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#property%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="toc-text">@property装饰器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#slots-%E9%AD%94%E6%B3%95"><span class="toc-text">__slots__魔法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E5%92%8C%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="toc-text">静态方法和类方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">类之间的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E5%92%8C%E5%A4%9A%E6%80%81"><span class="toc-text">继承和多态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B"><span class="toc-text">综合案例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B1%EF%BC%9A%E5%A5%A5%E7%89%B9%E6%9B%BC%E6%89%93%E5%B0%8F%E6%80%AA%E5%85%BD%E3%80%82"><span class="toc-text">案例1：奥特曼打小怪兽。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B2%EF%BC%9A%E6%89%91%E5%85%8B%E6%B8%B8%E6%88%8F%E3%80%82"><span class="toc-text">案例2：扑克游戏。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B3%EF%BC%9A%E5%B7%A5%E8%B5%84%E7%BB%93%E7%AE%97%E7%B3%BB%E7%BB%9F%E3%80%82"><span class="toc-text">案例3：工资结算系统。</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </div>
+
+
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/2021/10/17/Python-100-Days-master/Day01-15/09.面向对象进阶/">http://example.com/2021/10/17/Python-100-Days-master/Day01-15/09.面向对象进阶/</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2021/10/17/Python-100-Days-master/Day01-15/10.%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E5%92%8C%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/10/17/Python-100-Days-master/Day01-15/08.%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+      
+      
+        
+
+
+
+
+
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> Recent</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E4%BB%AC%E8%B8%A9%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E8%8B%B1%E8%AF%AD%E9%9D%A2%E8%AF%95/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%9F%A5%E4%B9%8E%E9%97%AE%E9%A2%98%E5%9B%9E%E7%AD%94/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%94%A8%E5%87%BD%E6%95%B0%E8%BF%98%E6%98%AF%E7%94%A8%E5%A4%8D%E6%9D%82%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%8E%A9%E8%BD%ACPyCharm/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/PEP8/" style="font-size: 10px;">PEP8</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-classify"></i> Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> Archive</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021年10月</a><span class="archive-list-count">173</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019年08月</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/PEP8/" rel="tag">PEP8</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> Blogroll</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example1.com/">site-name1</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example2.com/">site-name2</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example3.com/">site-name3</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">Site Map</a>
+        <span> | </span><a href="/atom.xml">Subscribe to this site</a>
+        <span> | </span><a href="/about/">Contact the blogger</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2021 John Doe.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+<script src="/localshare/js/social-share.js"></script>
+
+  
+<script src="/localshare/js/qrcode.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

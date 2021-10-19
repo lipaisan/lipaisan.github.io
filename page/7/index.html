@@ -1,0 +1,2576 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
+
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> Home</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> Archive</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> About</a>
+        
+          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> RSS</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="search"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  <article id="post-Python-100-Days-master/Day41-55/53.异步任务和定时任务" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:55.325Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/Day41-55/53.%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="异步任务和定时任务"><a href="#异步任务和定时任务" class="headerlink" title="异步任务和定时任务"></a>异步任务和定时任务</h2><p>在Web应用中，如果一个请求执行了耗时间的操作或者该请求的执行时间无法确定，而且对于用户来说只需要知道服务器接收了他的请求，并不需要马上得到请求的执行结果，这样的操作我们就应该对其进行异步化处理。如果说<strong>使用缓存是优化网站性能的第一要义</strong>，那么将耗时间或执行时间不确定的任务<strong>异步化则是网站性能优化的第二要义</strong>，简单的说就是<strong>能推迟做的事情都不要马上做</strong>。</p>
+<p>上一章节中讲到的发短信和上传文件到云存储为例，这两个操作前者属于时间不确定的操作（因为作为调用者，我们不能确定三方平台响应的时间），后者属于耗时间的操作（如果文件较大或者三方平台不稳定，都可能导致上传的时间较长），很显然，这两个操作都可以做异步化处理。</p>
+<p>在Python项目中实现异步化处理可以使用多线程或借助三方库Celery来完成。</p>
+<h3 id="使用Celery实现异步化"><a href="#使用Celery实现异步化" class="headerlink" title="使用Celery实现异步化"></a>使用Celery实现异步化</h3><h3 id="使用多线程实现异步化"><a href="#使用多线程实现异步化" class="headerlink" title="使用多线程实现异步化"></a>使用多线程实现异步化</h3>
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/page/7/index.html">http://example.com/page/7/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-Python-100-Days-master/Day41-55/52.接入三方平台" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:55.322Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/Day41-55/52.%E6%8E%A5%E5%85%A5%E4%B8%89%E6%96%B9%E5%B9%B3%E5%8F%B0/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="接入三方平台"><a href="#接入三方平台" class="headerlink" title="接入三方平台"></a>接入三方平台</h2><p>在Web应用的开发过程中，有一些任务并不是我们自己能够完成的。例如，我们的Web项目中需要做个人或企业的实名认证，很显然我们并没有能力判断用户提供的认证信息的真实性，这个时候我们就要借助三方平台提供的服务来完成该项操作。再比如说，我们的项目中需要提供在线支付功能，这类业务通常也是借助支付网关来完成而不是自己去实现，我们只需要接入像微信、支付宝、银联这样的三方平台即可。</p>
+<p>在项目中接入三方平台基本上就两种方式：API接入和SDK接入。</p>
+<ol>
+<li>API接入指的是通过访问三方提供的URL来完成操作或获取数据。国内有很多这样的平台提供了大量常用的服务，例如<a target="_blank" rel="noopener" href="https://www.juhe.cn/">聚合数据</a>上提供了生活服务类、金融科技类、交通地理类、充值缴费类等各种类型的API。我们可以通过Python程序发起网络请求，通过访问URL获取数据，这些API接口跟我们项目中提供的数据接口是一样的，只不过我们项目中的API是供自己使用的，而这类三方平台提供的API是开放的。当然开放并不代表免费，大多数能够提供有商业价值的数据的API都是需要付费才能使用的。</li>
+<li>SDK接入指的是通过安装三方库并使用三方库封装的类、函数来使用三方平台提供的服务的方式。例如我们刚才说到的接入支付宝，就需要先安装支付宝的SDK，然后通过支付宝封装的类和方法完成对支付服务的调用。</li>
+</ol>
+<p>下面我们通过具体的例子来讲解如何接入三方平台。</p>
+<h3 id="接入短信网关"><a href="#接入短信网关" class="headerlink" title="接入短信网关"></a>接入短信网关</h3><p>一个Web项目有很多地方都可以用到短信服务，例如：手机验证码登录、重要消息提醒、产品营销短信等。要实现发送短信的功能，可以通过接入短信网关来实现，国内比较有名的短信网关包括：云片短信、网易云信、螺丝帽、SendCloud等，这些短信网关一般都提供了免费试用功能。下面我们以<a target="_blank" rel="noopener" href="https://luosimao.com/">螺丝帽</a>平台为例，讲解如何在项目中接入短信网关，其他平台操作基本类似。</p>
+<ol>
+<li><p>注册账号，新用户可以免费试用。</p>
+</li>
+<li><p>登录到管理后台，进入短信版块。</p>
+</li>
+<li><p>点击“触发发送”可以找到自己专属的API Key（身份标识）。</p>
+<p> <img src="res/luosimao-sms-apikey.png"></p>
+</li>
+<li><p>点击“签名管理”可以添加短信签名，短信都必须携带签名，免费试用的短信要在短信中添加“【铁壳测试】”这个签名，否则短信无法发送。</p>
+<p> <img src="res/luosimao-sms-signature.png"></p>
+</li>
+<li><p>点击“IP白名单”将运行Django项目的服务器地址（公网IP地址，本地运行可以打开<a href="">xxx</a>网站查看自己本机的公网IP地址）填写到白名单中，否则短信无法发送。</p>
+<p> <img src="res/luosimao-sms-whitelist.png"></p>
+</li>
+<li><p>如果没有剩余的短信条数，可以到“充值”页面选择“短信服务”进行充值。</p>
+<p> <img src="res/luosimao-pay-onlinebuy.png"></p>
+</li>
+</ol>
+<p>接下来，我们可以通过调用螺丝帽短信网关实现发送短信验证码的功能，代码如下所示。</p>
+<pre><code class="Python">def send_mobile_code(tel, code):
+    &quot;&quot;&quot;发送短信验证码&quot;&quot;&quot;
+    resp = requests.post(
+        url=&#39;http://sms-api.luosimao.com/v1/send.json&#39;,
+        auth=(&#39;api&#39;, &#39;key-自己的APIKey&#39;),
+        data=&#123;
+            &#39;mobile&#39;: tel,
+            &#39;message&#39;: f&#39;您的短信验证码是&#123;code&#125;，打死也不能告诉别人哟。【Python小课】&#39;
+        &#125;,
+        verify=False
+    )
+    return resp.json()
+</code></pre>
+<p>运行上面的代码需要先安装<code>requests</code>三方库，这个三方库封装了HTTP网络请求的相关功能，使用起来非常的简单，我们在之前的内容中也讲到过这个三方库。<code>send_mobile_code</code>函数有两个参数，第一个参数是手机号，第二个参数是短信验证码的内容，第5行代码需要提供自己的API Key，就是上面第2步中查看到的自己的API Key。请求螺丝帽的短信网关会返回JSON格式的数据，对于上面的代码如果返回<code>&#123;&#39;err&#39;: 0, &#39;msg&#39;: &#39;ok&#39;&#125;</code>，则表示短信发送成功，如果<code>err</code>字段的值不为<code>0</code>而是其他值，则表示短信发送失败，可以在螺丝帽官方的<a target="_blank" rel="noopener" href="https://luosimao.com/docs/api/">开发文档</a>页面上查看到不同的数值代表的含义，例如：<code>-20</code>表示余额不足，<code>-32</code>表示缺少短信签名。</p>
+<p>可以在视图函数中调用上面的函数来完成发送短信验证码的功能，稍后我们可以把这个功能跟用户注册结合起来。</p>
+<p>生成随机验证码和验证手机号的函数。</p>
+<pre><code class="Python">import random
+import re
+
+TEL_PATTERN = re.compile(r&#39;1[3-9]\d&#123;9&#125;&#39;)
+
+
+def check_tel(tel):
+    &quot;&quot;&quot;检查手机号&quot;&quot;&quot;
+    return TEL_PATTERN.fullmatch(tel) is not None
+
+
+def random_code(length=6):
+    &quot;&quot;&quot;生成随机短信验证码&quot;&quot;&quot;
+    return &#39;&#39;.join(random.choices(&#39;0123456789&#39;, k=length))
+</code></pre>
+<p>发送短信验证码的视图函数。</p>
+<pre><code class="Python">@api_view((&#39;GET&#39;, ))
+def get_mobilecode(request, tel):
+    &quot;&quot;&quot;获取短信验证码&quot;&quot;&quot;
+    if check_tel(tel):
+        redis_cli = get_redis_connection()
+        if redis_cli.exists(f&#39;vote:block-mobile:&#123;tel&#125;&#39;):
+            data = &#123;&#39;code&#39;: 30001, &#39;message&#39;: &#39;请不要在60秒内重复发送短信验证码&#39;&#125;
+        else:
+            code = random_code()
+            send_mobile_code(tel, code)
+            # 通过Redis阻止60秒内容重复发送短信验证码
+            redis_cli.set(f&#39;vote:block-mobile:&#123;tel&#125;&#39;, &#39;x&#39;, ex=60)
+            # 将验证码在Redis中保留10分钟（有效期10分钟）
+            redis_cli.set(f&#39;vote2:valid-mobile:&#123;tel&#125;&#39;, code, ex=600)
+            data = &#123;&#39;code&#39;: 30000, &#39;message&#39;: &#39;短信验证码已发送，请注意查收&#39;&#125;
+    else:
+        data = &#123;&#39;code&#39;: 30002, &#39;message&#39;: &#39;请输入有效的手机号&#39;&#125;
+    return Response(data)
+</code></pre>
+<blockquote>
+<p><strong>说明</strong>：上面的代码利用Redis实现了两个额外的功能，一个是阻止用户60秒内重复发送短信验证码，一个是将用户的短信验证码保留10分钟，也就是说这个短信验证码的有效期只有10分钟，我们可以要求用户在注册时提供该验证码来验证用户手机号的真实性。</p>
+</blockquote>
+<h3 id="接入云存储服务"><a href="#接入云存储服务" class="headerlink" title="接入云存储服务"></a>接入云存储服务</h3><p>当我们提到<strong>云存储</strong>这个词的时候，通常是指把数据存放在由第三方提供的虚拟服务器环境下，简单的说就是将某些数据或资源通过第三平台托管。一般情况下，提供云存储服务的公司都运营着大型的数据中心，需要云存储服务的个人或组织通过向其购买或租赁存储空间来满足数据存储的需求。在开发Web应用时，可以将静态资源，尤其是用户上传的静态资源直接置于云存储服务中，云存储通常会提供对应的URL使得用户可以访问该静态资源。国内外比较有名的云存储服务（如：亚马逊的S3、阿里的OSS2等）一般都物美价廉，相比自己架设静态资源服务器，云存储的代价更小，而且一般的云存储平台都提供了CDN服务，用于加速对静态资源的访问，所以不管从哪个角度出发，使用云存储的方式管理Web应用的数据和静态资源都是非常好的选择，除非这些资源涉及到个人或商业隐私，否则就可以托管到云存储中。</p>
+<p>下面我们以接入<a target="_blank" rel="noopener" href="https://www.qiniu.com/">七牛云</a>为例，讲解如何实现将用户上传的文件保存到七牛云存储。七牛云是国内知名的云计算及数据服务提供商，七牛云在海量文件存储、CDN、视频点播、互动直播以及大规模异构数据的智能分析与处理等领域都有自己的产品，而且非付费用户也可以免费接入，使用其提供的服务。下面是接入七牛云的流程：</p>
+<ol>
+<li><p>注册账号，登录管理控制台。</p>
+<p> <img src="res/qiniu-manage-console.png"></p>
+</li>
+<li><p>选择左侧菜单中的对象存储。</p>
+<p> <img src="res/qiniu-storage-service.png"></p>
+</li>
+<li><p>在空间管理中选择新建空间（例如：myvote），如果提示空间名称已被占用，更换一个再尝试即可。注意，创建空间后会提示绑定自定义域名，如果暂时还没有自己的域名，可以使用七牛云提供的临时域名，但是临时域名会在30天后被回收，所以最好准备自己的域名（域名需要备案，不清楚如何操作的请自行查阅相关资料）。</p>
+<p> <img src="res/qiniu-storage-create.png"></p>
+</li>
+<li><p>在网页的右上角点击个人头像中的“密钥管理”，查看自己的密钥，稍后在代码中需要使用AK（AccessKey）和SK（SecretKey）两个密钥来认证用户身份。</p>
+<p> <img src="res/qiniu-secretkey-management.png"></p>
+</li>
+<li><p>点击网页上方菜单中的“文档”，进入到<a target="_blank" rel="noopener" href="https://developer.qiniu.com/">七牛开发者中心</a>，选择导航菜单中的“SDK&amp;工具”并点击“官方SDK”子菜单，找到Python（服务端）并点击“文档”查看官方文档。</p>
+<p> <img src="res/qiniu-document-python.png"></p>
+</li>
+</ol>
+<p>接下来，只要安装官方文档提供的示例，就可以接入七牛云，使用七牛云提供的云存储以及其他服务。首先可以通过下面的命令安装七牛云的三方库。</p>
+<pre><code class="Bash">pip install qiniu
+</code></pre>
+<p>接下来可以通过<code>qiniu</code>模块中的<code>put_file</code>和<code>put_stream</code>两个函数实现文件上传，前者可以上传指定路径的文件，后者可以将内存中的二进制数据上传至七牛云，具体的代码如下所示。</p>
+<pre><code class="Python">import qiniu
+
+AUTH = qiniu.Auth(&#39;密钥管理中的AccessKey&#39;, &#39;密钥管理中的SecretKey&#39;)
+BUCKET_NAME = &#39;myvote&#39;
+
+
+def upload_file_to_qiniu(key, file_path):
+    &quot;&quot;&quot;上传指定路径的文件到七牛云&quot;&quot;&quot;
+    token = AUTH.upload_token(BUCKET_NAME, key)
+    return qiniu.put_file(token, key, file_path)
+
+
+def upload_stream_to_qiniu(key, stream, size):
+    &quot;&quot;&quot;上传二进制数据流到七牛云&quot;&quot;&quot;
+    token = AUTH.upload_token(BUCKET_NAME, key)
+    return qiniu.put_stream(token, key, stream, None, size)
+</code></pre>
+<p>下面是一个文件上传的简单前端页。</p>
+<pre><code class="HTML">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;上传文件&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form action=&quot;/upload/&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+        &lt;div&gt;
+            &lt;input type=&quot;file&quot; name=&quot;photo&quot;&gt;
+            &lt;input type=&quot;submit&quot; value=&quot;上传&quot;&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<blockquote>
+<p><strong>说明</strong>：前端如果使用表单实现文件上传，表单的method属性必须设置为post，enctype属性需要设置为multipart/form-data，表单中type属性为file的input标签，就是上传文件的文件选择器。</p>
+</blockquote>
+<p>实现上传功能的视图函数如下所示。</p>
+<pre><code class="Python">from django.views.decorators.csrf import csrf_exempt
+
+
+@csrf_exempt
+def upload(request):
+    # 如果上传的文件小于2.5M，则photo对象的类型为InMemoryUploadedFile，文件在内存中
+    # 如果上传的文件超过2.5M，则photo对象的类型为TemporaryUploadedFile，文件在临时路径下
+    photo = request.FILES.get(&#39;photo&#39;)
+    _, ext = os.path.splitext(photo.name)
+    # 通过UUID和原来文件的扩展名生成独一无二的新的文件名
+    filename = f&#39;&#123;uuid.uuid1().hex&#125;&#123;ext&#125;&#39;
+    # 对于内存中的文件，可以使用上面封装好的函数upload_stream_to_qiniu上传文件到七牛云
+    # 如果文件保存在临时路径下，可以使用upload_file_to_qiniu实现文件上传
+    upload_stream_to_qiniu(filename, photo.file, photo.size)
+    return redirect(&#39;/static/html/upload.html&#39;)
+</code></pre>
+<blockquote>
+<p><strong>注意</strong>：上面的视图函数使用了<code>csrf_exempt</code>装饰器，该装饰器能够让表单免除必须提供CSRF令牌的要求。此外，代码第11行使用了<code>uuid</code>模块的<code>uuid1</code>函数来生成全局唯一标识符。</p>
+</blockquote>
+<p>运行项目尝试文件上传的功能，文件上传成功后，可以在七牛云“空间管理”中点击自己空间并进入“文件管理”界面，在这里可以看到我们刚才上传成功的文件，而且可以通过七牛云提供的域名获取该文件。</p>
+<p><img src="res/qiniu-file-management.png"></p>
+
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/page/7/index.html">http://example.com/page/7/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-Python-100-Days-master/Day41-55/51.使用缓存" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:55.320Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/Day41-55/51.%E4%BD%BF%E7%94%A8%E7%BC%93%E5%AD%98/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="使用缓存"><a href="#使用缓存" class="headerlink" title="使用缓存"></a>使用缓存</h2><p>通常情况下，Web应用的性能瓶颈都会出现在关系型数据库上，当并发访问量较大时，如果所有的请求都需要通过关系型数据库完成数据持久化操作，那么数据库一定会不堪重负。优化Web应用性能最为重要的一点就是使用缓存，把那些数据体量不大但访问频率非常高的数据提前加载到缓存服务器中，这又是典型的空间换时间的方法。通常缓存服务器都是直接将数据置于内存中而且使用了非常高效的数据存取策略（哈希存储、键值对方式等），在读写性能上远远优于关系型数据库的，因此我们可以让Web应用接入缓存服务器来优化其性能，其中一个非常好的选择就是使用Redis。</p>
+<p>Web应用的缓存架构大致如下图所示。</p>
+<p><img src="res/redis-cache-service.png"></p>
+<h3 id="Django项目接入Redis"><a href="#Django项目接入Redis" class="headerlink" title="Django项目接入Redis"></a>Django项目接入Redis</h3><p>在此前的课程中，我们介绍过Redis的安装和使用，此处不再进行赘述。如果需要在Django项目中接入Redis，可以使用三方库<code>django-redis</code>，这个三方库又依赖了一个名为<code>redis</code> 的三方库，它封装了对Redis的各种操作。</p>
+<p>安装<code>django-redis</code>。</p>
+<pre><code class="Bash">pip install django-redis
+</code></pre>
+<p>修改Django配置文件中关于缓存的配置。</p>
+<pre><code class="Python">CACHES = &#123;
+    &#39;default&#39;: &#123;
+        # 指定通过django-redis接入Redis服务
+        &#39;BACKEND&#39;: &#39;django_redis.cache.RedisCache&#39;,
+        # Redis服务器的URL
+        &#39;LOCATION&#39;: [&#39;redis://1.2.3.4:6379/0&#39;, ],
+        # Redis中键的前缀（解决命名冲突）
+        &#39;KEY_PREFIX&#39;: &#39;vote&#39;,
+        # 其他的配置选项
+        &#39;OPTIONS&#39;: &#123;
+            &#39;CLIENT_CLASS&#39;: &#39;django_redis.client.DefaultClient&#39;,
+            # 连接池（预置若干备用的Redis连接）参数
+            &#39;CONNECTION_POOL_KWARGS&#39;: &#123;
+                # 最大连接数
+                &#39;max_connections&#39;: 512,
+            &#125;,
+            # 连接Redis的用户口令
+            &#39;PASSWORD&#39;: &#39;foobared&#39;,
+        &#125;
+    &#125;,
+&#125;
+</code></pre>
+<p>至此，我们的Django项目已经可以接入Redis，接下来我们修改项目代码，用Redis为之写的获取学科数据的接口提供缓存服务。</p>
+<h3 id="为视图提供缓存服务"><a href="#为视图提供缓存服务" class="headerlink" title="为视图提供缓存服务"></a>为视图提供缓存服务</h3><h4 id="声明式缓存"><a href="#声明式缓存" class="headerlink" title="声明式缓存"></a>声明式缓存</h4><p>所谓声明式缓存是指不修改原来的代码，通过Python中的装饰器（代理）为原有的代码增加缓存功能。对于FBV，代码如下所示。</p>
+<pre><code class="Python">from django.views.decorators.cache import cache_page
+
+
+@api_view((&#39;GET&#39;, ))
+@cache_page(timeout=86400, cache=&#39;default&#39;)
+def show_subjects(request):
+    &quot;&quot;&quot;获取学科数据&quot;&quot;&quot;
+    queryset = Subject.objects.all()
+    data = SubjectSerializer(queryset, many=True).data
+    return Response(&#123;&#39;code&#39;: 20000, &#39;subjects&#39;: data&#125;)
+</code></pre>
+<p>上面的代码通过Django封装的<code>cache_page</code>装饰器缓存了视图函数的返回值（响应对象），<code>cache_page</code>的本意是缓存视图函数渲染的页面，对于返回JSON数据的视图函数，相当于是缓存了JSON数据。在使用<code>cache_page</code>装饰器时，可以传入<code>timeout</code>参数来指定缓存过期时间，还可以使用<code>cache</code>参数来指定需要使用哪一组缓存服务来缓存数据。Django项目允许在配置文件中配置多组缓存服务，上面的<code>cache=&#39;default&#39;</code>指定了使用默认的缓存服务（因为之前的配置文件中我们也只配置了名为<code>default</code>的缓存服务）。视图函数的返回值会被序列化成字节串放到Redis中（Redis中的str类型可以接收字节串），缓存数据的序列化和反序列化也不需要我们自己处理，因为<code>cache_page</code>装饰器会调用<code>django-redis</code>库中的<code>RedisCache</code>来对接Redis，该类使用了<code>DefaultClient</code>来连接Redis并使用了<a target="_blank" rel="noopener" href="https://python3-cookbook.readthedocs.io/zh_CN/latest/c05/p21_serializing_python_objects.html">pickle序列化</a>，<code>django_redis.serializers.pickle.PickleSerializer</code>是默认的序列化类。</p>
+<p>如果缓存中没有学科的数据，那么通过接口访问学科数据时，我们的视图函数会通过执行<code>Subject.objects.all()</code>向数据库发出SQL语句来获得数据，视图函数的返回值会被缓存，因此下次请求该视图函数如果缓存没有过期，可以直接从缓存中获取视图函数的返回值，无需再次查询数据库。如果想了解缓存的使用情况，可以配置数据库日志或者使用Django-Debug-Toolbar来查看，第一次访问学科数据接口时会看到查询学科数据的SQL语句，再次获取学科数据时，不会再向数据库发出SQL语句，因为可以直接从缓存中获取数据。</p>
+<p>对于CBV，可以利用Django中名为<code>method_decorator</code>的装饰器将<code>cache_page</code>这个装饰函数的装饰器放到类中的方法上，效果跟上面的代码是一样的。需要提醒大家注意的是，<code>cache_page</code>装饰器不能直接放在类上，因为它是装饰函数的装饰器，所以Django框架才提供了<code>method_decorator</code>来解决这个问题，很显然，<code>method_decorator</code>是一个装饰类的装饰器。</p>
+<pre><code class="Python">from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
+
+
+@method_decorator(decorator=cache_page(timeout=86400, cache=&#39;default&#39;), name=&#39;get&#39;)
+class SubjectView(ListAPIView):
+    &quot;&quot;&quot;获取学科数据的视图类&quot;&quot;&quot;
+    queryset = Subject.objects.all()
+    serializer_class = SubjectSerializer
+</code></pre>
+<h4 id="编程式缓存"><a href="#编程式缓存" class="headerlink" title="编程式缓存"></a>编程式缓存</h4><p>所谓编程式缓存是指通过自己编写的代码来使用缓存服务，这种方式虽然代码量会稍微大一些，但是相较于声明式缓存，它对缓存的操作和使用更加灵活，在实际开发中使用得更多。下面的代码去掉了之前使用的<code>cache_page</code>装饰器，通过<code>django-redis</code>提供的<code>get_redis_connection</code>函数直接获取Redis连接来操作Redis。</p>
+<pre><code class="Python">def show_subjects(request):
+    &quot;&quot;&quot;获取学科数据&quot;&quot;&quot;
+    redis_cli = get_redis_connection()
+    # 先尝试从缓存中获取学科数据
+    data = redis_cli.get(&#39;vote:polls:subjects&#39;)
+    if data:
+        # 如果获取到学科数据就进行反序列化操作
+        data = json.loads(data)
+    else:
+        # 如果缓存中没有获取到学科数据就查询数据库
+        queryset = Subject.objects.all()
+        data = SubjectSerializer(queryset, many=True).data
+        # 将查到的学科数据序列化后放到缓存中
+        redis_cli.set(&#39;vote:polls:subjects&#39;, json.dumps(data), ex=86400)
+    return Response(&#123;&#39;code&#39;: 20000, &#39;subjects&#39;: data&#125;)
+</code></pre>
+<p>需要说明的是，Django框架提供了<code>cache</code>和<code>caches</code>两个现成的变量来支持缓存操作，前者访问的是默认的缓存（名为<code>default</code>的缓存），后者可以通过索引运算获取指定的缓存服务（例如：<code>caches[&#39;default&#39;]</code>）。向<code>cache</code>对象发送<code>get</code>和<code>set</code>消息就可以实现对缓存的读和写操作，但是这种方式能做的操作有限，不如上面代码中使用的方式灵活。还有一个值得注意的地方，由于可以通过<code>get_redis_connection</code>函数获得的Redis连接对象向Redis发起各种操作，包括<code>FLUSHDB</code>、<code>SHUTDOWN</code>等危险的操作，所以在实际商业项目开发中，一般都会对<code>django-redis</code>再做一次封装，例如封装一个工具类，其中只提供了项目需要用到的缓存操作的方法，从而避免了直接使用<code>get_redis_connection</code>的潜在风险。当然，自己封装对缓存的操作还可以使用“Read Through”和“Write Through”的方式实现对缓存的更新，这个在下面会介绍到。</p>
+<h3 id="缓存相关问题"><a href="#缓存相关问题" class="headerlink" title="缓存相关问题"></a>缓存相关问题</h3><h4 id="缓存数据的更新"><a href="#缓存数据的更新" class="headerlink" title="缓存数据的更新"></a>缓存数据的更新</h4><p>在使用缓存时，一个必须搞清楚的问题就是，当数据改变时，如何更新缓存中的数据。通常更新缓存有如下几种套路，分别是：</p>
+<ol>
+<li>Cache Aside Pattern</li>
+<li>Read/Write Through Pattern</li>
+<li>Write Behind Caching Pattern</li>
+</ol>
+<p>第1种方式的具体做法就是，当数据更新时，先更新数据库，再删除缓存。注意，不能够使用先更新数据库再更新缓存的方式，也不能够使用先删除缓存再更新数据库的方式，大家可以自己想一想为什么（考虑一下有并发的读操作和写操作的场景）。当然，先更新数据库再删除缓存的做法在理论上也存在风险，但是发生问题的概率是极低的，所以不少的项目都使用了这种方式。</p>
+<p>第1种方式相当于编写业务代码的开发者要自己负责对两套存储系统（缓存和关系型数据库）的操作，代码写起来非常的繁琐。第2种方式的主旨是将后端的存储系统变成一套代码，对缓存的维护封装在这套代码中。其中，Read Through指在查询操作中更新缓存，也就是说，当缓存失效的时候，由缓存服务自己负责对数据的加载，从而对应用方是透明的；而Write Through是指在更新数据时，如果没有命中缓存，直接更新数据库，然后返回。如果命中了缓存，则更新缓存，然后再由缓存服务自己更新数据库（同步更新）。刚才我们说过，如果自己对项目中的Redis操作再做一次封装，就可以实现“Read Through”和“Write Through”模式，这样做虽然会增加工作量，但无疑是一件“一劳永逸”且“功在千秋”的事情。</p>
+<p>第3种方式是在更新数据的时候，只更新缓存，不更新数据库，而缓存服务这边会<strong>异步的批量更新</strong>数据库。这种做法会大幅度提升性能，但代价是牺牲数据的<strong>强一致性</strong>。第3种方式的实现逻辑比较复杂，因为他需要追踪有哪数据是被更新了的，然后再批量的刷新到持久层上。</p>
+<h4 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h4><p>缓存是为了缓解数据库压力而添加的一个中间层，如果恶意的访问者频繁的访问缓存中没有的数据，那么缓存就失去了存在的意义，瞬间所有请求的压力都落在了数据库上，这样会导致数据库承载着巨大的压力甚至连接异常，类似于分布式拒绝服务攻击（DDoS）的做法。解决缓存穿透的一个办法是约定如果查询返回为空值，把这个空值也缓存起来，但是需要为这个空值的缓存设置一个较短的超时时间，毕竟缓存这样的值就是对缓存空间的浪费。另一个解决缓存穿透的办法是使用布隆过滤器，具体的做法大家可以自行了解。</p>
+<h4 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h4><p>在实际的项目中，可能存在某个缓存的key某个时间点过期，但恰好在这个时间点对有对该key的大量的并发请求过来，这些请求没有从缓存中找到key对应的数据，就会直接从数据库中获取数据并写回到缓存，这个时候大并发的请求可能会瞬间把数据库压垮，这种现象称为缓存击穿。比较常见的解决缓存击穿的办法是使用互斥锁，简单的说就是在缓存失效的时候，不是立即去数据库加载数据，而是先设置互斥锁（例如：Redis中的setnx），只有设置互斥锁的操作成功的请求，才能执行查询从数据库中加载数据并写入缓存，其他设置互斥锁失败的请求，可以先执行一个短暂的休眠，然后尝试重新从缓存中获取数据，如果缓存还没有数据，则重复刚才的设置互斥锁的操作，大致的参考代码如下所示。</p>
+<pre><code class="Python">data = redis_cli.get(key)
+while not data:
+    if redis_cli.setnx(&#39;mutex&#39;, &#39;x&#39;):
+        redis.expire(&#39;mutex&#39;, timeout)
+        data = db.query(...)
+        redis.set(key, data)
+        redis.delete(&#39;mutex&#39;)
+    else:
+        time.sleep(0.1)
+        data = redis_cli.get(key)
+</code></pre>
+<h4 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h4><p>缓存雪崩是指在将数据放入缓存时采用了相同的过期时间，这样就导致缓存在某一时刻同时失效，请求全部转发到数据库，导致数据库瞬时压力过大而崩溃。解决缓存雪崩问题的方法也比较简单，可以在既定的缓存过期时间上加一个随机时间，这样可以从一定程度上避免不同的key在同一时间集体失效。还有一种办法就是使用多级缓存，每一级缓存的过期时间都不一样，这样的话即便某个级别的缓存集体失效，但是其他级别的缓存还能够提供数据，避免所有的请求都落到数据库上。</p>
+
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/page/7/index.html">http://example.com/page/7/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-Python-100-Days-master/Day41-55/50.RESTful架构和DRF进阶" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:55.318Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/Day41-55/50.RESTful%E6%9E%B6%E6%9E%84%E5%92%8CDRF%E8%BF%9B%E9%98%B6/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="RESTful架构和DRF进阶"><a href="#RESTful架构和DRF进阶" class="headerlink" title="RESTful架构和DRF进阶"></a>RESTful架构和DRF进阶</h2><p>除了上一节讲到的方法，使用DRF创建REST风格的数据接口也可以通过CBV（基于类的视图）的方式。使用CBV创建数据接口的特点是代码简单，开发效率高，但是没有FBV（基于函数的视图）灵活，因为使用FBV的方式，数据接口对应的视图函数执行什么样的代码以及返回什么的数据是高度可定制的。下面我们以定制学科的数据接口为例，讲解通过CBV方式定制数据接口的具体做法。</p>
+<h3 id="使用CBV"><a href="#使用CBV" class="headerlink" title="使用CBV"></a>使用CBV</h3><h4 id="继承APIView的子类"><a href="#继承APIView的子类" class="headerlink" title="继承APIView的子类"></a>继承APIView的子类</h4><p>修改之前项目中的<code>polls/views.py</code>，去掉<code>show_subjects</code>视图函数，添加一个名为<code>SubjectView</code>的类，该类继承自<code>ListAPIView</code>，<code>ListAPIView</code>能接收GET请求，它封装了获取数据列表并返回JSON数据的<code>get</code>方法。<code>ListAPIView</code>是<code>APIView</code> 的子类，<code>APIView</code>还有很多的子类，例如<code>CreateAPIView</code>可以支持POST请求，<code>UpdateAPIView</code>可以支持PUT和PATCH请求，<code>DestoryAPIView</code>可以支持DELETE请求。<code>SubjectView</code> 的代码如下所示。</p>
+<pre><code class="Python">from rest_framework.generics import ListAPIView
+
+
+class SubjectView(ListAPIView):
+    # 通过queryset指定如何获取学科数据
+    queryset = Subject.objects.all()
+    # 通过serializer_class指定如何序列化学科数据
+    serializer_class = SubjectSerializer
+</code></pre>
+<p>刚才说过，由于<code>SubjectView</code>的父类<code>ListAPIView</code>已经实现了<code>get</code>方法来处理获取学科列表的GET请求，所以我们只需要声明如何获取学科数据以及如何序列化学科数据，前者用<code>queryset</code>属性指定，后者用<code>serializer_class</code>属性指定。要使用上面的<code>SubjectView</code>，需要修改<code>urls.py</code>文件，如下所示。</p>
+<pre><code class="Python">urlpatterns = [
+    path(&#39;api/subjects/&#39;, SubjectView.as_view()),   
+]
+</code></pre>
+<p>很显然，上面的做法较之之前讲到的FBV要简单很多。</p>
+<h4 id="继承ModelViewSet"><a href="#继承ModelViewSet" class="headerlink" title="继承ModelViewSet"></a>继承ModelViewSet</h4><p>如果学科对应的数据接口需要支持GET、POST、PUT、PATCH、DELETE请求来支持对学科资源的获取、新增、更新、删除操作，更为简单的做法是继承<code>ModelViewSet</code>来编写学科视图类。再次修改<code>polls/views.py</code>文件，去掉<code>SubjectView</code>类，添加一个名为<code>SubjectViewSet</code>的类，代码如下所示。</p>
+<pre><code class="Python">from rest_framework.viewsets import ModelViewSet
+
+
+class SubjectViewSet(ModelViewSet):
+    queryset = Subject.objects.all()
+    serializer_class = SubjectSerializer
+</code></pre>
+<p>通过查看<code>ModelViewSet</code>类的源代码可以发现，该类共有6个父类，其中前5个父类分别实现对POST（新增学科）、GET（获取指定学科）、PUT/PATCH（更新学科）、DELETE（删除学科）和GET（获取学科列表）操作的支持，对应的方法分别是<code>create</code>、<code>retrieve</code>、<code>update</code>、<code>destroy</code>和<code>list</code>。由于<code>ModelViewSet</code>的父类中已经实现了这些方法，所以我们几乎没有编写任何代码就完成了学科数据全套接口的开发，我们要做的仅仅是指出如何获取到数据（通过<code>queryset</code>属性指定）以及如何序列化数据（通过<code>serializer_class</code>属性指定），这一点跟上面继承<code>APIView</code>的子类做法是一致的。</p>
+<pre><code class="Python">class ModelViewSet(mixins.CreateModelMixin,
+                   mixins.RetrieveModelMixin,
+                   mixins.UpdateModelMixin,
+                   mixins.DestroyModelMixin,
+                   mixins.ListModelMixin,
+                   GenericViewSet):
+    &quot;&quot;&quot;
+    A viewset that provides default `create()`, `retrieve()`, `update()`,
+    `partial_update()`, `destroy()` and `list()` actions.
+    &quot;&quot;&quot;
+    pass
+</code></pre>
+<p>要使用上面的<code>SubjectViewSet</code>，需要在<code>urls.py</code>文件中进行URL映射。由于<code>ModelViewSet</code>相当于是多个视图函数的汇总，所以不同于之前映射URL的方式，我们需要先创建一个路由器并通过它注册<code>SubjectViewSet</code>，然后将注册成功后生成的URL一并添加到<code>urlspattern</code>列表中，代码如下所示。</p>
+<pre><code class="Python">from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+router.register(&#39;api/subjects&#39;, SubjectViewSet)
+urlpatterns += router.urls
+</code></pre>
+<p>除了<code>ModelViewSet</code>类外，DRF还提供了一个名为<code>ReadOnlyModelViewSet</code> 的类，从名字上就可以看出，该类是只读视图的集合，也就意味着，继承该类定制的数据接口只能支持GET请求，也就是获取单个资源和资源列表的请求。</p>
+<h3 id="数据分页"><a href="#数据分页" class="headerlink" title="数据分页"></a>数据分页</h3><p>在使用GET请求获取资源列表时，我们通常不会一次性的加载所有的数据，除非数据量真的很小。大多数获取资源列表的操作都支持数据分页展示，也就说我们可以通过指定页码（或类似于页码的标识）和页面大小（一次加载多少条数据）来获取不同的数据。我们可以通过对<code>QuerySet</code>对象的切片操作来实现分页，也可以利用Django框架封装的<code>Paginator</code>和<code>Page</code>对象来实现分页。使用DRF时，可以在Django配置文件中修改<code>REST_FRAMEWORK</code>并配置默认的分页类和页面大小来实现分页，如下所示。</p>
+<pre><code class="Python">REST_FRAMEWORK = &#123;
+    &#39;PAGE_SIZE&#39;: 10,
+    &#39;DEFAULT_PAGINATION_CLASS&#39;: &#39;rest_framework.pagination.PageNumberPagination&#39;
+&#125;
+</code></pre>
+<p>除了上面配置的<code>PageNumberPagination</code>分页器之外，DRF还提供了<code>LimitOffsetPagination</code>和<code>CursorPagination</code>分页器，值得一提的是<code>CursorPagination</code>，它可以避免使用页码分页时暴露网站的数据体量，有兴趣的读者可以自行了解。如果不希望使用配置文件中默认的分页设定，可以在视图类中添加一个<code>pagination_class</code>属性来重新指定分页器，通常可以将该属性指定为自定义的分页器，如下所示。</p>
+<pre><code class="Python">from rest_framework.pagination import PageNumberPagination
+
+
+class CustomizedPagination(PageNumberPagination):
+    # 默认页面大小
+    page_size = 5
+    # 页面大小对应的查询参数
+    page_size_query_param = &#39;size&#39;
+    # 页面大小的最大值
+    max_page_size = 50
+</code></pre>
+<pre><code class="Python">class SubjectView(ListAPIView):
+    # 指定如何获取数据
+    queryset = Subject.objects.all()
+    # 指定如何序列化数据
+    serializer_class = SubjectSerializer
+    # 指定如何分页
+    pagination_class = CustomizedPagination
+</code></pre>
+<p>如果不希望数据分页，可以将<code>pagination_class</code>属性设置为<code>None</code>来取消默认的分页器。</p>
+<h3 id="数据筛选"><a href="#数据筛选" class="headerlink" title="数据筛选"></a>数据筛选</h3><p>如果希望使用CBV定制获取老师信息的数据接口，也可以通过继承<code>ListAPIView</code>来实现。但是因为要通过指定的学科来获取对应的老师信息，因此需要对老师数据进行筛选而不是直接获取所有老师的数据。如果想从请求中获取学科编号并通过学科编号对老师进行筛选，可以通过重写<code>get_queryset</code>方法来做到，代码如下所示。</p>
+<pre><code class="Python">class TeacherView(ListAPIView):
+    serializer_class = TeacherSerializer
+
+    def get_queryset(self):
+        queryset = Teacher.objects.defer(&#39;subject&#39;)
+        try:
+            sno = self.request.GET.get(&#39;sno&#39;, &#39;&#39;)
+            queryset = queryset.filter(subject__no=sno)
+            return queryset
+        except ValueError:
+            raise Http404(&#39;No teachers found.&#39;)
+</code></pre>
+<p>除了上述方式之外，还可以使用三方库<code>django-filter</code>来配合DRF实现对数据的筛选，使用<code>django-filter</code>后，可以通过为视图类配置<code>filter-backends</code>属性并指定使用<code>DjangoFilterBackend</code>来支持数据筛选。在完成上述配置后，可以使用<code>filter_fields</code> 属性或<code>filterset_class</code>属性来指定如何筛选数据，有兴趣的读者可以自行研究。</p>
+
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/page/7/index.html">http://example.com/page/7/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-Python-100-Days-master/Day41-55/49.RESTful架构和DRF入门" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:55.315Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/Day41-55/49.RESTful%E6%9E%B6%E6%9E%84%E5%92%8CDRF%E5%85%A5%E9%97%A8/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="RESTful架构和DRF入门"><a href="#RESTful架构和DRF入门" class="headerlink" title="RESTful架构和DRF入门"></a>RESTful架构和DRF入门</h2><p>把软件（Software）、平台（Platform）、基础设施（Infrastructure）做成服务（Service）是很多IT企业都一直在做的事情，这就是大家经常听到的SasS（软件即服务）、PasS（平台即服务）和IasS（基础设置即服务）。实现面向服务的架构（SOA）有诸多的方式，包括RPC（远程过程调用）、Web Service、REST等，在技术层面上，SOA是一种<strong>抽象的、松散耦合的粗粒度软件架构</strong>；在业务层面上，SOA的核心概念是“<strong>重用</strong>”和“<strong>互操作</strong>”，它将系统资源整合成可操作的、标准的服务，使得这些资源能够被重新组合和应用。在实现SOA的诸多方案中，REST被认为是最适合互联网应用的架构，符合REST规范的架构也经常被称作RESTful架构。</p>
+<h3 id="REST概述"><a href="#REST概述" class="headerlink" title="REST概述"></a>REST概述</h3><p>REST这个词，是<strong>Roy Thomas Fielding</strong>在他2000年的博士论文中提出的，Roy是HTTP协议（1.0和1.1版）的主要设计者、Apache服务器软件主要作者、Apache基金会第一任主席。在他的博士论文中，Roy把他对互联网软件的架构原则定名为REST，即<strong>RE</strong>presentational <strong>S</strong>tate <strong>T</strong>ransfer的缩写，中文通常翻译为“<strong>表现层状态转移</strong>”或“<strong>表述状态转移</strong>”。</p>
+<p>这里的“表现层”其实指的是“资源”的“表现层”。所谓资源，就是网络上的一个实体，或者说是网络上的一个具体信息。它可以是一段文本、一张图片、一首歌曲或一种服务。我们可以用一个URI（统一资源定位符）指向资源，要获取到这个资源，访问它的URI即可，URI就是资源在互联网上的唯一标识。资源可以有多种外在表现形式。我们把资源具体呈现出来的形式，叫做它的“表现层”。比如，文本可以用<code>text/plain</code>格式表现，也可以用<code>text/html</code>格式、<code>text/xml</code>格式、<code>application/json</code>格式表现，甚至可以采用二进制格式；图片可以用<code>image/jpeg</code>格式表现，也可以用<code>image/png</code>格式表现。URI只代表资源的实体，不代表它的表现形式。严格地说，有些网址最后的<code>.html</code>后缀名是不必要的，因为这个后缀名表示格式，属于“表现层”范畴，而URI应该只代表“资源”的位置，它的具体表现形式，应该在HTTP请求的头信息中用<code>Accept</code>和<code>Content-Type</code>字段指定，这两个字段才是对“表现层”的描述。</p>
+<p>访问一个网站，就代表了客户端和服务器的一个互动过程。在这个过程中，势必涉及到数据和状态的变化。Web应用通常使用HTTP作为其通信协议，客户端想要操作服务器，必须通过HTTP请求，让服务器端发生“状态转移”，而这种转移是建立在表现层之上的，所以就是“表现层状态转移”。客户端通过HTTP的动词GET、POST、PUT（或PATCH）、DELETE，分别对应对资源的四种基本操作，其中GET用来获取资源，POST用来新建资源（也可以用于更新资源），PUT（或PATCH）用来更新资源，DELETE用来删除资源。</p>
+<p>简单的说RESTful架构就是：“每一个URI代表一种资源，客户端通过四个HTTP动词，对服务器端资源进行操作，实现资源的表现层状态转移”。</p>
+<p>我们在设计Web应用时，如果需要向客户端提供资源，就可以使用REST风格的URI，这是实现RESTful架构的第一步。当然，真正的RESTful架构并不只是URI符合REST风格，更为重要的是“无状态”和“幂等性”两个词，我们在后面的课程中会为大家阐述这两点。下面的例子给出了一些符合REST风格的URI，供大家在设计URI时参考。</p>
+<table>
+<thead>
+<tr>
+<th>请求方法（HTTP动词）</th>
+<th>URI</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>GET</strong></td>
+<td><code>/students/</code></td>
+<td>获取所有学生</td>
+</tr>
+<tr>
+<td><strong>POST</strong></td>
+<td><code>/students/</code></td>
+<td>新建一个学生</td>
+</tr>
+<tr>
+<td><strong>GET</strong></td>
+<td><code>/students/ID/</code></td>
+<td>获取指定ID的学生信息</td>
+</tr>
+<tr>
+<td><strong>PUT</strong></td>
+<td><code>/students/ID/</code></td>
+<td>更新指定ID的学生信息（提供该学生的全部信息）</td>
+</tr>
+<tr>
+<td><strong>PATCH</strong></td>
+<td><code>/students/ID/</code></td>
+<td>更新指定ID的学生信息（提供该学生的部分信息）</td>
+</tr>
+<tr>
+<td><strong>DELETE</strong></td>
+<td><code>/students/ID/</code></td>
+<td>删除指定ID的学生信息</td>
+</tr>
+<tr>
+<td><strong>GET</strong></td>
+<td><code>/students/ID/friends/</code></td>
+<td>列出指定ID的学生的所有朋友</td>
+</tr>
+<tr>
+<td><strong>DELETE</strong></td>
+<td><code>/students/ID/friends/ID/</code></td>
+<td>删除指定ID的学生的指定ID的朋友</td>
+</tr>
+</tbody></table>
+<h3 id="DRF使用入门"><a href="#DRF使用入门" class="headerlink" title="DRF使用入门"></a>DRF使用入门</h3><p>在Django项目中，如果要实现REST架构，即将网站的资源发布成REST风格的API接口，可以使用著名的三方库<code>djangorestframework</code> ，我们通常将其简称为DRF。</p>
+<h4 id="安装和配置DRF"><a href="#安装和配置DRF" class="headerlink" title="安装和配置DRF"></a>安装和配置DRF</h4><p>安装DRF。</p>
+<pre><code class="Shell">pip install djangorestframework
+</code></pre>
+<p>配置DRF。</p>
+<pre><code class="Python">INSTALLED_APPS = [
+
+    &#39;rest_framework&#39;,
+    
+]
+
+# 下面的配置根据项目需要进行设置
+REST_FRAMEWORK = &#123;
+    # 配置默认页面大小
+    # &#39;PAGE_SIZE&#39;: 10,
+    # 配置默认的分页类
+    # &#39;DEFAULT_PAGINATION_CLASS&#39;: &#39;...&#39;,
+    # 配置异常处理器
+    # &#39;EXCEPTION_HANDLER&#39;: &#39;...&#39;,
+    # 配置默认解析器
+    # &#39;DEFAULT_PARSER_CLASSES&#39;: (
+    #     &#39;rest_framework.parsers.JSONParser&#39;,
+    #     &#39;rest_framework.parsers.FormParser&#39;,
+    #     &#39;rest_framework.parsers.MultiPartParser&#39;,
+    # ),
+    # 配置默认限流类
+    # &#39;DEFAULT_THROTTLE_CLASSES&#39;: (
+    #     &#39;...&#39;
+    # ),
+    # 配置默认授权类
+    # &#39;DEFAULT_PERMISSION_CLASSES&#39;: (
+    #     &#39;...&#39;,
+    # ),
+    # 配置默认认证类
+    # &#39;DEFAULT_AUTHENTICATION_CLASSES&#39;: (
+    #     &#39;...&#39;,
+    # ),
+&#125;
+</code></pre>
+<h4 id="编写序列化器"><a href="#编写序列化器" class="headerlink" title="编写序列化器"></a>编写序列化器</h4><p>前后端分离的开发需要后端为前端、移动端提供API数据接口，而API接口通常情况下都是返回JSON格式的数据，这就需要对模型对象进行序列化处理。DRF中封装了<code>Serializer</code>类和<code>ModelSerializer</code>类用于实现序列化操作，通过继承<code>Serializer</code>类或<code>ModelSerializer</code>类，我们可以自定义序列化器，用于将对象处理成字典，代码如下所示。</p>
+<pre><code class="Python">from rest_framework import serializers 
+
+
+class SubjectSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Subject
+        fields = &#39;__all__&#39;
+</code></pre>
+<p>上面的代码直接继承了<code>ModelSerializer</code>，通过<code>Meta</code>类的<code>model</code>属性指定要序列化的模型以及<code>fields</code>属性指定需要序列化的模型字段，稍后我们就可以在视图函数中使用该类来实现对<code>Subject</code>模型的序列化。</p>
+<h4 id="编写视图函数"><a href="#编写视图函数" class="headerlink" title="编写视图函数"></a>编写视图函数</h4><p>DRF框架支持两种实现数据接口的方式，一种是FBV（基于函数的视图），另一种是CBV（基于类的视图）。我们先看看FBV的方式如何实现数据接口，代码如下所示。</p>
+<pre><code class="Python">from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+
+@api_view((&#39;GET&#39;, ))
+def show_subjects(request: HttpRequest) -&gt; HttpResponse:
+    subjects = Subject.objects.all().order_by(&#39;no&#39;)
+    # 创建序列化器对象并指定要序列化的模型
+    serializer = SubjectSerializer(subjects, many=True)
+    # 通过序列化器的data属性获得模型对应的字典并通过创建Response对象返回JSON格式的数据
+    return Response(serializer.data)
+</code></pre>
+<p>对比上一个章节的使用<code>bpmapper</code>实现模型序列化的代码，使用DRF的代码更加简单明了，而且DRF本身自带了一套页面，可以方便我们查看我们使用DRF定制的数据接口，如下图所示。</p>
+<p><img src="res/drf-app.png"></p>
+<p>直接使用上一节写好的页面，就可以通过Vue.js把上面接口提供的学科数据渲染并展示出来，此处不再进行赘述。</p>
+<h4 id="实现老师信息数据接口"><a href="#实现老师信息数据接口" class="headerlink" title="实现老师信息数据接口"></a>实现老师信息数据接口</h4><p>编写序列化器。</p>
+<pre><code class="Python">class SubjectSimpleSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Subject
+        fields = (&#39;no&#39;, &#39;name&#39;)
+
+
+class TeacherSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Teacher
+        exclude = (&#39;subject&#39;, )
+</code></pre>
+<p>编写视图函数。</p>
+<pre><code class="Python">@api_view((&#39;GET&#39;, ))
+def show_teachers(request: HttpRequest) -&gt; HttpResponse:
+    try:
+        sno = int(request.GET.get(&#39;sno&#39;))
+        subject = Subject.objects.only(&#39;name&#39;).get(no=sno)
+        teachers = Teacher.objects.filter(subject=subject).defer(&#39;subject&#39;).order_by(&#39;no&#39;)
+        subject_seri = SubjectSimpleSerializer(subject)
+        teacher_seri = TeacherSerializer(teachers, many=True)
+        return Response(&#123;&#39;subject&#39;: subject_seri.data, &#39;teachers&#39;: teacher_seri.data&#125;)
+    except (TypeError, ValueError, Subject.DoesNotExist):
+        return Response(status=404)
+</code></pre>
+<p>配置URL映射。</p>
+<pre><code class="Python">urlpatterns = [
+    
+    path(&#39;api/teachers/&#39;, show_teachers),
+    
+]
+</code></pre>
+<p>通过Vue.js渲染页面。</p>
+<pre><code class="HTML">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;老师信息&lt;/title&gt;
+    &lt;style&gt;
+        /* 此处省略掉层叠样式表 */
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;h1&gt;&#123;&#123; subject.name &#125;&#125;学科的老师信息&lt;/h1&gt;
+        &lt;hr&gt;
+        &lt;h2 v-if=&quot;loaded &amp;&amp; teachers.length == 0&quot;&gt;暂无该学科老师信息&lt;/h2&gt;
+        &lt;div class=&quot;teacher&quot; v-for=&quot;teacher in teachers&quot;&gt;
+            &lt;div class=&quot;photo&quot;&gt;
+                &lt;img :src=&quot;&#39;/static/images/&#39; + teacher.photo&quot; height=&quot;140&quot; alt=&quot;&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;info&quot;&gt;
+                &lt;div&gt;
+                    &lt;span&gt;&lt;strong&gt;姓名：&#123;&#123; teacher.name &#125;&#125;&lt;/strong&gt;&lt;/span&gt;
+                    &lt;span&gt;性别：&#123;&#123; teacher.sex | maleOrFemale &#125;&#125;&lt;/span&gt;
+                    &lt;span&gt;出生日期：&#123;&#123; teacher.birth &#125;&#125;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;intro&quot;&gt;&#123;&#123; teacher.intro &#125;&#125;&lt;/div&gt;
+                &lt;div class=&quot;comment&quot;&gt;
+                    &lt;a href=&quot;&quot; @click.prevent=&quot;vote(teacher, true)&quot;&gt;好评&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+                    (&lt;strong&gt;&#123;&#123; teacher.good_count &#125;&#125;&lt;/strong&gt;)
+                    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+                    &lt;a href=&quot;&quot; @click.prevent=&quot;vote(teacher, false)&quot;&gt;差评&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+                    (&lt;strong&gt;&#123;&#123; teacher.bad_count &#125;&#125;&lt;/strong&gt;)
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;a href=&quot;/static/html/subjects.html&quot;&gt;返回首页&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        let app = new Vue(&#123;
+            el: &#39;#container&#39;,
+            data: &#123;
+                subject: &#123;&#125;,
+                teachers: [],
+                loaded: false
+            &#125;,
+            created() &#123;
+                fetch(&#39;/api/teachers/&#39; + location.search)
+                    .then(resp =&gt; resp.json())
+                    .then(json =&gt; &#123;
+                        this.subject = json.subject
+                        this.teachers = json.teachers
+                    &#125;)
+            &#125;,
+            filters: &#123;
+                maleOrFemale(sex) &#123;
+                    return sex? &#39;男&#39;: &#39;女&#39;
+                &#125;
+            &#125;,
+            methods: &#123;
+               vote(teacher, flag) &#123;
+                    let url = flag? &#39;/praise/&#39; : &#39;/criticize/&#39;
+                    url += &#39;?tno=&#39; + teacher.no
+                    fetch(url).then(resp =&gt; resp.json()).then(json =&gt; &#123;
+                        if (json.code === 10000) &#123;
+                            if (flag) &#123;
+                                teacher.good_count = json.count
+                            &#125; else &#123;
+                                teacher.bad_count = json.count
+                            &#125;
+                        &#125;
+                    &#125;)
+                &#125;
+            &#125;
+        &#125;)
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="前后端分离下的用户登录"><a href="#前后端分离下的用户登录" class="headerlink" title="前后端分离下的用户登录"></a>前后端分离下的用户登录</h3><p>之前我们提到过， HTTP是无状态的，一次请求结束连接断开，下次服务器再收到请求，它就不知道这个请求是哪个用户发过来的。但是对于一个Web应用而言，它是需要有状态管理的，这样才能让服务器知道HTTP请求来自哪个用户，从而判断是否允许该用户请求以及为用户提供更好的服务，这个过程就是常说的<strong>会话管理</strong>。</p>
+<p>之前我们做会话管理（用户跟踪）的方法是：用户登录成功后，在服务器端通过一个session对象保存用户相关数据，然后把session对象的ID写入浏览器的cookie中；下一次请求时，HTTP请求头中携带cookie的数据，服务器从HTTP请求头读取cookie中的sessionid，根据这个标识符找到对应的session对象，这样就能够获取到之前保存在session中的用户数据。我们刚才说过，REST架构是最适合互联网应用的架构，它强调了HTTP的无状态性，这样才能保证应用的水平扩展能力（当并发访问量增加时，可以通过增加新的服务器节点来为系统扩容）。显然，基于session实现用户跟踪的方式需要服务器保存session对象，在做水平扩展增加新的服务器节点时，需要复制和同步session对象，这显然是非常麻烦的。解决这个问题有两种方案，一种是架设缓存服务器（如Redis），让多个服务器节点共享缓存服务并将session对象直接置于缓存服务器中；另一种方式放弃基于session的用户跟踪，使用<strong>基于token的用户跟踪</strong>。</p>
+<p>基于token的用户跟踪是在用户登录成功后，为用户生成身份标识并保存在浏览器本地存储（localStorage、sessionStorage、cookie等）中，这样的话服务器不需要保存用户状态，从而可以很容易的做到水平扩展。基于token的用户跟踪具体流程如下：</p>
+<ol>
+<li>用户登录时，如果登录成功就按照某种方式为用户生成一个令牌（token），该令牌中通常包含了用户标识、过期时间等信息而且需要加密并生成指纹（避免伪造或篡改令牌），服务器将令牌返回给前端；</li>
+<li>前端获取到服务器返回的token，保存在浏览器本地存储中（可以保存在<code>localStorage</code>或<code>sessionStorage</code>中，对于使用Vue.js的前端项目来说，还可以通过Vuex进行状态管理）；</li>
+<li>对于使用了前端路由的项目来说，前端每次路由跳转，可以先判断<code>localStroage</code>中有无token，如果没有则跳转到登录页；</li>
+<li>每次请求后端数据接口，在HTTP请求头里携带token；后端接口判断请求头有无token，如果没有token以及token是无效的或过期的，服务器统一返回401；</li>
+<li>如果前端收到HTTP响应状态码401，则重定向到登录页面。</li>
+</ol>
+<p>通过上面的描述，相信大家已经发现了，基于token的用户跟踪最为关键是在用户登录成功时，要为用户生成一个token作为用户的身份标识。生成token的方法很多，其中一种比较成熟的解决方案是使用JSON Web Token。</p>
+<h4 id="JWT概述"><a href="#JWT概述" class="headerlink" title="JWT概述"></a>JWT概述</h4><p>JSON Web Token通常简称为JWT，它是一种开放标准（RFC 7519）。随着RESTful架构的流行，越来越多的项目使用JWT作为用户身份认证的方式。JWT相当于是三个JSON对象经过编码后，用<code>.</code>分隔并组合到一起，这三个JSON对象分别是头部（header）、载荷（payload）和签名（signature），如下图所示。</p>
+<p><img src="res/json-web-token.png"></p>
+<ol>
+<li><p>头部</p>
+<pre><code class="JSON">&#123;
+  &quot;alg&quot;: &quot;HS256&quot;,
+  &quot;typ&quot;: &quot;JWT&quot;
+&#125;
+</code></pre>
+<p> 其中，<code>alg</code>属性表示签名的算法，默认是HMAC SHA256（简写成<code>HS256</code>）；<code>typ</code>属性表示这个令牌的类型，JWT中都统一书写为<code>JWT</code>。</p>
+</li>
+<li><p>载荷</p>
+<p> 载荷部分用来存放实际需要传递的数据。JWT官方文档中规定了7个可选的字段：</p>
+<ul>
+<li>iss ：签发人</li>
+<li>exp：过期时间</li>
+<li>sub：主题</li>
+<li>aud：受众</li>
+<li>nbf：生效时间</li>
+<li>iat：签发时间</li>
+<li>jti：编号</li>
+</ul>
+<p> 除了官方定义的字典，我们可以根据应用的需要添加自定义的字段，如下所示。</p>
+<pre><code class="JSON">&#123;
+  &quot;sub&quot;: &quot;1234567890&quot;,
+  &quot;nickname&quot;: &quot;jackfrued&quot;,
+  &quot;role&quot;: &quot;admin&quot;
+&#125;
+</code></pre>
+</li>
+<li><p>签名</p>
+<p> 签名部分是对前面两部分生成一个指纹，防止数据伪造和篡改。实现签名首先需要指定一个密钥。这个密钥只有服务器才知道，不能泄露给用户。然后，使用头部指定的签名算法（默认是<code>HS256</code>），按照下面的公式产生签名。</p>
+<pre><code class="Python">HS256(base64Encode(header) + &#39;.&#39; + base64Encode(payload), secret)
+</code></pre>
+<p> 算出签名以后，把头部、载荷、签名三个部分拼接成一个字符串，每个部分用<code>.</code>进行分隔，这样一个JWT就生成好了。</p>
+</li>
+</ol>
+<h4 id="JWT的优缺点"><a href="#JWT的优缺点" class="headerlink" title="JWT的优缺点"></a>JWT的优缺点</h4><p>使用JWT的优点非常明显，包括：</p>
+<ol>
+<li>更容易实现水平扩展，因为令牌保存在浏览器中，服务器不需要做状态管理。</li>
+<li>更容易防范CSRF攻击，因为在请求头中添加<code>localStorage</code>或<code>sessionStorage</code>中的token必须靠JavaScript代码完成，而不是自动添加到请求头中的。</li>
+<li>可以防伪造和篡改，因为JWT有签名，伪造和篡改的令牌无法通过签名验证，会被认定是无效的令牌。</li>
+</ol>
+<p>当然，任何技术不可能只有优点没有缺点，JWT也有诸多缺点，大家需要在使用的时候引起注意，具体包括：</p>
+<ol>
+<li>可能会遭受到XSS攻击（跨站脚本攻击），通过注入恶意脚本执行JavaScript代码获取到用户令牌。</li>
+<li>在令牌过期之前，无法作废已经颁发的令牌，要解决这个问题，还需要额外的中间层和代码来辅助。</li>
+<li>JWT是用户的身份令牌，一旦泄露，任何人都可以获得该用户的所有权限。为了降低令牌被盗用后产生的风险，JWT的有效期应该设置得比较短。对于一些比较重要的权限，使用时应通过其他方式再次对用户进行认证，例如短信验证码等。</li>
+</ol>
+<h4 id="使用PyJWT"><a href="#使用PyJWT" class="headerlink" title="使用PyJWT"></a>使用PyJWT</h4><p>在Python代码中，可以使用三方库<code>PyJWT</code>生成和验证JWT，下面是安装<code>PyJWT</code>的命令。</p>
+<pre><code class="Bash">pip install pyjwt
+</code></pre>
+<p>生成令牌。</p>
+<pre><code class="Python">payload = &#123;
+    &#39;exp&#39;: datetime.datetime.utcnow() + datetime.timedelta(days=1),
+    &#39;userid&#39;: 10001
+&#125;
+token = jwt.encode(payload, settings.SECRET_KEY).decode()
+</code></pre>
+<p>验证令牌。</p>
+<pre><code class="Python">try:
+    token = &#39;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1OTQ4NzIzOTEsInVzZXJpZCI6MTAwMDF9.FM-bNxemWLqQQBIsRVvc4gq71y42I9m2zt5nlFxNHUo&#39;
+    payload = jwt.decode(token, settings.SECRET_KEY)
+except InvalidTokenError:
+    raise AuthenticationFailed(&#39;无效的令牌或令牌已经过期&#39;)
+</code></pre>
+<p>如果不清楚JWT具体的使用方式，可以先看看第55天的内容，里面提供了完整的投票项目代码的地址。</p>
+
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/page/7/index.html">http://example.com/page/7/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-Python-100-Days-master/Day41-55/48.前后端分离开发入门" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:55.312Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/Day41-55/48.%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="前后端分离开发入门"><a href="#前后端分离开发入门" class="headerlink" title="前后端分离开发入门"></a>前后端分离开发入门</h2><p>在传统的Web应用开发中，大多数的程序员会将浏览器作为前后端的分界线。将浏览器中为用户进行页面展示的部分称之为前端，而将运行在服务器为前端提供业务逻辑和数据准备的所有代码统称为后端。所谓前后端分离的开发，就是前后端工程师约定好数据交互接口，并行的进行开发和测试，后端只提供数据，不负责将数据渲染到页面上，前端通过HTTP请求获取数据并负责将数据渲染到页面上，这个工作是交给浏览器中的JavaScript代码来完成。</p>
+<p>使用前后端分离开发有诸多的好处，下面我们简要的说下这些好处：</p>
+<ol>
+<li><strong>提升开发效率</strong>。前后端分离以后，可以实现前后端代码的解耦，只要前后端沟通约定好应用所需接口以及接口参数，便可以开始并行开发，无需等待对方的开发工作结束。在这种情况下，前后端工程师都可以只专注于自己的开发工作，有助于打造出更好的团队。除此之外，在前后端分离的开发模式下，即使需求发生变更，只要接口与数据格式不变，后端开发人员就不需要修改代码，只要前端进行变动即可。</li>
+<li><strong>增强代码的可维护性</strong>。前后端分离后，应用的代码不再是前后端混合，只有在运行期才会有调用依赖关系，这样的话维护代码的工作将变得轻松愉快很多，再不会牵一发而动全身。当你的代码变得简明且整洁时，代码的可读性和可维护性都会有质的提升。</li>
+<li><strong>支持多终端和服务化架构</strong>。前后端分离后，同一套数据接口可以为不同的终端提供服务，更有助于打造多终端应用；此外，由于后端提供的接口之间可以通过HTTP(S)进行调用，有助于打造服务化架构（包括微服务）。</li>
+</ol>
+<p>接下来我们就用前后端分离的方式来改写之前的投票应用。</p>
+<h3 id="返回JSON格式的数据"><a href="#返回JSON格式的数据" class="headerlink" title="返回JSON格式的数据"></a>返回JSON格式的数据</h3><p>刚才说过，在前后端分离的开发模式下，后端需要为前端提供数据接口，这些接口通常返回JSON格式的数据。在Django项目中，我们可以先将对象处理成字典，然后就可以利用Django封装的<code>JsonResponse</code>向浏览器返回JSON格式的数据，具体的做法如下所示。</p>
+<pre><code class="Python">def show_subjects(request):
+    queryset = Subject.objects.all()
+    subjects = []
+    for subject in queryset:
+        subjects.append(&#123;
+            &#39;no&#39;: subject.no,
+            &#39;name&#39;: subject.name,
+            &#39;intro&#39;: subject.intro,
+            &#39;isHot&#39;: subject.is_hot
+        &#125;)
+    return JsonResponse(subjects, safe=False)
+</code></pre>
+<p>上面的代码中，我们通过循环遍历查询学科得到的<code>QuerySet</code>对象，将每个学科的数据处理成一个字典，在将字典保存在名为<code>subjects</code>的列表容器中，最后利用<code>JsonResponse</code>完成对列表的序列化，向浏览器返回JSON格式的数据。由于<code>JsonResponse</code>序列化的是一个列表而不是字典，所以需要指定<code>safe</code>参数的值为<code>False</code>才能完成对<code>subjects</code>的序列化，否则会产生<code>TypeError</code>异常。</p>
+<p>可能大家已经发现了，自己写代码将一个对象转成字典是比较麻烦的，如果对象的属性很多而且某些属性又关联到一个比较复杂的对象时，情况会变得更加糟糕。为此我们可以使用一个名为<code>bpmappers</code>的三方库来简化将对象转成字典的操作，这个三方库本身也提供了对Django框架的支持。</p>
+<p>安装三方库<code>bpmappers</code>。</p>
+<pre><code class="Shell">pip install bpmappers
+</code></pre>
+<p>编写映射器（实现对象到字典转换）。</p>
+<pre><code class="Python">from bpmappers.djangomodel import ModelMapper
+
+from poll2.models import Subject
+
+
+class SubjectMapper(ModelMapper):
+   
+    class Meta:
+        model = Subject
+</code></pre>
+<p>修改视图函数。</p>
+<pre><code class="Python">def show_subjects(request):
+    queryset = Subject.objects.all()
+    subjects = []
+    for subject in queryset:
+        subjects.append(SubjectMapper(subject).as_dict())
+    return JsonResponse(subjects, safe=False)
+</code></pre>
+<p>配置URL映射。</p>
+<pre><code class="Python">urlpatterns = [
+    
+    path(&#39;api/subjects/&#39;, show_subjects),
+    
+]
+</code></pre>
+<p>然后访问该接口，可以得到如下所示的JSON格式数据。</p>
+<pre><code class="JSON">[
+    &#123;
+        &quot;no&quot;: 1,
+        &quot;name&quot;: &quot;Python全栈+人工智能&quot;,
+        &quot;intro&quot;: &quot;Python是一种计算机程序设计语言。是一种面向对象的动态类型语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发。&quot;,
+        &quot;is_hot&quot;: true
+    &#125;,
+    // 此处省略下面的内容
+]
+</code></pre>
+<p>如果不希望在JSON数据中显示学科的成立时间，我们可以在映射器中排除<code>create_date</code>属性；如果希望将是否为热门学科对应的键取名为<code>isHot</code>（默认的名字是<code>is_hot</code>），也可以通过修改映射器来做到。具体的做法如下所示：</p>
+<pre><code class="Python">from bpmappers import RawField
+from bpmappers.djangomodel import ModelMapper
+
+from poll2.models import Subject
+
+
+class SubjectMapper(ModelMapper):
+    isHot = RawField(&#39;is_hot&#39;)
+
+    class Meta:
+        model = Subject
+        exclude = (&#39;is_hot&#39;, )
+</code></pre>
+<p>再次查看学科接口返回的JSON数据。</p>
+<pre><code class="JSON">[
+    &#123;
+        &quot;no&quot;: 101,
+        &quot;name&quot;: &quot;Python全栈+人工智能&quot;,
+        &quot;intro&quot;: &quot;Python是一种计算机程序设计语言。是一种面向对象的动态类型语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发。&quot;,
+        &quot;isHot&quot;: true
+    &#125;,
+    // 此处省略下面的内容
+]
+</code></pre>
+<p>关于<code>bpmappers</code>详细的使用指南，请参考它的<a target="_blank" rel="noopener" href="https://bpmappers.readthedocs.io/en/stable/">官方文档</a>，这个官方文档是用日语书写的，可以使用浏览器的翻译功能将它翻译成你熟悉的语言即可。</p>
+<h3 id="使用Vue-js渲染页面"><a href="#使用Vue-js渲染页面" class="headerlink" title="使用Vue.js渲染页面"></a>使用Vue.js渲染页面</h3><p>接下来我们通过前端框架Vue.js来实现页面的渲染。如果希望全面的了解和学习Vue.js，建议阅读它的<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/">官方教程</a>或者在<a target="_blank" rel="noopener" href="https://www.youtube.com/">YouTube</a>上搜索Vue.js的新手教程（Vue.js Crash Course）进行学习。</p>
+<p>重新改写subjects.html页面，使用Vue.js来渲染页面。</p>
+<pre><code class="HTML">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;学科信息&lt;/title&gt;
+    &lt;style&gt;
+        /* 此处省略层叠样式表 */
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;h1&gt;扣丁学堂所有学科&lt;/h1&gt;
+        &lt;hr&gt;
+        &lt;div id=&quot;main&quot;&gt;
+            &lt;dl v-for=&quot;subject in subjects&quot;&gt;
+                &lt;dt&gt;
+                    &lt;a :href=&quot;&#39;/static/html/teachers.html?sno=&#39; + subject.no&quot;&gt;
+                        &#123;&#123; subject.name &#125;&#125;
+                    &lt;/a&gt;
+                    &lt;img v-if=&quot;subject.is_hot&quot; src=&quot;/static/images/hot-icon-small.png&quot;&gt;
+                &lt;/dt&gt;
+                &lt;dd&gt;&#123;&#123; subject.intro &#125;&#125;&lt;/dd&gt;
+            &lt;/dl&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        let app = new Vue(&#123;
+            el: &#39;#main&#39;,
+            data: &#123;
+                subjects: []
+            &#125;,
+            created() &#123;
+                fetch(&#39;/api/subjects/&#39;)
+                    .then(resp =&gt; resp.json())
+                    .then(json =&gt; &#123;
+                        this.subjects = json
+                    &#125;)
+            &#125;
+        &#125;)
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>前后端分离的开发需要将前端页面作为静态资源进行部署，项目实际上线的时候，我们会对整个Web应用进行动静分离，静态资源通过Nginx或Apache服务器进行部署，生成动态内容的Python程序部署在uWSGI或者Gunicorn服务器上，对动态内容的请求由Nginx或Apache路由到uWSGI或Gunicorn服务器上。</p>
+<p>在开发阶段，我们通常会使用Django自带的测试服务器，如果要尝试前后端分离，可以先将静态页面放在之前创建的放静态资源的目录下，具体的做法可以参考<a target="_blank" rel="noopener" href="https://gitee.com/jackfrued/django19062">项目完整代码</a>。</p>
+
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/page/7/index.html">http://example.com/page/7/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-Python-100-Days-master/Day41-55/47.中间件的应用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:55.310Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/Day41-55/47.%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E5%BA%94%E7%94%A8/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="中间件的应用"><a href="#中间件的应用" class="headerlink" title="中间件的应用"></a>中间件的应用</h2><p>之前我们已经实现了用户必须登录才能投票的限制，但是一个新的问题来了。如果我们的应用中有很多功能都需要用户先登录才能执行，例如将前面导出Excel报表和查看统计图表的功能都做了必须登录才能访问的限制，那么我们是不是需要在每个视图函数中添加代码来检查session中是否包含<code>userid</code>的代码呢？答案是否定的，如果这样做了，我们的视图函数中必然会充斥着大量的重复代码。编程大师<em>Martin Fowler</em>曾经说过：<strong>代码有很多种坏味道，重复是最坏的一种</strong>。在Python程序中，我们可以通过装饰器来为函数提供额外的能力；在Django项目中，我们可以把类似于验证用户是否登录这样的重复性代码放到<strong>中间件</strong>中。</p>
+<h3 id="Django中间件概述"><a href="#Django中间件概述" class="headerlink" title="Django中间件概述"></a>Django中间件概述</h3><p>中间件是安插在Web应用请求和响应过程之间的组件，它在整个Web应用中扮演了拦截过滤器的角色，通过中间件可以拦截请求和响应，并对请求和响应进行过滤（简单的说就是执行额外的处理）。通常，一个中间件组件只专注于完成一件特定的事，例如：Django框架通过<code>SessionMiddleware</code>中间件实现了对session的支持，又通过<code>AuthenticationMiddleware</code>中间件实现了基于session的请求认证。通过把多个中间件组合在一起，我们可以完成更为复杂的任务，Django框架就是这么做的。</p>
+<p>Django项目的配置文件中就包含了对中间件的配置，代码如下所示。</p>
+<pre><code class="Python">MIDDLEWARE = [
+    &#39;django.middleware.security.SecurityMiddleware&#39;,
+    &#39;django.contrib.sessions.middleware.SessionMiddleware&#39;,
+    &#39;django.middleware.common.CommonMiddleware&#39;,
+    &#39;django.middleware.csrf.CsrfViewMiddleware&#39;,
+    &#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;,
+    &#39;django.contrib.messages.middleware.MessageMiddleware&#39;,
+    &#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;,
+]
+</code></pre>
+<p>我们稍微为大家解释一下这些中间件的作用：</p>
+<ol>
+<li><code>CommonMiddleware</code> - 基础设置中间件，可以处理以下一些配置参数。<ul>
+<li>DISALLOWED_USER_AGENTS - 不被允许的用户代理（浏览器）</li>
+<li>APPEND_SLASH - 是否追加<code>/</code></li>
+<li>USE_ETAG - 浏览器缓存相关</li>
+</ul>
+</li>
+<li><code>SecurityMiddleware</code> - 安全相关中间件，可以处理和安全相关的配置项。<ul>
+<li>SECURE_HSTS_SECONDS - 强制使用HTTPS的时间</li>
+<li>SECURE_HSTS_INCLUDE_SUBDOMAINS - HTTPS是否覆盖子域名</li>
+<li>SECURE_CONTENT_TYPE_NOSNIFF - 是否允许浏览器推断内容类型</li>
+<li>SECURE_BROWSER_XSS_FILTER - 是否启用跨站脚本攻击过滤器</li>
+<li>SECURE_SSL_REDIRECT - 是否重定向到HTTPS连接</li>
+<li>SECURE_REDIRECT_EXEMPT - 免除重定向到HTTPS</li>
+</ul>
+</li>
+<li><code>SessionMiddleware</code> - 会话中间件。</li>
+<li><code>CsrfViewMiddleware</code> - 通过生成令牌，防范跨请求份伪的造中间件。</li>
+<li><code>XFrameOptionsMiddleware</code> - 通过设置请求头参数，防范点击劫持攻击的中间件。</li>
+</ol>
+<p>在请求的过程中，上面的中间件会按照书写的顺序从上到下执行，然后是URL解析，最后请求才会来到视图函数；在响应的过程中，上面的中间件会按照书写的顺序从下到上执行，与请求时中间件执行的顺序正好相反。</p>
+<h3 id="自定义中间件"><a href="#自定义中间件" class="headerlink" title="自定义中间件"></a>自定义中间件</h3><p>Django中的中间件有两种实现方式：基于类的实现方式和基于函数的实现方式，后者更接近于装饰器的写法。装饰器实际上是代理模式的应用，将横切关注功能（与正常业务逻辑没有必然联系的功能，例如：身份认证、日志记录、编码转换之类的功能）置于代理中，由代理对象来完成被代理对象的行为并添加额外的功能。中间件对用户请求和响应进行拦截过滤并增加额外的处理，在这一点上它跟装饰器是完全一致的，所以基于函数的写法来实现中间件就跟装饰器的写法几乎一模一样。下面我们用自定义的中间件来实现用户登录验证的功能。</p>
+<pre><code class="Python">&quot;&quot;&quot;
+middlewares.py
+&quot;&quot;&quot;
+from django.http import JsonResponse
+from django.shortcuts import redirect
+
+# 需要登录才能访问的资源路径
+LOGIN_REQUIRED_URLS = &#123;&#39;/praise/&#39;, &#39;/criticize/&#39;, &#39;/excel/&#39;, &#39;/teachers_data/&#39;&#125;
+
+
+def check_login_middleware(get_resp):
+
+    def wrapper(request, *args, **kwargs):
+        # 请求的资源路径在上面的集合中
+        if request.path in LOGIN_REQUIRED_URLS:
+            # 会话中包含userid则视为已经登录
+            if &#39;userid&#39; not in request.session:
+                # 判断是不是Ajax请求
+                if request.is_ajax():
+                    # Ajax请求返回JSON数据提示用户登录
+                    return JsonResponse(&#123;&#39;code&#39;: 10003, &#39;hint&#39;: &#39;请先登录&#39;&#125;)
+                else:
+                    backurl = request.get_full_path()
+                    # 非Ajax请求直接重定向到登录页
+                    return redirect(f&#39;/login/?backurl=&#123;backurl&#125;&#39;)
+        return get_resp(request, *args, **kwargs)
+
+    return wrapper
+</code></pre>
+<p>当然，我们也可以定义一个类来充当装饰器，如果类中有<code>__call__</code>魔术方法，这个类的对象就像函数一样可调用，所以下面是另一种实现中间件的方式，道理跟上面的代码完全一样。</p>
+<p>还有一种基于类实现中间件的方式，这种方式在较新版本的Django中已经不推荐使用了，但是大家接触到的代码中，仍然有可能遇到这种写法，大致的代码如下所示。</p>
+<pre><code class="Python">from django.utils.deprecation import MiddlewareMixin
+
+
+class MyMiddleware(MiddlewareMixin):
+
+    def process_request(self, request):
+        pass
+
+    def process_view(self, request, view_func, view_args, view_kwargs):
+        pass
+
+    def process_template_response(self, request, response):
+        pass
+
+    def process_response(self, request, response):
+        pass
+
+    def process_exception(self, request, exception):
+        pass
+</code></pre>
+<p>上面类中的五个方法都是中间件的钩子函数，分别在收到用户请求、进入视图函数之前、渲染模板、返回响应和出现异常的时候被回调。当然，写不写这些方法是根据中间件的需求来确定的，并不是所有的场景都需要重写五个方法，下面的图相信能够帮助大家理解这种写法。</p>
+<p><img src="res/django-middleware.png"></p>
+<p>写好中间件代码后，需要修改配置文件来激活中间件使其生效。</p>
+<pre><code class="Python">MIDDLEWARE = [
+    &#39;django.middleware.security.SecurityMiddleware&#39;,
+    &#39;django.contrib.sessions.middleware.SessionMiddleware&#39;,
+    &#39;django.middleware.common.CommonMiddleware&#39;,
+    &#39;django.middleware.csrf.CsrfViewMiddleware&#39;,
+    &#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;,
+    &#39;django.contrib.messages.middleware.MessageMiddleware&#39;,
+    &#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;,
+    &#39;debug_toolbar.middleware.DebugToolbarMiddleware&#39;,
+    &#39;vote.middlewares.check_login_middleware&#39;,
+]
+</code></pre>
+<p>注意上面这个中间件列表中元素的顺序，当收到来自用户的请求时，中间件按照从上到下的顺序依次执行，这行完这些中间件以后，请求才会最终到达视图函数。当然，在这个过程中，用户的请求可以被拦截，就像上面我们自定义的中间件那样，如果用户在没有登录的情况下访问了受保护的资源，中间件会将请求直接重定向到登录页，后面的中间件和视图函数将不再执行。在响应用户请求的过程中，上面的中间件会按照从下到上的顺序依次执行，这样的话我们还可以对响应做进一步的处理。</p>
+<p>中间件执行的顺序是非常重要的，对于有依赖关系的中间件必须保证被依赖的中间件要置于依赖它的中间件的前面，就好比我们刚才自定义的中间件要放到<code>SessionMiddleware</code>的后面，因为我们要依赖这个中间件为请求绑定的<code>session</code>对象才能判定用户是否登录。</p>
+
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/page/7/index.html">http://example.com/page/7/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-Python-100-Days-master/Day41-55/46.日志和调试工具栏" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:55.307Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/Day41-55/46.%E6%97%A5%E5%BF%97%E5%92%8C%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%E6%A0%8F/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="日志和调试工具栏"><a href="#日志和调试工具栏" class="headerlink" title="日志和调试工具栏"></a>日志和调试工具栏</h2><h3 id="配置日志"><a href="#配置日志" class="headerlink" title="配置日志"></a>配置日志</h3><p>项目开发阶段，显示足够的调试信息以辅助开发人员调试代码还是非常必要的；项目上线以后，将系统运行时出现的警告、错误等信息记录下来以备相关人员了解系统运行状况并维护代码也是很有必要的。与此同时，采集日志数据也是为网站做数字化运营奠定一个基础，通过对系统运行日志的分析，我们可以监测网站的流量以及流量分布，同时还可以挖掘出用户的使用习惯和行为模式。</p>
+<p>接下来，我们先看看如何通过Django的配置文件来配置日志。Django的日志配置基本可以参照官方文档再结合项目实际需求来进行，这些内容基本上可以从官方文档上复制下来，然后进行局部的调整即可，下面给出一些参考配置。</p>
+<pre><code class="Python">LOGGING = &#123;
+    &#39;version&#39;: 1,
+    # 是否禁用已经存在的日志器
+    &#39;disable_existing_loggers&#39;: False,
+    # 日志格式化器
+    &#39;formatters&#39;: &#123;
+        &#39;simple&#39;: &#123;
+            &#39;format&#39;: &#39;%(asctime)s %(module)s.%(funcName)s: %(message)s&#39;,
+            &#39;datefmt&#39;: &#39;%Y-%m-%d %H:%M:%S&#39;,
+        &#125;,
+        &#39;verbose&#39;: &#123;
+            &#39;format&#39;: &#39;%(asctime)s %(levelname)s [%(process)d-%(threadName)s] &#39;
+                      &#39;%(module)s.%(funcName)s line %(lineno)d: %(message)s&#39;,
+            &#39;datefmt&#39;: &#39;%Y-%m-%d %H:%M:%S&#39;,
+        &#125;
+    &#125;,
+    # 日志过滤器
+    &#39;filters&#39;: &#123;
+        # 只有在Django配置文件中DEBUG值为True时才起作用
+        &#39;require_debug_true&#39;: &#123;
+            &#39;()&#39;: &#39;django.utils.log.RequireDebugTrue&#39;,
+        &#125;,
+    &#125;,
+    # 日志处理器
+    &#39;handlers&#39;: &#123;
+        # 输出到控制台
+        &#39;console&#39;: &#123;
+            &#39;class&#39;: &#39;logging.StreamHandler&#39;,
+            &#39;level&#39;: &#39;DEBUG&#39;,
+            &#39;filters&#39;: [&#39;require_debug_true&#39;],
+            &#39;formatter&#39;: &#39;simple&#39;,
+        &#125;,
+        # 输出到文件(每周切割一次)
+        &#39;file1&#39;: &#123;
+            &#39;class&#39;: &#39;logging.handlers.TimedRotatingFileHandler&#39;,
+            &#39;filename&#39;: &#39;access.log&#39;,
+            &#39;when&#39;: &#39;W0&#39;,
+            &#39;backupCount&#39;: 12,
+            &#39;formatter&#39;: &#39;simple&#39;,
+            &#39;level&#39;: &#39;INFO&#39;,
+        &#125;,
+        # 输出到文件(每天切割一次)
+        &#39;file2&#39;: &#123;
+            &#39;class&#39;: &#39;logging.handlers.TimedRotatingFileHandler&#39;,
+            &#39;filename&#39;: &#39;error.log&#39;,
+            &#39;when&#39;: &#39;D&#39;,
+            &#39;backupCount&#39;: 31,
+            &#39;formatter&#39;: &#39;verbose&#39;,
+            &#39;level&#39;: &#39;WARNING&#39;,
+        &#125;,
+    &#125;,
+    # 日志器记录器
+    &#39;loggers&#39;: &#123;
+        &#39;django&#39;: &#123;
+            # 需要使用的日志处理器
+            &#39;handlers&#39;: [&#39;console&#39;, &#39;file1&#39;, &#39;file2&#39;],
+            # 是否向上传播日志信息
+            &#39;propagate&#39;: True,
+            # 日志级别(不一定是最终的日志级别)
+            &#39;level&#39;: &#39;DEBUG&#39;,
+        &#125;,
+    &#125;
+&#125;
+</code></pre>
+<p>大家可能已经注意到了，上面日志配置中的<code>formatters</code>是<strong>日志格式化器</strong>，它代表了如何格式化输出日志，其中格式占位符分别表示：</p>
+<ol>
+<li><code>%(name)s</code> - 记录器的名称</li>
+<li><code>%(levelno)s</code> - 数字形式的日志记录级别</li>
+<li><code>%(levelname)s</code> - 日志记录级别的文本名称</li>
+<li><code>%(filename)s</code> - 执行日志记录调用的源文件的文件名称</li>
+<li><code>%(pathname)s</code> - 执行日志记录调用的源文件的路径名称</li>
+<li><code>%(funcName)s</code> - 执行日志记录调用的函数名称</li>
+<li><code>%(module)s</code> - 执行日志记录调用的模块名称</li>
+<li><code>%(lineno)s</code> - 执行日志记录调用的行号</li>
+<li><code>%(created)s</code> - 执行日志记录的时间</li>
+<li><code>%(asctime)s</code> - 日期和时间</li>
+<li><code>%(msecs)s</code> - 毫秒部分</li>
+<li><code>%(thread)d</code> - 线程ID（整数）</li>
+<li><code>%(threadName)s</code> - 线程名称</li>
+<li><code>%(process)d</code> - 进程ID （整数）</li>
+</ol>
+<p>日志配置中的handlers用来指定<strong>日志处理器</strong>，简单的说就是指定将日志输出到控制台还是文件又或者是网络上的服务器，可用的处理器包括：</p>
+<ol>
+<li><code>logging.StreamHandler(stream=None)</code> - 可以向类似与<code>sys.stdout</code>或者<code>sys.stderr</code>的任何文件对象输出信息</li>
+<li><code>logging.FileHandler(filename, mode=&#39;a&#39;, encoding=None, delay=False)</code> - 将日志消息写入文件</li>
+<li><code>logging.handlers.DatagramHandler(host, port)</code> - 使用UDP协议，将日志信息发送到指定主机和端口的网络主机上</li>
+<li><code>logging.handlers.HTTPHandler(host, url)</code> - 使用HTTP的GET或POST方法将日志消息上传到一台HTTP 服务器</li>
+<li><code>logging.handlers.RotatingFileHandler(filename, mode=&#39;a&#39;, maxBytes=0, backupCount=0, encoding=None, delay=False)</code> - 将日志消息写入文件，如果文件的大小超出<code>maxBytes</code>指定的值，那么将重新生成一个文件来记录日志</li>
+<li><code>logging.handlers.SocketHandler(host, port)</code> - 使用TCP协议，将日志信息发送到指定主机和端口的网络主机上 </li>
+<li><code>logging.handlers.SMTPHandler(mailhost, fromaddr, toaddrs, subject, credentials=None, secure=None, timeout=1.0)</code> - 将日志输出到指定的邮件地址</li>
+<li><code>logging.MemoryHandler(capacity, flushLevel=ERROR, target=None, flushOnClose=True)</code> - 将日志输出到内存指定的缓冲区中</li>
+</ol>
+<p>上面每个日志处理器都指定了一个名为<code>level</code>的属性，它代表了日志的级别，不同的日志级别反映出日志中记录信息的严重性。Python中定义了六个级别的日志，按照从低到高的顺序依次是：NOTSET、DEBUG、INFO、WARNING、ERROR、CRITICAL。</p>
+<p>最后配置的<strong>日志记录器</strong>是用来真正输出日志的，Django框架提供了如下所示的内置记录器：</p>
+<ol>
+<li><code>django</code> - 在Django层次结构中的所有消息记录器</li>
+<li><code>django.request</code> - 与请求处理相关的日志消息。5xx响应被视为错误消息；4xx响应被视为为警告消息</li>
+<li><code>django.server</code> - 与通过runserver调用的服务器所接收的请求相关的日志消息。5xx响应被视为错误消息；4xx响应被记录为警告消息；其他一切都被记录为INFO</li>
+<li><code>django.template</code> - 与模板渲染相关的日志消息</li>
+<li><code>django.db.backends</code> - 有与数据库交互产生的日志消息，如果希望显示ORM框架执行的SQL语句，就可以使用该日志记录器。</li>
+</ol>
+<p>日志记录器中配置的日志级别有可能不是最终的日志级别，因为还要参考日志处理器中配置的日志级别，取二者中级别较高者作为最终的日志级别。</p>
+<h3 id="配置Django-Debug-Toolbar"><a href="#配置Django-Debug-Toolbar" class="headerlink" title="配置Django-Debug-Toolbar"></a>配置Django-Debug-Toolbar</h3><p>如果想调试你的Django项目，你一定不能不过名为Django-Debug-Toolbar的神器，它是项目开发阶段辅助调试和优化的必备工具，只要配置了它，就可以很方便的查看到如下表所示的项目运行信息，这些信息对调试项目和优化Web应用性能都是至关重要的。</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Versions</td>
+<td>Django的版本</td>
+</tr>
+<tr>
+<td>Time</td>
+<td>显示视图耗费的时间</td>
+</tr>
+<tr>
+<td>Settings</td>
+<td>配置文件中设置的值</td>
+</tr>
+<tr>
+<td>Headers</td>
+<td>HTTP请求头和响应头的信息</td>
+</tr>
+<tr>
+<td>Request</td>
+<td>和请求相关的各种变量及其信息</td>
+</tr>
+<tr>
+<td>StaticFiles</td>
+<td>静态文件加载情况</td>
+</tr>
+<tr>
+<td>Templates</td>
+<td>模板的相关信息</td>
+</tr>
+<tr>
+<td>Cache</td>
+<td>缓存的使用情况</td>
+</tr>
+<tr>
+<td>Signals</td>
+<td>Django内置的信号信息</td>
+</tr>
+<tr>
+<td>Logging</td>
+<td>被记录的日志信息</td>
+</tr>
+<tr>
+<td>SQL</td>
+<td>向数据库发送的SQL语句及其执行时间</td>
+</tr>
+</tbody></table>
+<ol>
+<li><p>安装Django-Debug-Toolbar。</p>
+<pre><code class="Shell">pip install django-debug-toolbar
+</code></pre>
+</li>
+<li><p>配置 - 修改settings.py。</p>
+<pre><code class="Python">INSTALLED_APPS = [
+    &#39;debug_toolbar&#39;,
+]
+
+MIDDLEWARE = [
+    &#39;debug_toolbar.middleware.DebugToolbarMiddleware&#39;,
+]
+
+DEBUG_TOOLBAR_CONFIG = &#123;
+    # 引入jQuery库
+    &#39;JQUERY_URL&#39;: &#39;https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js&#39;,
+    # 工具栏是否折叠
+    &#39;SHOW_COLLAPSED&#39;: True,
+    # 是否显示工具栏
+    &#39;SHOW_TOOLBAR_CALLBACK&#39;: lambda x: True,
+&#125;
+</code></pre>
+</li>
+<li><p>配置 - 修改urls.py。</p>
+<pre><code class="Python">if settings.DEBUG:
+
+    import debug_toolbar
+
+    urlpatterns.insert(0, path(&#39;__debug__/&#39;, include(debug_toolbar.urls)))
+</code></pre>
+</li>
+<li><p>在配置好Django-Debug-Toolbar之后，页面右侧会看到一个调试工具栏，如下图所示，上面包括了如前所述的各种调试信息，包括执行时间、项目设置、请求头、SQL、静态资源、模板、缓存、信号等，查看起来非常的方便。</p>
+<p><img src="res/debug-toolbar.png"></p>
+</li>
+</ol>
+<h3 id="优化ORM代码"><a href="#优化ORM代码" class="headerlink" title="优化ORM代码"></a>优化ORM代码</h3><p>在配置了日志或Django-Debug-Toolbar之后，我们可以查看一下之前将老师数据导出成Excel报表的视图函数执行情况，这里我们关注的是ORM框架生成的SQL查询到底是什么样子的，相信这里的结果会让你感到有一些意外。执行<code>Teacher.objects.all()</code>之后我们可以注意到，在控制台看到的或者通过Django-Debug-Toolbar输出的SQL是下面这样的：</p>
+<pre><code class="SQL">SELECT `tb_teacher`.`no`, `tb_teacher`.`name`, `tb_teacher`.`detail`, `tb_teacher`.`photo`, `tb_teacher`.`good_count`, `tb_teacher`.`bad_count`, `tb_teacher`.`sno` FROM `tb_teacher`; args=()
+SELECT `tb_subject`.`no`, `tb_subject`.`name`, `tb_subject`.`intro`, `tb_subject`.`create_date`, `tb_subject`.`is_hot` FROM `tb_subject` WHERE `tb_subject`.`no` = 101; args=(101,)
+SELECT `tb_subject`.`no`, `tb_subject`.`name`, `tb_subject`.`intro`, `tb_subject`.`create_date`, `tb_subject`.`is_hot` FROM `tb_subject` WHERE `tb_subject`.`no` = 101; args=(101,)
+SELECT `tb_subject`.`no`, `tb_subject`.`name`, `tb_subject`.`intro`, `tb_subject`.`create_date`, `tb_subject`.`is_hot` FROM `tb_subject` WHERE `tb_subject`.`no` = 101; args=(101,)
+SELECT `tb_subject`.`no`, `tb_subject`.`name`, `tb_subject`.`intro`, `tb_subject`.`create_date`, `tb_subject`.`is_hot` FROM `tb_subject` WHERE `tb_subject`.`no` = 101; args=(101,)
+SELECT `tb_subject`.`no`, `tb_subject`.`name`, `tb_subject`.`intro`, `tb_subject`.`create_date`, `tb_subject`.`is_hot` FROM `tb_subject` WHERE `tb_subject`.`no` = 103; args=(103,)
+SELECT `tb_subject`.`no`, `tb_subject`.`name`, `tb_subject`.`intro`, `tb_subject`.`create_date`, `tb_subject`.`is_hot` FROM `tb_subject` WHERE `tb_subject`.`no` = 103; args=(103,)
+</code></pre>
+<p>这里的问题通常被称为“1+N查询”（有的地方也将其称之为“N+1查询”），原本获取老师的数据只需要一条SQL，但是由于老师关联了学科，当我们查询到<code>N</code>条老师的数据时，Django的ORM框架又向数据库发出了<code>N</code>条SQL去查询老师所属学科的信息。每条SQL执行都会有较大的开销而且会给数据库服务器带来压力，如果能够在一条SQL中完成老师和学科的查询肯定是更好的做法，这一点也很容易做到，相信大家已经想到怎么做了。是的，我们可以使用连接查询，但是在使用Django的ORM框架时如何做到这一点呢？对于多对一关联（如投票应用中的老师和学科），我们可以使用<code>QuerySet</code>的用<code>select_related()</code>方法来加载关联对象；而对于多对多关联（如电商网站中的订单和商品），我们可以使用<code>prefetch_related()</code>方法来加载关联对象。</p>
+<p>在导出老师Excel报表的视图函数中，我们可以按照下面的方式优化代码。</p>
+<pre><code class="Python">queryset = Teacher.objects.all().select_related(&#39;subject&#39;)
+</code></pre>
+<p>事实上，用ECharts生成前端报表的视图函数中，查询老师好评和差评数据的操作也能够优化，因为在这个例子中，我们只需要获取老师的姓名、好评数和差评数这三项数据，但是在默认的情况生成的SQL会查询老师表的所有字段。可以用<code>QuerySet</code>的<code>only()</code>方法来指定需要查询的属性，也可以用<code>QuerySet</code>的<code>defer()</code>方法来指定暂时不需要查询的属性，这样生成的SQL会通过投影操作来指定需要查询的列，从而改善查询性能，代码如下所示：</p>
+<pre><code class="Python">queryset = Teacher.objects.all().only(&#39;name&#39;, &#39;good_count&#39;, &#39;bad_count&#39;)
+</code></pre>
+<p>当然，如果要统计出每个学科的老师好评和差评的平均数，利用Django的ORM框架也能够做到，代码如下所示：</p>
+<pre><code class="Python">queryset = Teacher.objects.values(&#39;subject&#39;).annotate(good=Avg(&#39;good_count&#39;), bad=Avg(&#39;bad_count&#39;))
+</code></pre>
+<p>这里获得的<code>QuerySet</code>中的元素是字典对象，每个字典中有三组键值对，分别是代表学科编号的<code>subject</code>、代表好评数的<code>good</code>和代表差评数的<code>bad</code>。如果想要获得学科的名称而不是编号，可以按照如下所示的方式调整代码：</p>
+<pre><code class="Python">queryset = Teacher.objects.values(&#39;subject__name&#39;).annotate(good=Avg(&#39;good_count&#39;), bad=Avg(&#39;bad_count&#39;))
+</code></pre>
+<p>可见，Django的ORM框架允许我们用面向对象的方式完成关系数据库中的分组和聚合查询。</p>
+
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/page/7/index.html">http://example.com/page/7/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-Python-100-Days-master/Day41-55/45.制作报表" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:55.304Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/Day41-55/45.%E5%88%B6%E4%BD%9C%E6%8A%A5%E8%A1%A8/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="制作报表"><a href="#制作报表" class="headerlink" title="制作报表"></a>制作报表</h2><h3 id="导出Excel报表"><a href="#导出Excel报表" class="headerlink" title="导出Excel报表"></a>导出Excel报表</h3><p>报表就是用表格、图表等格式来动态显示数据，所以有人用这样的公式来描述报表：</p>
+<pre><code>报表 = 多样的格式 + 动态的数据
+</code></pre>
+<p>有很多的三方库支持在Python程序中写Excel文件，包括<a target="_blank" rel="noopener" href="https://xlwt.readthedocs.io/en/latest/"><code>xlwt</code></a>、<a target="_blank" rel="noopener" href="https://docs.xlwings.org/en/latest/quickstart.html"><code>xlwings</code></a>、<a target="_blank" rel="noopener" href="https://openpyxl.readthedocs.io/en/latest/"><code>openpyxl</code></a>、<a target="_blank" rel="noopener" href="https://xlsxwriter.readthedocs.io/"><code>xlswriter</code></a>等，其中的xlwt虽然只支持写xls格式的Excel文件，但在性能方面的表现还是不错的。下面我们就以<code>xlwt</code>为例，来演示如何在Django项目中导出Excel报表。</p>
+<p>安装<code>xlwt</code>。</p>
+<pre><code class="Bash">pip install xlwt
+</code></pre>
+<p>导出包含所有老师信息的Excel表格的视图函数。</p>
+<pre><code class="Python">def export_teachers_excel(request):
+    # 创建工作簿
+    wb = xlwt.Workbook()
+    # 添加工作表
+    sheet = wb.add_sheet(&#39;老师信息表&#39;)
+    # 查询所有老师的信息
+    queryset = Teacher.objects.all()
+    # 向Excel表单中写入表头
+    colnames = (&#39;姓名&#39;, &#39;介绍&#39;, &#39;好评数&#39;, &#39;差评数&#39;, &#39;学科&#39;)
+    for index, name in enumerate(colnames):
+        sheet.write(0, index, name)
+    # 向单元格中写入老师的数据
+    props = (&#39;name&#39;, &#39;detail&#39;, &#39;good_count&#39;, &#39;bad_count&#39;, &#39;subject&#39;)
+    for row, teacher in enumerate(queryset):
+        for col, prop in enumerate(props):
+            value = getattr(teacher, prop, &#39;&#39;)
+            if isinstance(value, Subject):
+                value = value.name
+            sheet.write(row + 1, col, value)
+    # 保存Excel
+    buffer = BytesIO()
+    wb.save(buffer)
+    # 将二进制数据写入响应的消息体中并设置MIME类型
+    resp = HttpResponse(buffer.getvalue(), content_type=&#39;application/vnd.ms-excel&#39;)
+    # 中文文件名需要处理成百分号编码
+    filename = quote(&#39;老师.xls&#39;)
+    # 通过响应头告知浏览器下载该文件以及对应的文件名
+    resp[&#39;content-disposition&#39;] = f&#39;attachment; filename*=utf-8\&#39;\&#39;&#123;filename&#125;&#39;
+    return resp
+</code></pre>
+<p>映射URL。</p>
+<pre><code class="Python">urlpatterns = [
+    
+    path(&#39;excel/&#39;, views.export_teachers_excel),
+    
+]
+</code></pre>
+<h3 id="导出PDF报表"><a href="#导出PDF报表" class="headerlink" title="导出PDF报表"></a>导出PDF报表</h3><p>在Django项目中，如果需要导出PDF报表，可以借助三方库<code>reportlab</code>来生成PDF文件的内容，再将文件的二进制数据输出给浏览器并指定MIME类型为<code>application/pdf</code>，具体的代码如下所示。</p>
+<pre><code class="Python">def export_pdf(request: HttpRequest) -&gt; HttpResponse:
+    buffer = io.BytesIO()
+    pdf = canvas.Canvas(buffer)
+    pdf.setFont(&quot;Helvetica&quot;, 80)
+    pdf.setFillColorRGB(0.2, 0.5, 0.3)
+    pdf.drawString(100, 550, &#39;hello, world!&#39;)
+    pdf.showPage()
+    pdf.save()
+    resp = HttpResponse(buffer.getvalue(), content_type=&#39;application/pdf&#39;)
+    resp[&#39;content-disposition&#39;] = &#39;inline; filename=&quot;demo.pdf&quot;&#39;
+    return resp
+</code></pre>
+<p>关于如何用<code>reportlab</code>定制PDF报表的内容，可以参考reportlab的<a target="_blank" rel="noopener" href="https://www.reportlab.com/docs/reportlab-userguide.pdf">官方文档</a>。</p>
+<h3 id="生成前端统计图表"><a href="#生成前端统计图表" class="headerlink" title="生成前端统计图表"></a>生成前端统计图表</h3><p>如果项目中需要生成前端统计图表，可以使用百度的<a target="_blank" rel="noopener" href="https://echarts.baidu.com/">ECharts</a>。具体的做法是后端通过提供数据接口返回统计图表所需的数据，前端使用ECharts来渲染出柱状图、折线图、饼图、散点图等图表。例如我们要生成一个统计所有老师好评数和差评数的报表，可以按照下面的方式来做。</p>
+<pre><code class="Python">def get_teachers_data(request):
+    queryset = Teacher.objects.all()
+    names = [teacher.name for teacher in queryset]
+    good_counts = [teacher.good_count for teacher in queryset]
+    bad_counts = [teacher.bad_count for teacher in queryset]
+    return JsonResponse(&#123;&#39;names&#39;: names, &#39;good&#39;: good_counts, &#39;bad&#39;: bad_counts&#125;)
+</code></pre>
+<p>映射URL。</p>
+<pre><code class="Python">urlpatterns = [
+    path(&#39;teachers_data/&#39;, views.get_teachers_data),
+]
+</code></pre>
+<p>使用ECharts生成柱状图。</p>
+<pre><code class="HTML">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;老师评价统计&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;main&quot; style=&quot;width: 600px; height: 400px&quot;&gt;&lt;/div&gt;
+    &lt;p&gt;
+        &lt;a href=&quot;/&quot;&gt;返回首页&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;script src=&quot;https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        var myChart = echarts.init(document.querySelector(&#39;#main&#39;))
+        fetch(&#39;/teachers_data/&#39;)
+            .then(resp =&gt; resp.json())
+            .then(json =&gt; &#123;
+                var option = &#123;
+                    color: [&#39;#f00&#39;, &#39;#00f&#39;],
+                    title: &#123;
+                        text: &#39;老师评价统计图&#39;
+                    &#125;,
+                    tooltip: &#123;&#125;,
+                    legend: &#123;
+                        data:[&#39;好评&#39;, &#39;差评&#39;]
+                    &#125;,
+                    xAxis: &#123;
+                        data: json.names
+                    &#125;,
+                    yAxis: &#123;&#125;,
+                    series: [
+                        &#123;
+                            name: &#39;好评&#39;,
+                            type: &#39;bar&#39;,
+                            data: json.good
+                        &#125;,
+                        &#123;
+                            name: &#39;差评&#39;,
+                            type: &#39;bar&#39;,
+                            data: json.bad
+                        &#125;
+                    ]
+                &#125;
+                myChart.setOption(option)
+            &#125;)
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>运行效果如下图所示。</p>
+<p><img src="./res/echarts_bar_graph.png"></p>
+
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/page/7/index.html">http://example.com/page/7/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-Python-100-Days-master/Day41-55/44.Cookie和Session" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:55.300Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/Day41-55/44.Cookie%E5%92%8CSession/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Cookie和Session"><a href="#Cookie和Session" class="headerlink" title="Cookie和Session"></a>Cookie和Session</h2><p>我们继续来完成上一章节中的项目，实现“用户登录”的功能，并限制只有登录的用户才能投票。</p>
+<h3 id="用户登录的准备工作"><a href="#用户登录的准备工作" class="headerlink" title="用户登录的准备工作"></a>用户登录的准备工作</h3><p>我们先为实现用户登录做一些准备工作。</p>
+<ol>
+<li><p>创建用户模型。之前我们讲解过如果通过Django的ORM实现从二维表到模型的转换（反向工程），这次我们尝试把模型变成二维表（正向工程）。</p>
+<pre><code class="Python">class User(models.Model):
+    &quot;&quot;&quot;用户&quot;&quot;&quot;
+    no = models.AutoField(primary_key=True, verbose_name=&#39;编号&#39;)
+    username = models.CharField(max_length=20, unique=True, verbose_name=&#39;用户名&#39;)
+    password = models.CharField(max_length=32, verbose_name=&#39;密码&#39;)
+    tel = models.CharField(max_length=20, verbose_name=&#39;手机号&#39;)
+    reg_date = models.DateTimeField(auto_now_add=True, verbose_name=&#39;注册时间&#39;)
+    last_visit = models.DateTimeField(null=True, verbose_name=&#39;最后登录时间&#39;)
+
+    class Meta:
+        db_table = &#39;tb_user&#39;
+        verbose_name = &#39;用户&#39;
+        verbose_name_plural = &#39;用户&#39;
+</code></pre>
+</li>
+<li><p>使用下面的命令生成迁移文件并执行迁移，将<code>User</code>模型直接变成关系型数据库中的二维表<code>tb_user</code>。</p>
+<pre><code class="Bash">python manage.py makemigrations polls
+python manage.py migrate polls
+</code></pre>
+</li>
+<li><p>用下面的SQL语句直接插入两条测试数据，通常不能讲用户的密码直接保存在数据库中，因此我们将用户密码处理成对应的MD5摘要。MD5消息摘要算法是一种被广泛使用的密码哈希函数（散列函数），可以产生出一个128位（比特）的哈希值（散列值），用于确保信息传输完整一致。在使用哈希值时，通常会将哈希值表示为16进制字符串，因此128位的MD5摘要通常表示为32个十六进制符号。</p>
+<pre><code class="SQL">insert into `tb_user`
+    (`username`, `password`, `tel`, `reg_date`)
+values
+    (&#39;wangdachui&#39;, &#39;1c63129ae9db9c60c3e8aa94d3e00495&#39;, &#39;13122334455&#39;, now()),
+    (&#39;hellokitty&#39;, &#39;c6f8cf68e5f68b0aa4680e089ee4742c&#39;, &#39;13890006789&#39;, now());
+</code></pre>
+<blockquote>
+<p><strong>说明</strong>：上面创建的两个用户<code>wangdachui</code>和<code>hellokitty</code>密码分别是<code>1qaz2wsx</code>和<code>Abc123!!</code>。</p>
+</blockquote>
+</li>
+<li><p>我们在应用下增加一个名为<code>utils.py</code>的模块用来保存需要使用的工具函数。Python标准库中的<code>hashlib</code>模块封装了常用的哈希算法，包括：MD5、SHA1、SHA256等。下面是使用<code>hashlib</code>中的<code>md5</code>类将字符串处理成MD5摘要的函数如下所示。</p>
+<pre><code class="Python">import hashlib
+
+
+def gen_md5_digest(content):
+    return hashlib.md5(content.encode()).hexdigest()
+</code></pre>
+</li>
+<li><p>编写用户登录的视图函数和模板页。</p>
+<p> 添加渲染登录页面的视图函数：</p>
+<pre><code class="Python">def login(request: HttpRequest) -&gt; HttpResponse:
+    hint = &#39;&#39;
+    return render(request, &#39;login.html&#39;, &#123;&#39;hint&#39;: hint&#125;)
+</code></pre>
+<p> 增加<code>login.html</code>模板页：</p>
+<pre><code class="HTML">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;用户登录&lt;/title&gt;
+    &lt;style&gt;
+        #container &#123;
+            width: 520px;
+            margin: 10px auto;
+        &#125;
+        .input &#123;
+            margin: 20px 0;
+            width: 460px;
+            height: 40px;
+        &#125;
+        .input&gt;label &#123;
+            display: inline-block;
+            width: 140px;
+            text-align: right;
+        &#125;
+        .input&gt;img &#123;
+            width: 150px;
+            vertical-align: middle;
+        &#125;
+        input[name=captcha] &#123;
+            vertical-align: middle;
+        &#125;
+        form+div &#123;
+            margin-top: 20px;
+        &#125;
+        form+div&gt;a &#123;
+            text-decoration: none;
+            color: darkcyan;
+            font-size: 1.2em;
+        &#125;
+        .button &#123;
+            width: 500px;
+            text-align: center;
+            margin-top: 20px;
+        &#125;
+        .hint &#123;
+            color: red;
+            font-size: 12px;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;h1&gt;用户登录&lt;/h1&gt;
+        &lt;hr&gt;
+        &lt;p class=&quot;hint&quot;&gt;&#123;&#123; hint &#125;&#125;&lt;/p&gt;
+        &lt;form action=&quot;/login/&quot; method=&quot;post&quot;&gt;
+            &#123;% csrf_token %&#125;
+            &lt;fieldset&gt;
+                &lt;legend&gt;用户信息&lt;/legend&gt;
+                &lt;div class=&quot;input&quot;&gt;
+                    &lt;label&gt;用户名：&lt;/label&gt;
+                    &lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;input&quot;&gt;
+                    &lt;label&gt;密码：&lt;/label&gt;
+                    &lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;input&quot;&gt;
+                    &lt;label&gt;验证码：&lt;/label&gt;
+                    &lt;input type=&quot;text&quot; name=&quot;captcha&quot;&gt;
+                    &lt;img id=&quot;code&quot; src=&quot;/captcha/&quot; alt=&quot;&quot; width=&quot;150&quot; height=&quot;40&quot;&gt;
+                &lt;/div&gt;
+            &lt;/fieldset&gt;
+            &lt;div class=&quot;button&quot;&gt;
+                &lt;input type=&quot;submit&quot; value=&quot;登录&quot;&gt;
+                &lt;input type=&quot;reset&quot; value=&quot;重置&quot;&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+        &lt;div&gt;
+            &lt;a href=&quot;/&quot;&gt;返回首页&lt;/a&gt;
+            &lt;a href=&quot;/register/&quot;&gt;注册新用户&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p> 注意，在上面的表单中，我们使用了模板指令<code>&#123;% csrf_token %&#125;</code>为表单添加一个隐藏域（大家可以在浏览器中显示网页源代码就可以看到这个指令生成的<code>type</code>属性为<code>hidden</code>的<code>input</code>标签），它的作用是在表单中生成一个随机令牌（token）来防范<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0">跨站请求伪造</a>（简称为CSRF），这也是Django在提交表单时的硬性要求。如果我们的表单中没有这样的令牌，那么提交表单时，Django框架会产生一个响应状态码为<code>403</code>的响应（禁止访问），除非我们设置了免除CSRF令牌。下图是一个关于CSRF简单生动的例子。</p>
+<p> <img src="./res/csrf-simple.png"></p>
+</li>
+</ol>
+<p>接下来，我们可以编写提供验证码和实现用户登录的视图函数，在此之前，我们先说说一个Web应用实现用户跟踪的方式以及Django框架对实现用户跟踪所提供的支持。对一个Web应用来说，用户登录成功后必然要让服务器能够记住该用户已经登录，这样服务器才能为这个用户提供更好的服务，而且上面说到的CSRF也是通过钓鱼网站来套取用户登录信息进行恶意操作的攻击手段，这些都是以用户跟踪技术为基础的。在理解了这些背景知识后，我们就清楚用户登录时到底需要执行哪些操作。</p>
+<h3 id="实现用户跟踪"><a href="#实现用户跟踪" class="headerlink" title="实现用户跟踪"></a>实现用户跟踪</h3><p>如今，一个网站如果不通过某种方式记住你是谁以及你之前在网站的活动情况，失去的就是网站的可用性和便利性，继而很有可能导致网站用户的流式，所以记住一个用户（更专业的说法叫<strong>用户跟踪</strong>）对绝大多数Web应用来说都是必需的功能。</p>
+<p>在服务器端，我们想记住一个用户最简单的办法就是创建一个对象，通过这个对象就可以把用户相关的信息都保存起来，这个对象就是我们常说的session（用户会话对象）。那么问题来了，HTTP本身是一个<strong>无连接</strong>（每次请求和响应的过程中，服务器一旦完成对客户端请求的响应之后就断开连接）、<strong>无状态</strong>（客户端再次发起对服务器的请求时，服务器无法得知这个客户端之前的任何信息）的协议，即便服务器通过session对象保留了用户数据，还得通过某种方式来确定当前的请求与之前保存过的哪一个session是有关联的。相信很多人都能想到，我们可以给每个session对象分配一个全局唯一的标识符来识别session对象，我们姑且称之为sessionid，每次客户端发起请求时，只要携带上这个sessionid，就有办法找到与之对应的session对象，从而实现在两次请求之间记住该用户的信息，也就是我们之前说的用户跟踪。</p>
+<p>要让客户端记住并在每次请求时带上sessionid又有以下几种做法：</p>
+<ol>
+<li><p>URL重写。所谓URL重写就是在URL中携带sessionid，例如：<code>http://www.example.com/index.html?sessionid=123456</code>，服务器通过获取sessionid参数的值来取到与之对应的session对象。</p>
+</li>
+<li><p>隐藏域（隐式表单域）。在提交表单的时候，可以通过在表单中设置隐藏域向服务器发送额外的数据。例如：<code>&lt;input type=&quot;hidden&quot; name=&quot;sessionid&quot; value=&quot;123456&quot;&gt;</code>。</p>
+</li>
+<li><p>本地存储。现在的浏览器都支持多种本地存储方案，包括：cookie、localStorage、sessionStorage、IndexedDB等。在这些方案中，cookie是历史最为悠久也是被诟病得最多的一种方案，也是我们接下来首先为大家讲解的一种方案。简单的说，cookie是一种以键值对方式保存在浏览器临时文件中的数据，每次请求时，请求头中会携带本站点的cookie到服务器，那么只要将sessionid写入cookie，下次请求时服务器只要读取请求头中的cookie就能够获得这个sessionid，如下图所示。</p>
+<p><img src="./res/sessionid_from_cookie.png"></p>
+<p>在HTML5时代要，除了cookie，还可以使用新的本地存储API来保存数据，就是刚才提到的localStorage、sessionStorage、IndexedDB等技术，如下图所示。</p>
+<p><img src="./res/cookie_xstorage_indexeddb.png"></p>
+</li>
+</ol>
+<p><strong>总结一下</strong>，要实现用户跟踪，服务器端可以为每个用户会话创建一个session对象并将session对象的ID写入到浏览器的cookie中；用户下次请求服务器时，浏览器会在HTTP请求头中携带该网站保存的cookie信息，这样服务器就可以从cookie中找到session对象的ID并根据此ID获取到之前创建的session对象；由于session对象可以用键值对的方式保存用户数据，这样之前保存在session对象中的信息可以悉数取出，服务器也可以根据这些信息判定用户身份和了解用户偏好，为用户提供更好的个性化服务。</p>
+<h3 id="Django框架对session的支持"><a href="#Django框架对session的支持" class="headerlink" title="Django框架对session的支持"></a>Django框架对session的支持</h3><p>在创建Django项目时，默认的配置文件<code>settings.py</code>文件中已经激活了一个名为<code>SessionMiddleware</code>的中间件（关于中间件的知识我们在后面的章节做详细讲解，这里只需要知道它的存在即可），因为这个中间件的存在，我们可以直接通过请求对象的<code>session</code>属性来操作会话对象。前面我们说过，<code>session</code>属性是一个像字典一样可以读写数据的容器对象，因此我们可以使用“键值对”的方式来保留用户数据。与此同时，<code>SessionMiddleware</code>中间件还封装了对cookie的操作，在cookie中保存了sessionid，这一点我们在上面已经提到过了。</p>
+<p>在默认情况下，Django将session的数据序列化后保存在关系型数据库中，在Django 1.6以后的版本中，默认的序列化数据的方式是JSON序列化，而在此之前一直使用Pickle序列化。JSON序列化和Pickle序列化的差别在于前者将对象序列化为字符串（字符形式），而后者将对象序列化为字节串（二进制形式），因为安全方面的原因，JSON序列化成为了目前Django框架默认序列化数据的方式，这就要求在我们保存在session中的数据必须是能够JSON序列化的，否则就会引发异常。还有一点需要说明的是，使用关系型数据库保存session中的数据在大多数时候并不是最好的选择，因为数据库可能会承受巨大的压力而成为系统性能的瓶颈，在后面的章节中我们会告诉大家如何将session保存到缓存服务中以提升系统的性能。</p>
+<h3 id="实现用户登录验证"><a href="#实现用户登录验证" class="headerlink" title="实现用户登录验证"></a>实现用户登录验证</h3><p>首先，我们在刚才的<code>polls/utils.py</code>文件中编写生成随机验证码的函数<code>gen_random_code</code>，内容如下所示。</p>
+<pre><code class="Python">import random
+
+ALL_CHARS = &#39;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;
+
+
+def gen_random_code(length=4):
+    return &#39;&#39;.join(random.choices(ALL_CHARS, k=length))
+</code></pre>
+<p>编写生成验证码图片的类<code>Captcha</code>。</p>
+<pre><code class="Python">&quot;&quot;&quot;
+图片验证码
+&quot;&quot;&quot;
+import os
+import random
+from io import BytesIO
+
+from PIL import Image
+from PIL import ImageFilter
+from PIL.ImageDraw import Draw
+from PIL.ImageFont import truetype
+
+
+class Bezier:
+    &quot;&quot;&quot;贝塞尔曲线&quot;&quot;&quot;
+
+    def __init__(self):
+        self.tsequence = tuple([t / 20.0 for t in range(21)])
+        self.beziers = &#123;&#125;
+
+    def make_bezier(self, n):
+        &quot;&quot;&quot;绘制贝塞尔曲线&quot;&quot;&quot;
+        try:
+            return self.beziers[n]
+        except KeyError:
+            combinations = pascal_row(n - 1)
+            result = []
+            for t in self.tsequence:
+                tpowers = (t ** i for i in range(n))
+                upowers = ((1 - t) ** i for i in range(n - 1, -1, -1))
+                coefs = [c * a * b for c, a, b in zip(combinations,
+                                                      tpowers, upowers)]
+                result.append(coefs)
+            self.beziers[n] = result
+            return result
+
+
+class Captcha:
+    &quot;&quot;&quot;验证码&quot;&quot;&quot;
+
+    def __init__(self, width, height, fonts=None, color=None):
+        self._image = None
+        self._fonts = fonts if fonts else \
+            [os.path.join(os.path.dirname(__file__), &#39;fonts&#39;, font)
+             for font in [&#39;Arial.ttf&#39;, &#39;Georgia.ttf&#39;, &#39;Action.ttf&#39;]]
+        self._color = color if color else random_color(0, 200, random.randint(220, 255))
+        self._width, self._height = width, height
+
+    @classmethod
+    def instance(cls, width=200, height=75):
+        &quot;&quot;&quot;用于获取Captcha对象的类方法&quot;&quot;&quot;
+        prop_name = f&#39;_instance_&#123;width&#125;_&#123;height&#125;&#39;
+        if not hasattr(cls, prop_name):
+            setattr(cls, prop_name, cls(width, height))
+        return getattr(cls, prop_name)
+
+    def _background(self):
+        &quot;&quot;&quot;绘制背景&quot;&quot;&quot;
+        Draw(self._image).rectangle([(0, 0), self._image.size],
+                                    fill=random_color(230, 255))
+
+    def _smooth(self):
+        &quot;&quot;&quot;平滑图像&quot;&quot;&quot;
+        return self._image.filter(ImageFilter.SMOOTH)
+
+    def _curve(self, width=4, number=6, color=None):
+        &quot;&quot;&quot;绘制曲线&quot;&quot;&quot;
+        dx, height = self._image.size
+        dx /= number
+        path = [(dx * i, random.randint(0, height))
+                for i in range(1, number)]
+        bcoefs = Bezier().make_bezier(number - 1)
+        points = []
+        for coefs in bcoefs:
+            points.append(tuple(sum([coef * p for coef, p in zip(coefs, ps)])
+                                for ps in zip(*path)))
+        Draw(self._image).line(points, fill=color if color else self._color, width=width)
+
+    def _noise(self, number=50, level=2, color=None):
+        &quot;&quot;&quot;绘制扰码&quot;&quot;&quot;
+        width, height = self._image.size
+        dx, dy = width / 10, height / 10
+        width, height = width - dx, height - dy
+        draw = Draw(self._image)
+        for i in range(number):
+            x = int(random.uniform(dx, width))
+            y = int(random.uniform(dy, height))
+            draw.line(((x, y), (x + level, y)),
+                      fill=color if color else self._color, width=level)
+
+    def _text(self, captcha_text, fonts, font_sizes=None, drawings=None, squeeze_factor=0.75, color=None):
+        &quot;&quot;&quot;绘制文本&quot;&quot;&quot;
+        color = color if color else self._color
+        fonts = tuple([truetype(name, size)
+                       for name in fonts
+                       for size in font_sizes or (65, 70, 75)])
+        draw = Draw(self._image)
+        char_images = []
+        for c in captcha_text:
+            font = random.choice(fonts)
+            c_width, c_height = draw.textsize(c, font=font)
+            char_image = Image.new(&#39;RGB&#39;, (c_width, c_height), (0, 0, 0))
+            char_draw = Draw(char_image)
+            char_draw.text((0, 0), c, font=font, fill=color)
+            char_image = char_image.crop(char_image.getbbox())
+            for drawing in drawings:
+                d = getattr(self, drawing)
+                char_image = d(char_image)
+            char_images.append(char_image)
+        width, height = self._image.size
+        offset = int((width - sum(int(i.size[0] * squeeze_factor)
+                                  for i in char_images[:-1]) -
+                      char_images[-1].size[0]) / 2)
+        for char_image in char_images:
+            c_width, c_height = char_image.size
+            mask = char_image.convert(&#39;L&#39;).point(lambda i: i * 1.97)
+            self._image.paste(char_image,
+                              (offset, int((height - c_height) / 2)),
+                              mask)
+            offset += int(c_width * squeeze_factor)
+
+    @staticmethod
+    def _warp(image, dx_factor=0.3, dy_factor=0.3):
+        &quot;&quot;&quot;图像扭曲&quot;&quot;&quot;
+        width, height = image.size
+        dx = width * dx_factor
+        dy = height * dy_factor
+        x1 = int(random.uniform(-dx, dx))
+        y1 = int(random.uniform(-dy, dy))
+        x2 = int(random.uniform(-dx, dx))
+        y2 = int(random.uniform(-dy, dy))
+        warp_image = Image.new(
+            &#39;RGB&#39;,
+            (width + abs(x1) + abs(x2), height + abs(y1) + abs(y2)))
+        warp_image.paste(image, (abs(x1), abs(y1)))
+        width2, height2 = warp_image.size
+        return warp_image.transform(
+            (width, height),
+            Image.QUAD,
+            (x1, y1, -x1, height2 - y2, width2 + x2, height2 + y2, width2 - x2, -y1))
+
+    @staticmethod
+    def _offset(image, dx_factor=0.1, dy_factor=0.2):
+        &quot;&quot;&quot;图像偏移&quot;&quot;&quot;
+        width, height = image.size
+        dx = int(random.random() * width * dx_factor)
+        dy = int(random.random() * height * dy_factor)
+        offset_image = Image.new(&#39;RGB&#39;, (width + dx, height + dy))
+        offset_image.paste(image, (dx, dy))
+        return offset_image
+
+    @staticmethod
+    def _rotate(image, angle=25):
+        &quot;&quot;&quot;图像旋转&quot;&quot;&quot;
+        return image.rotate(random.uniform(-angle, angle),
+                            Image.BILINEAR, expand=1)
+
+    def generate(self, captcha_text=&#39;&#39;, fmt=&#39;PNG&#39;):
+        &quot;&quot;&quot;生成验证码(文字和图片)
+        :param captcha_text: 验证码文字
+        :param fmt: 生成的验证码图片格式
+        :return: 验证码图片的二进制数据
+        &quot;&quot;&quot;
+        self._image = Image.new(&#39;RGB&#39;, (self._width, self._height), (255, 255, 255))
+        self._background()
+        self._text(captcha_text, self._fonts,
+                   drawings=[&#39;_warp&#39;, &#39;_rotate&#39;, &#39;_offset&#39;])
+        self._curve()
+        self._noise()
+        self._smooth()
+        image_bytes = BytesIO()
+        self._image.save(image_bytes, format=fmt)
+        return image_bytes.getvalue()
+
+
+def pascal_row(n=0):
+    &quot;&quot;&quot;生成毕达哥拉斯三角形（杨辉三角）&quot;&quot;&quot;
+    result = [1]
+    x, numerator = 1, n
+    for denominator in range(1, n // 2 + 1):
+        x *= numerator
+        x /= denominator
+        result.append(x)
+        numerator -= 1
+    if n &amp; 1 == 0:
+        result.extend(reversed(result[:-1]))
+    else:
+        result.extend(reversed(result))
+    return result
+
+
+def random_color(start=0, end=255, opacity=255):
+    &quot;&quot;&quot;获得随机颜色&quot;&quot;&quot;
+    red = random.randint(start, end)
+    green = random.randint(start, end)
+    blue = random.randint(start, end)
+    if opacity is None:
+        return red, green, blue
+    return red, green, blue, opacity
+</code></pre>
+<blockquote>
+<p><strong>说明</strong>：上面的代码中用到了三个字体文件，字体文件位于<code>polls/fonts</code>目录下，大家可以自行添加字体文件，但是需要注意字体文件的文件名跟上面代码的第45行保持一致。</p>
+</blockquote>
+<p>接下来，我们先完成提供验证码的视图函数。</p>
+<pre><code class="Python">def get_captcha(request: HttpRequest) -&gt; HttpResponse:
+    &quot;&quot;&quot;验证码&quot;&quot;&quot;
+    captcha_text = gen_random_code()
+    request.session[&#39;captcha&#39;] = captcha_text
+    image_data = Captcha.instance().generate(captcha_text)
+    return HttpResponse(image_data, content_type=&#39;image/png&#39;)
+</code></pre>
+<p>注意上面代码中的第4行，我们将随机生成的验证码字符串保存到session中，稍后用户登录时，我们要将保存在session中的验证码字符串和用户输入的验证码字符串进行比对，如果用户输入了正确的验证码才能够执行后续的登录流程，代码如下所示。</p>
+<pre><code class="Python">def login(request: HttpRequest) -&gt; HttpResponse:
+    hint = &#39;&#39;
+    if request.method == &#39;POST&#39;:
+        username = request.POST.get(&#39;username&#39;)
+        password = request.POST.get(&#39;password&#39;)
+        if username and password:
+            password = gen_md5_digest(password)
+            user = User.objects.filter(username=username, password=password).first()
+            if user:
+                request.session[&#39;userid&#39;] = user.no
+                request.session[&#39;username&#39;] = user.username
+                return redirect(&#39;/&#39;)
+            else:
+                hint = &#39;用户名或密码错误&#39;
+        else:
+            hint = &#39;请输入有效的用户名和密码&#39;
+    return render(request, &#39;login.html&#39;, &#123;&#39;hint&#39;: hint&#125;)
+</code></pre>
+<blockquote>
+<p><strong>说明</strong>：上面的代码没有对用户名和密码没有进行验证，实际项目中建议使用正则表达式验证用户输入信息，否则有可能将无效的数据交给数据库进行处理或者造成其他安全方面的隐患。</p>
+</blockquote>
+<p>上面的代码中，我们设定了登录成功后会在session中保存用户的编号（<code>userid</code>）和用户名（<code>username</code>），页面会重定向到首页。接下来我们可以稍微对首页的代码进行调整，在页面的右上角显示出登录用户的用户名。我们将这段代码单独写成了一个名为header.html的HTML文件，首页中可以通过在<code>&lt;body&gt;</code>标签中添加<code>&#123;% include 'header.html' %&#125;</code>来包含这个页面，代码如下所示。</p>
+<pre><code class="HTML">&lt;div class=&quot;user&quot;&gt;
+    &#123;% if request.session.userid %&#125;
+    <span>&#123;&#123; request.session.username &#125;&#125;</span>
+    <a href="/logout">注销</a>
+    &#123;% else %&#125;
+    <a href="/login">登录</a>&nbsp;&nbsp;
+    &#123;% endif %&#125;
+    &lt;a href=&quot;/register&quot;&gt;注册&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+<p>如果用户没有登录，页面会显示登录和注册的超链接；而用户登录成功后，页面上会显示用户名和注销的链接，注销链接对应的视图函数如下所示，URL的映射与之前讲过的类似，不再赘述。</p>
+<pre><code class="Python">def logout(request):
+    &quot;&quot;&quot;注销&quot;&quot;&quot;
+    request.session.flush()
+    return redirect(&#39;/&#39;)
+</code></pre>
+<p>上面的代码通过session对象<code>flush</code>方法来销毁session，一方面清除了服务器上session对象保存的用户数据，一方面将保存在浏览器cookie中的sessionid删除掉，稍后我们会对如何读写cookie的操作加以说明。</p>
+<p>我们可以通过项目使用的数据库中名为<code>django_session</code> 的表来找到所有的session，该表的结构如下所示：</p>
+<table>
+<thead>
+<tr>
+<th>session_key</th>
+<th>session_data</th>
+<th>expire_date</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>c9g2gt5cxo0k2evykgpejhic5ae7bfpl</td>
+<td>MmI4YzViYjJhOGMyMDJkY2M5Yzg3…</td>
+<td>2019-05-25 23:16:13.898522</td>
+</tr>
+</tbody></table>
+<p>其中，第1列就是浏览器cookie中保存的sessionid；第2列是经过BASE64编码后的session中的数据，如果使用Python的<code>base64</code>对其进行解码，解码的过程和结果如下所示。</p>
+<pre><code class="Python">import base64
+
+base64.b64decode(&#39;MmI4YzViYjJhOGMyMDJkY2M5Yzg3ZWIyZGViZmUzYmYxNzdlNDdmZjp7ImNhcHRjaGEiOiJzS3d0Iiwibm8iOjEsInVzZXJuYW1lIjoiamFja2ZydWVkIn0=&#39;)
+</code></pre>
+<p>第3列是session的过期时间，session过期后浏览器保存的cookie中的sessionid就会失效，但是数据库中的这条对应的记录仍然会存在，如果想清除过期的数据，可以使用下面的命令。</p>
+<pre><code class="Shell">python manage.py clearsessions
+</code></pre>
+<p>Django框架默认的session过期时间为两周（1209600秒），如果想修改这个时间，可以在项目的配置文件中添加如下所示的代码。</p>
+<pre><code class="Python"># 配置会话的超时时间为1天（86400秒）
+SESSION_COOKIE_AGE = 86400
+</code></pre>
+<p>有很多对安全性要求较高的应用都必须在关闭浏览器窗口时让会话过期，不再保留用户的任何信息，如果希望在关闭浏览器窗口时就让会话过期（cookie中的sessionid失效），可以加入如下所示的配置。</p>
+<pre><code class="Python"># 设置为True在关闭浏览器窗口时session就过期
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+</code></pre>
+<p>如果不希望将session的数据保存在数据库中，可以将其放入缓存中，对应的配置如下所示，缓存的配置和使用我们在后面讲解。</p>
+<pre><code class="Python"># 配置将会话对象放到缓存中存储
+SESSION_ENGINE = &#39;django.contrib.sessions.backends.cache&#39;
+# 配置使用哪一组缓存来保存会话
+SESSION_CACHE_ALIAS = &#39;default&#39;
+</code></pre>
+<p>如果要修改session数据默认的序列化方式，可以将默认的<code>JSONSerializer</code>修改为<code>PickleSerializer</code>。</p>
+<pre><code class="Python">SESSION_SERIALIZER = &#39;django.contrib.sessions.serializers.PickleSerializer&#39;
+</code></pre>
+<p>接下来，我们就可以限制只有登录用户才能为老师投票，修改后的<code>praise_or_criticize</code>函数如下所示，我们通过从<code>request.session</code>中获取<code>userid</code>来判定用户是否登录。</p>
+<pre><code class="Python">def praise_or_criticize(request: HttpRequest) -&gt; HttpResponse:
+    if request.session.get(&#39;userid&#39;):
+        try:
+            tno = int(request.GET.get(&#39;tno&#39;))
+            teacher = Teacher.objects.get(no=tno)
+            if request.path.startswith(&#39;/praise/&#39;):
+                teacher.good_count += 1
+                count = teacher.good_count
+            else:
+                teacher.bad_count += 1
+                count = teacher.bad_count
+            teacher.save()
+            data = &#123;&#39;code&#39;: 20000, &#39;mesg&#39;: &#39;投票成功&#39;, &#39;count&#39;: count&#125;
+        except (ValueError, Teacher.DoesNotExist):
+            data = &#123;&#39;code&#39;: 20001, &#39;mesg&#39;: &#39;投票失败&#39;&#125;
+    else:
+        data = &#123;&#39;code&#39;: 20002, &#39;mesg&#39;: &#39;请先登录&#39;&#125;
+    return JsonResponse(data)
+</code></pre>
+<p>当然，在修改了视图函数后，<code>teachers.html</code>也需要进行调整，用户如果没有登录，就将用户引导至登录页，登录成功再返回到投票页，此处不再赘述。</p>
+<h3 id="在视图函数中读写cookie"><a href="#在视图函数中读写cookie" class="headerlink" title="在视图函数中读写cookie"></a>在视图函数中读写cookie</h3><p>下面我们对如何使用cookie做一个更为细致的说明以便帮助大家在Web项目中更好的使用这项技术。Django封装的<code>HttpRequest</code>和<code>HttpResponse</code>对象分别提供了读写cookie的操作。</p>
+<p>HttpRequest封装的属性和方法：</p>
+<ol>
+<li><code>COOKIES</code>属性 - 该属性包含了HTTP请求携带的所有cookie。</li>
+<li><code>get_signed_cookie</code>方法 - 获取带签名的cookie，如果签名验证失败，会产生<code>BadSignature</code>异常。</li>
+</ol>
+<p>HttpResponse封装的方法：</p>
+<ol>
+<li><code>set_cookie</code>方法 - 该方法可以设置一组键值对并将其最终将写入浏览器。</li>
+<li><code>set_signed_cookie</code>方法 - 跟上面的方法作用相似，但是会对cookie进行签名来达到防篡改的作用。因为如果篡改了cookie中的数据，在不知道<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%AF%86%E9%92%A5">密钥</a>和<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%9B%90_(%E5%AF%86%E7%A0%81%E5%AD%A6)">盐</a>的情况下是无法生成有效的签名，这样服务器在读取cookie时会发现数据与签名不一致从而产生<code>BadSignature</code>异常。需要说明的是，这里所说的密钥就是我们在Django项目配置文件中指定的<code>SECRET_KEY</code>，而盐是程序中设定的一个字符串，你愿意设定为什么都可以，只要是一个有效的字符串。</li>
+</ol>
+<p>上面提到的方法，如果不清楚它们的具体用法，可以自己查阅一下Django的<a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/2.1/ref/request-response/">官方文档</a>，没有什么资料比官方文档能够更清楚的告诉你这些方法到底如何使用。</p>
+<p>刚才我们说过了，激活<code>SessionMiddleware</code>之后，每个<code>HttpRequest</code>对象都会绑定一个session属性，它是一个类似字典的对象，除了保存用户数据之外还提供了检测浏览器是否支持cookie的方法，包括：</p>
+<ol>
+<li><code>set_test_cookie</code>方法 - 设置用于测试的cookie。</li>
+<li><code>test_cookie_worked</code>方法 - 检测测试cookie是否工作。</li>
+<li><code>delete_test_cookie</code>方法 - 删除用于测试的cookie。</li>
+<li><code>set_expiry</code>方法 - 设置会话的过期时间。</li>
+<li><code>get_expire_age</code>/<code>get_expire_date</code>方法 - 获取会话的过期时间。</li>
+<li><code>clear_expired</code>方法 - 清理过期的会话。</li>
+</ol>
+<p>下面是在执行登录之前检查浏览器是否支持cookie的代码。通常情况下，浏览器默认开启了对cookie的支持，但是可能因为某种原因，用户禁用了浏览器的cookie功能，遇到这种情况我们可以在视图函数中提供一个检查功能，如果检查到用户浏览器不支持cookie，可以给出相应的提示。</p>
+<pre><code class="Python">def login(request):
+    if request.method == &#39;POST&#39;:
+        if request.session.test_cookie_worked():
+            request.session.delete_test_cookie()
+            # Add your code to perform login process here
+        else:
+            return HttpResponse(&quot;Please enable cookies and try again.&quot;)
+    request.session.set_test_cookie()
+    return render_to_response(&#39;login.html&#39;)
+</code></pre>
+<h3 id="Cookie的替代品"><a href="#Cookie的替代品" class="headerlink" title="Cookie的替代品"></a>Cookie的替代品</h3><p>之前我们说过了，cookie的名声一直都不怎么好，当然我们在实际开发中是不会在cookie中保存用户的敏感信息（如用户的密码、信用卡的账号等）的，而且保存在cookie中的数据一般也会做好编码和签名的工作。对于支持HTML5的浏览器来说，可以使用localStorage和sessionStorage做为cookie的替代方案，相信从名字上你就能听出二者的差别，存储在<code>localStorage</code>的数据可以长期保留；而存储在<code>sessionStorage</code>的数据会在浏览器关闭时会被清除 。关于这些cookie替代品的用法，建议大家查阅<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web">MDN</a>来进行了解。 </p>
+
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/page/7/index.html">http://example.com/page/7/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+
+    <nav id="page-nav">
+
+<a class="extend prev" rel="prev" href="/page/6/">Previous</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/8/">Next</a>
+</nav>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> Recent</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E4%BB%AC%E8%B8%A9%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E8%8B%B1%E8%AF%AD%E9%9D%A2%E8%AF%95/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%9F%A5%E4%B9%8E%E9%97%AE%E9%A2%98%E5%9B%9E%E7%AD%94/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%94%A8%E5%87%BD%E6%95%B0%E8%BF%98%E6%98%AF%E7%94%A8%E5%A4%8D%E6%9D%82%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%8E%A9%E8%BD%ACPyCharm/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/PEP8/" style="font-size: 10px;">PEP8</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-classify"></i> Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> Archive</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021年10月</a><span class="archive-list-count">173</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019年08月</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/PEP8/" rel="tag">PEP8</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> Blogroll</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example1.com/">site-name1</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example2.com/">site-name2</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example3.com/">site-name3</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">Site Map</a>
+        <span> | </span><a href="/atom.xml">Subscribe to this site</a>
+        <span> | </span><a href="/about/">Contact the blogger</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2021 John Doe.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+<script src="/localshare/js/social-share.js"></script>
+
+  
+<script src="/localshare/js/qrcode.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

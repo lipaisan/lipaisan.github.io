@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
+
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> Home</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> Archive</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> About</a>
+        
+          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> RSS</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="search"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Python-100-Days-master/公开课/文档/第05次公开课-算法入门系列1-周而复始/算法入门系列1-周而复始" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:56.711Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/%E5%85%AC%E5%BC%80%E8%AF%BE/%E6%96%87%E6%A1%A3/%E7%AC%AC05%E6%AC%A1%E5%85%AC%E5%BC%80%E8%AF%BE-%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%971-%E5%91%A8%E8%80%8C%E5%A4%8D%E5%A7%8B/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%971-%E5%91%A8%E8%80%8C%E5%A4%8D%E5%A7%8B/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="算法入门系列课程1-周而复始"><a href="#算法入门系列课程1-周而复始" class="headerlink" title="算法入门系列课程1 - 周而复始"></a>算法入门系列课程1 - 周而复始</h2><h3 id="算法概述"><a href="#算法概述" class="headerlink" title="算法概述"></a>算法概述</h3><ol>
+<li><p>什么是算法？</p>
+<p>解决问题的正确方法和具体的实施步骤。</p>
+<p>例子1：如何在两栋相距50m的大楼的两个房间牵一条线（两个房间都有窗）？</p>
+<ul>
+<li>养一只鸟（如鸽子），将线送过去</li>
+<li>用很长的杆子将线递过去</li>
+<li>用无人机（遥控飞行器）将线送过去</li>
+</ul>
+<p>如何评价这些方法的好坏？<strong>少花钱，不费事</strong>！</p>
+<p>例子2：大教室里坐了几百名学生一起听课，如何快速的统计学生人数？</p>
+<p>例子3：向列表容器中<strong>逆向</strong>插入100000个元素。</p>
+<ul>
+<li><p>方法1：</p>
+<pre><code class="Python">nums = []
+for i in range(100000):
+    nums.append(i)
+nums.reverse()
+</code></pre>
+</li>
+<li><p>方法2：</p>
+<pre><code class="Python">nums = []
+for i in range(100000):
+    nums.insert(0, i)
+</code></pre>
+</li>
+</ul>
+<p>例子3：生成Fibonacci数列（前100个Fibonacci数）。</p>
+<ul>
+<li><p>方法1 - 递推：</p>
+<pre><code class="Python">a, b = 0, 1
+for num in range(1, 101):
+    a, b = b, a + b
+    print(f&#39;&#123;num&#125;: &#123;a&#125;&#39;)
+</code></pre>
+</li>
+<li><p>方法2 - 递归：</p>
+<pre><code class="Python">def fib(num):
+    if num in (1, 2):
+        return 1
+    return fib(num - 1) + fib(num - 2)
+
+
+for num in range(1, 101):
+    print(f&#39;&#123;num&#125;: &#123;fib(num)&#125;&#39;)
+</code></pre>
+</li>
+<li><p>方法3 - 改进的递归：</p>
+<pre><code class="Python">def fib(num, temp=&#123;&#125;):
+    if num in (1, 2):
+        return 1
+    elif num not in temp:
+        temp[num] = fib(num - 1) + fib(num - 2)
+    return temp[num]
+</code></pre>
+</li>
+<li><p>方法4  - 改进的递归：</p>
+<pre><code class="Python">from functools import lru_cache
+
+
+@lru_cache()
+def fib(num):
+    if num in (1, 2):
+        return 1
+    return fib(num - 1) + fib(num - 2)
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>如何评价算法的好坏？</p>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6">渐近时间复杂度</a>和渐近空间复杂度。</p>
+</li>
+<li><p>大<em><strong>O</strong></em>符号的意义？</p>
+<p>表示一个函数相对于输入规模的增长速度，也可以称之为函数的数量级。</p>
+<table>
+<thead>
+<tr>
+<th>大<em>O</em>符号</th>
+<th>说明</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$$O(c)$$</td>
+<td>常量时间复杂度</td>
+<td>布隆过滤器 / 哈希存储</td>
+</tr>
+<tr>
+<td>$$O(log_2n)$$</td>
+<td>对数时间复杂度</td>
+<td>二分查找（折半查找）</td>
+</tr>
+<tr>
+<td>$$O(n)$$</td>
+<td>线性时间复杂度</td>
+<td>顺序查找 / 桶排序</td>
+</tr>
+<tr>
+<td>$$O(n*log_2n)$$</td>
+<td>对数线性时间复杂度</td>
+<td>高级排序算法（归并排序、快速排序）</td>
+</tr>
+<tr>
+<td>$$O(n^2)$$</td>
+<td>平方时间复杂度</td>
+<td>简单排序算法（选择排序、插入排序、冒泡排序）</td>
+</tr>
+<tr>
+<td>$$O(n^3)$$</td>
+<td>立方时间复杂度</td>
+<td>Floyd算法 / 矩阵乘法运算</td>
+</tr>
+<tr>
+<td>$$O(2^n)$$</td>
+<td>几何级数时间复杂度</td>
+<td>汉诺塔</td>
+</tr>
+<tr>
+<td>$$O(n!)$$</td>
+<td>阶乘时间复杂度</td>
+<td>旅行经销商问题</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h3 id="穷举法"><a href="#穷举法" class="headerlink" title="穷举法"></a>穷举法</h3><p>在计算机科学中，<strong>穷举法</strong>或者<strong>暴力搜索法</strong>是一个非常非常直观的解决问题的方法，这种方法通过一项一项的列举解决方案所有可能的候选项以及检查每个候选项是否符合问题的描述，最终得到问题的解。</p>
+<p>虽然暴力搜索很容易实现，并且如果解决方案存在它就一定能够找到，但是它的代价是和候选方案的数量成比例的，由于这一点，在很多实际问题中，消耗的代价会随着问题规模的增加而快速地增长。因此，当问题规模有限或当存在可用于将候选解决方案的集合减少到可管理大小时，就可以使用暴力搜索。另外，当实现方法的简单度比速度更重要的时候，也可以考虑使用这种方法。</p>
+<h3 id="经典例子"><a href="#经典例子" class="headerlink" title="经典例子"></a>经典例子</h3><ol>
+<li><p><strong>百钱百鸡</strong>问题：公鸡5元一只，母鸡3元一只，小鸡1元三只，用100元买一百只鸡，问公鸡、母鸡、小鸡各有多少只？</p>
+<pre><code class="Python">for x in range(21):
+    for y in range(34):
+        z = 100 - x - y
+        if z % 3 == 0 and 5 * x + 3 * y + z // 3 == 100:
+            print(x, y, z)
+</code></pre>
+</li>
+<li><p><strong>五人分鱼</strong>问题：ABCDE五人在某天夜里合伙捕鱼，最后疲惫不堪各自睡觉。第二天A第一个醒来，他将鱼分为5份，扔掉多余的1条，拿走了属于自己的一份；B第二个醒来，也将鱼分为5份，扔掉多余的1条，拿走属于自己的一份；然后C、D、E依次醒来，也按同样的方式分鱼，问他们至少捕了多少条鱼？</p>
+<pre><code class="Python">fish = 6
+while True:
+    total = fish
+    enough = True
+    for _ in range(5):
+        if (total - 1) % 5 == 0:
+            total = (total - 1) // 5 * 4
+        else:
+            enough = False
+            break
+    if enough:
+        print(fish)
+        break
+    fish += 5
+</code></pre>
+</li>
+<li><p><strong>暴力破解口令</strong>：</p>
+<pre><code class="Python">import re
+
+import PyPDF2
+
+with open(&#39;Python_Tricks_encrypted.pdf&#39;, &#39;rb&#39;) as pdf_file_stream:
+    reader = PyPDF2.PdfFileReader(pdf_file_stream)
+    with open(&#39;dictionary.txt&#39;, &#39;r&#39;) as txt_file_stream:
+        file_iter = iter(lambda: txt_file_stream.readline(), &#39;&#39;)
+        for word in file_iter:
+            word = re.sub(r&#39;\s&#39;, &#39;&#39;, word)
+            if reader.decrypt(word):
+                print(word)
+                break
+</code></pre>
+</li>
+</ol>
+
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B1-%E5%91%A8%E8%80%8C%E5%A4%8D%E5%A7%8B"><span class="toc-text">算法入门系列课程1 - 周而复始</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0"><span class="toc-text">算法概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%B7%E4%B8%BE%E6%B3%95"><span class="toc-text">穷举法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E4%BE%8B%E5%AD%90"><span class="toc-text">经典例子</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/2021/10/17/Python-100-Days-master/公开课/文档/第05次公开课-算法入门系列1-周而复始/算法入门系列1-周而复始/">http://example.com/2021/10/17/Python-100-Days-master/公开课/文档/第05次公开课-算法入门系列1-周而复始/算法入门系列1-周而复始/</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2021/10/17/Python-100-Days-master/%E5%85%AC%E5%BC%80%E8%AF%BE/%E6%96%87%E6%A1%A3/%E7%AC%AC06%E6%AC%A1%E5%85%AC%E5%BC%80%E8%AF%BE-%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%972-%E5%9C%A8%E6%B0%B4%E4%B8%80%E6%96%B9/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%972%20-%20%E5%9C%A8%E6%B0%B4%E4%B8%80%E6%96%B9/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/10/17/Python-100-Days-master/%E5%85%AC%E5%BC%80%E8%AF%BE/%E6%96%87%E6%A1%A3/%E7%AC%AC04%E6%AC%A1%E5%85%AC%E5%BC%80%E8%AF%BE-%E5%A5%BD%E7%8E%A9%E7%9A%84Python/%E5%A5%BD%E7%8E%A9%E7%9A%84Python/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+      
+      
+        
+
+
+
+
+
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> Recent</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E4%BB%AC%E8%B8%A9%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E8%8B%B1%E8%AF%AD%E9%9D%A2%E8%AF%95/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%9F%A5%E4%B9%8E%E9%97%AE%E9%A2%98%E5%9B%9E%E7%AD%94/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%94%A8%E5%87%BD%E6%95%B0%E8%BF%98%E6%98%AF%E7%94%A8%E5%A4%8D%E6%9D%82%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%8E%A9%E8%BD%ACPyCharm/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/PEP8/" style="font-size: 10px;">PEP8</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-classify"></i> Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> Archive</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021年10月</a><span class="archive-list-count">173</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019年08月</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/PEP8/" rel="tag">PEP8</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> Blogroll</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example1.com/">site-name1</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example2.com/">site-name2</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example3.com/">site-name3</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">Site Map</a>
+        <span> | </span><a href="/atom.xml">Subscribe to this site</a>
+        <span> | </span><a href="/about/">Contact the blogger</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2021 John Doe.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+<script src="/localshare/js/social-share.js"></script>
+
+  
+<script src="/localshare/js/qrcode.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

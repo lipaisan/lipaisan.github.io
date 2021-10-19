@@ -2,613 +2,2421 @@
 <html>
 <head>
   <meta charset="utf-8">
+  
+  
   <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-  <meta name="keywords" content="">
-  <meta name="description" content="Hexo">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="dd">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Python编程惯例">
-<meta property="og:url" content="http://example.com/2019/08/01/Untitled/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="dd">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://gitee.com/lipaisan/image-bed/raw/master/md_img/20211017114649.png">
-<meta property="og:image" content="c:/Users/lxy/Desktop/QQ拼音截图20211017114303.png">
-<meta property="og:image" content="https://gitee.com/lipaisan/image-bed/raw/master/md_img/20211017115244.png">
-<meta property="og:image" content="https://gitee.com/lipaisan/image-bed/raw/master/md_img/20211017114537.png">
-<meta property="og:image" content="c:/Users/lxy/Pictures/img/02ab551d449947d68e5b46ffc8071c5f_2.jpg">
-<meta property="og:image" content="https://gitee.com/lipaisan/image-bed/raw/master/md_img/20211017105224.jpg">
-<meta property="article:published_time" content="2019-07-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-10-17T03:52:51.365Z">
-<meta property="article:author" content="John Doe">
-<meta property="article:tag" content="Python">
-<meta property="article:tag" content="PEP8">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/lipaisan/image-bed/raw/master/md_img/20211017114649.png">
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
 
-<link rel="icon" href="/img/avatar.jpg">
-
-<link href="/css/style.css?v=1.1.0" rel="stylesheet">
-
-<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
-
-<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
-
-<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-<script src="/js/titleTip.js?v=1.1.0" ></script>
-
-<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
-<script>
-    hljs.initHighlightingOnLoad();
-</script>
-
-<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
-
-
-
-<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
-
-<script src="/js/iconfont.js?v=1.1.0" ></script>
-
+  
+  
 <meta name="generator" content="Hexo 5.4.0"></head>
-<div style="display: none">
-  <input class="theme_disqus_on" value="false">
-  <input class="theme_preload_comment" value="">
-  <input class="theme_blog_path" value="">
-  <input id="theme_shortcut" value="true" />
-  <input id="theme_highlight_on" value="true" />
-  <input id="theme_code_copy" value="true" />
-</div>
-
-
 
 <body>
-<aside class="nav mobile">
-    <div class="nav-left">
-        <a href="/"
-   class="avatar_target">
-    <img class="avatar"
-         src="/img/avatar.jpg"/>
-</a>
-<div class="author">
-    <span>John Doe</span>
-</div>
-
-<div class="icon">
-    
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
         
-            <a title="rss"
-               href="/atom.xml"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-rss"></use>
-                    </svg>
-                
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> Home</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> Archive</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> About</a>
+        
+          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> RSS</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="search"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
             </a>
-        
-    
-        
-            <a title="github"
-               href="https://github.com/yelog"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-github"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-            <a title="facebook"
-               href="https://www.facebook.com/faker.tops"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-facebook"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-    
-        
-    
-        
-            <a title="instagram"
-               href="https://www.facebook.com/faker.tops"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-instagram"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-            <a title="reddit"
-               href="https://www.reddit.com/user/yelog/"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-reddit"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-            <a title="weibo"
-               href="http://weibo.com/u/2307534817"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-weibo"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-            <a title="jianshu"
-               href="https://www.jianshu.com/u/ff56736de7cf"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-jianshu"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-            <a title="zhihu"
-               href="https://www.zhihu.com/people/jaytp/activities"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-zhihu"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-    
-        
-            <a title="oschina"
-               href="https://my.oschina.net/yelog"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-oschina"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-    
-        
-            <a title="email"
-               href="mailto:jaytp@qq.com"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-email"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-            <a title="qq"
-               href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-qq"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-            <a title="kugou"
-               href="https://www.kugou.com/"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-kugou"></use>
-                    </svg>
-                
-            </a>
-        
-    
-        
-            <a title="neteasemusic"
-               href="https://music.163.com/#/user/home?id=88151013"
-               target="_blank">
-                
-                    <svg class="iconfont-svg" aria-hidden="true">
-                        <use xlink:href="#icon-neteasemusic"></use>
-                    </svg>
-                
-            </a>
-        
-    
-</div>
-
-
-
-
-<ul>
-    <li>
-        <div class="all active" data-rel="All">All
-            
-                <small>(2)</small>
-            
-        </div>
-    </li>
-    
-        
-            
-                <li>
-                    <div data-rel="Python基础">
-                        
-                        Python基础
-                        <small>(2)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-</ul>
-<div class="left-bottom">
-    <div class="menus">
-        
-            
-            
-            
+          </div>
+        </template>
+      </div>
     </div>
-    <div>
-        
-            <a class="about  hasFriend  site_url"
-               
-               href="/about">About</a>
-        
-        <a style="width: 50%"
-                
-                                           class="friends">Friends</a>
-        
-    </div>
-</div>
-<input type="hidden" id="yelog_site_posts_number" value="2">
+  </div>
+</header>
 
-<div style="display: none">
-    <span id="busuanzi_value_site_uv"></span>
-    <span id="busuanzi_value_site_pv"></span>
-</div>
-
-    </div>
-    <div class="nav-right">
-        <div class="friends-area">
-    <div class="friends-title">
-        Links
-        <i class="iconfont icon-left"></i>
-    </div>
-    <div class="friends-content">
-        <ul>
-            
-            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
-            
-        </ul>
-    </div>
-</div>
-        <div class="title-list">
-    <div class="right-top">
-        <div id="default-panel">
-            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
-            <div class="right-title">All</div>
-            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
-        </div>
-        <div id="search-panel">
-            <i class="iconfont icon-left" data-title="返回"></i>
-            <input id="local-search-input" autocomplete="off"/>
-            <label class="border-line" for="input"></label>
-            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
-            <i class="iconfont icon-tag" data-title="标签"></i>
-        </div>
-        <div id="outline-panel" style="display: none">
-            <div class="right-title">大纲</div>
-            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
-        </div>
-    </div>
-
-    <div class="tags-list">
-    <input id="tag-search" />
-    <div class="tag-wrapper">
-        
-            <li class="article-tag-list-item">
-                <i class="iconfont icon-tag"></i><a>PEP8</a>
-            </li>
-        
-            <li class="article-tag-list-item">
-                <i class="iconfont icon-tag"></i><a>Python</a>
-            </li>
-        
-    </div>
-
-</div>
-
+      <div class="outer">
+        <section id="main">
+  <article id="post-Python-100-Days-master/番外篇/那些年我们踩过的那些坑" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
     
-    <nav id="title-list-nav">
-        
-        <a  class="All Python基础 "
-           href="/2019/08/01/Untitled/"
-           data-tag="Python,PEP8"
-           data-author="" >
-            <span class="post-title" title="Python编程惯例">Python编程惯例</span>
-            <span class="post-date" title="2019-08-01 00:00:00">2019/08/01</span>
-        </a>
-        
-        <a  class="All Python基础 "
-           href="/2019/08/01/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/"
-           data-tag="Python,PEP8"
-           data-author="" >
-            <span class="post-title" title="Python编程惯例">Python编程惯例</span>
-            <span class="post-date" title="2019-08-01 00:00:00">2019/08/01</span>
-        </a>
-        
-        <div id="no-item-tips">
-
-        </div>
-    </nav>
-    <div id="outline-list">
-    </div>
-</div>
-
-    </div>
-    <div class="hide-list">
-        <div class="semicircle" data-title="切换全屏 快捷键 s">
-            <div class="brackets first"><</div>
-            <div class="brackets">&gt;</div>
-        </div>
-    </div>
-</aside>
-<div id="post" class="index">
-    <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%8F%B6%E8%90%BD%E9%98%81"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E5%B9%B3%E5%8F%B0"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
-    
-<style>
-    .left-col .switch-btn,
-    .left-col .switch-area {
-        display: none;
-    }
-    .toc-level-3 i,
-    .toc-level-3 ol {
-        display: none !important;
-    }
-</style>
-</div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阁主（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 生成，部署在 <a target="_blank" rel="noopener" href="https://pages.github.com/">GitHub Pages</a>主题 <a target="_blank" rel="noopener" href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> 已经在github上开源</p>
-<p><code>3-hexo</code> 主题使用交流可以加 Q群: <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=e8cf083cc097141eaf323396f1766809b8e90ff00c67bb441898f672892f6904"><img data-ignore border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="3-hexo使用交流" title="3-hexo使用交流"></a></p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a target="_blank" rel="noopener" href='http://yelog.org/2017/03/24/3-hexo-shortcuts/'>3-hexo快捷键说明</a></li>
-</ul>
-
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
-    </div>
-    <div class="copyright">
-        <p class="footer-entry">
-    ©2016-2020 Yelog
-</p>
-<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
-
-    </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
-<a class="" id="rocket" ></a>
-
-</div>
-
-<div class="hide_box" onclick="dashangToggle()"></div>
-<div class="shang_box">
-    <a class="shang_close"  onclick="dashangToggle()">×</a>
-    <div class="shang_tit">
-        <p>Help us with donation</p>
-    </div>
-    <div class="shang_payimg">
-        <div class="pay_img">
-            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
-            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
-        </div>
-    </div>
-    <div class="shang_payselect">
-        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
-    </div>
-</div>
-
-
-
-<div style="position:absolute; bottom: 0; right: 0;">
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1375468860&auto=1&height=66"></iframe>
-</div>
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:56.851Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E4%BB%AC%E8%B8%A9%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/#comments" class="article-comment-link">
   
- 
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="那些年我们踩过的那些坑"><a href="#那些年我们踩过的那些坑" class="headerlink" title="那些年我们踩过的那些坑"></a>那些年我们踩过的那些坑</h2><h3 id="坑1-整数比较的坑"><a href="#坑1-整数比较的坑" class="headerlink" title="坑1 - 整数比较的坑"></a>坑1 - 整数比较的坑</h3><p>在 Python 中一切都是对象，整数也是对象，在比较两个整数时有两个运算符<code>==</code>和<code>is</code>，它们的区别是：</p>
+<ul>
+<li><code>is</code>比较的是两个整数对象的id值是否相等，也就是比较两个引用是否代表了内存中同一个地址。</li>
+<li><code>==</code>比较的是两个整数对象的内容是否相等，使用<code>==</code>时其实是调用了对象的<code>__eq__()</code>方法。</li>
+</ul>
+<p>知道了<code>is</code>和<code>==</code>的区别之后，我们可以来看看下面的代码，了解Python中整数比较有哪些坑，<strong>以CPython解释器为例</strong>，大家先看看下面的代码。</p>
+<pre><code class="Python">def main():
+    x = y = -1
+    while True:
+        x += 1
+        y += 1
+        if x is y:
+            print(&#39;%d is %d&#39; % (x, y))
+        else:
+            print(&#39;Attention! %d is not %d&#39; % (x, y))
+            break
+            
+    x = y = 0
+    while True:
+        x -= 1
+        y -= 1
+        if x is y:
+            print(&#39;%d is %d&#39; % (x, y))
+        else:
+            print(&#39;Attention! %d is not %d&#39; % (x, y))
+            break
+
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<p>上面代码的部分运行结果如下图所示。这个结果是因为CPython出于性能优化的考虑，把频繁使用的整数对象用一个叫<code>small_ints</code>的对象池缓存起来造成的。<code>small_ints</code>缓存的整数值被设定为<code>[-5, 256]</code>这个区间，也就是说，如果使用CPython解释器，在任何引用这些整数的地方，都不需要重新创建<code>int</code>对象，而是直接引用缓存池中的对象。如果整数不在该范围内，那么即便两个整数的值相同，它们也是不同的对象。</p>
+<p><img src="./res/int-is-comparation.png"></p>
+<p>当然仅仅如此这个坑就不值一提了，如果你理解了上面的规则，我们就再看看下面的代码。</p>
+<pre><code class="Python">a = 257
+
+
+def main():
+    b = 257  # 第6行
+    c = 257  # 第7行
+    print(b is c)  # True
+    print(a is b)  # False
+    print(a is c)  # False
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<p>程序的执行结果已经用注释写在代码上了。够坑吧！看上去<code>a</code>、<code>b</code>和<code>c</code>的值都是一样的，但是<code>is</code>运算的结果却不一样。为什么会出现这样的结果，首先我们来说说Python程序中的代码块。所谓代码块是程序的一个最小的基本执行单位，一个模块文件、一个函数体、一个类、交互式命令中的单行代码都叫做一个代码块。上面的代码由两个代码块构成，<code>a = 257</code>是一个代码块，<code>main</code>函数是另外一个代码块。CPython底层为了进一步提升性能还做了一个设定：对于同一个代码块中值不在<code>small_ints</code>缓存范围之内的整数，如果同一个代码块中已经存在一个值与其相同的整数对象，那么就直接引用该对象，否则创建新的<code>int</code>对象。需要大家注意的是，这条规则对数值型适用，但对字符串则需要考虑字符串的长度，这一点可以自行证明。<br>为了验证刚刚的结论，我们可以借用<code>dis</code>模块（听名字就知道是进行反汇编的模块）从字节码的角度来看看这段代码。如果不理解什么是字节码，可以先看看<a href="(http://www.cnblogs.com/restran/p/4903056.html)">《谈谈 Python 程序的运行原理》</a>这篇文章。可以先用<code>import dis</code>导入<code>dis</code>模块并按照如下所示的方式修改代码。</p>
+<pre><code class="Python">import dis
+
+dis.dis(main)
+</code></pre>
+<p>代码的执行结果如下图所示。可以看出代码第6行和第7行，也就是<code>main</code>函数中的257是从同一个位置加载的，因此是同一个对象；而代码第9行的<code>a</code>明显是从不同的地方加载的，因此引用的是不同的对象。</p>
+<p><img src="./res/result-of-dis.png"></p>
+<p>如果还想对这个问题进行进一步深挖，推荐大家阅读<a target="_blank" rel="noopener" href="https://foofish.net/python_int_implement.html">《Python整数对象实现原理》</a>这篇文章。</p>
+<h3 id="坑2-嵌套列表的坑"><a href="#坑2-嵌套列表的坑" class="headerlink" title="坑2 - 嵌套列表的坑"></a>坑2 - 嵌套列表的坑</h3><p>Python中有一种内置的数据类型叫列表，它是一种容器，可以用来承载其他的对象（准确的说是其他对象的引用），列表中的对象可以称为列表的元素，很明显我们可以把列表作为列表中的元素，这就是所谓的嵌套列表。嵌套列表可以模拟出现实中的表格、矩阵、2D游戏的地图（如植物大战僵尸的花园）、棋盘（如国际象棋、黑白棋）等。但是在使用嵌套的列表时要小心，否则很可能遭遇非常尴尬的情况，下面是一个小例子。</p>
+<pre><code class="Python">names = [&#39;关羽&#39;, &#39;张飞&#39;, &#39;赵云&#39;, &#39;马超&#39;, &#39;黄忠&#39;]
+subjs = [&#39;语文&#39;, &#39;数学&#39;, &#39;英语&#39;]
+scores = [[0] * 3] * 5
+for row, name in enumerate(names):
+    print(&#39;请输入%s的成绩&#39; % name)
+    for col, subj in enumerate(subjs):
+        scores[row][col] = float(input(subj + &#39;: &#39;))
+        print(scores)
+</code></pre>
+<p>我们希望录入5个学生3门课程的成绩，于是定义了一个有5个元素的列表，而列表中的每个元素又是一个由3个元素构成的列表，这样一个列表的列表刚好跟一个表格是一致的，相当于有5行3列，接下来我们通过嵌套的for-in循环输入每个学生3门课程的成绩。程序执行完成后我们发现，每个学生3门课程的成绩是一模一样的，而且就是最后录入的那个学生的成绩。</p>
+<p>要想把这个坑填平，我们首先要区分对象和对象的引用这两个概念，而要区分这两个概念，还得先说说内存中的栈和堆。我们经常会听人说起“堆栈”这个词，但实际上“堆”和“栈”是两个不同的概念。众所周知，一个程序运行时需要占用一些内存空间来存储数据和代码，那么这些内存从逻辑上又可以做进一步的划分。对底层语言（如C语言）有所了解的程序员大都知道，程序中可以使用的内存从逻辑上可以为五个部分，按照地址从高到低依次是：栈（stack）、堆（heap）、数据段（data segment）、只读数据段（static area）和代码段（code segment）。其中，栈用来存储局部、临时变量，以及函数调用时保存现场和恢复现场需要用到的数据，这部分内存在代码块开始执行时自动分配，代码块执行结束时自动释放，通常由编译器自动管理；堆的大小不固定，可以动态的分配和回收，因此如果程序中有大量的数据需要处理，这些数据通常都放在堆上，如果堆空间没有正确的被释放会引发内存泄露的问题，而像Python、Java等编程语言都使用了垃圾回收机制来实现自动化的内存管理（自动回收不再使用的堆空间）。所以下面的代码中，变量<code>a</code>并不是真正的对象，它是对象的引用，相当于记录了对象在堆空间的地址，通过这个地址我们可以访问到对应的对象；同理，变量<code>b</code>是列表容器的引用，它引用了堆空间上的列表容器，而列表容器中并没有保存真正的对象，它保存的也仅仅是对象的引用。</p>
+<pre><code class="Python">a = object()
+b = [&#39;apple&#39;, &#39;pitaya&#39;, &#39;grape&#39;]
+</code></pre>
+<p>知道了这一点，我们可以回过头看看刚才的程序，我们对列表进行<code>[[0] * 3] * 5</code>操作时，仅仅是将<code>[0, 0, 0]</code>这个列表的地址进行了复制，并没有创建新的列表对象，所以容器中虽然有5个元素，但是这5个元素引用了同一个列表对象，这一点可以通过<code>id</code>函数检查<code>scores[0]</code>和<code>scores[1]</code>的地址得到证实。所以正确的代码应该按照如下的方式进行修改。</p>
+<pre><code class="Python">names = [&#39;关羽&#39;, &#39;张飞&#39;, &#39;赵云&#39;, &#39;马超&#39;, &#39;黄忠&#39;]
+subjs = [&#39;语文&#39;, &#39;数学&#39;, &#39;英语&#39;]
+scores = [[]] * 5
+for row, name in enumerate(names):
+    print(&#39;请输入%s的成绩&#39; % name)
+    scores[row] = [0] * 3
+    for col, subj in enumerate(subjs):
+        scores[row][col] = float(input(subj + &#39;: &#39;))
+        print(scores)
+</code></pre>
+<p>或者</p>
+<pre><code class="Python">names = [&#39;关羽&#39;, &#39;张飞&#39;, &#39;赵云&#39;, &#39;马超&#39;, &#39;黄忠&#39;]
+subjs = [&#39;语文&#39;, &#39;数学&#39;, &#39;英语&#39;]
+scores = [[0] * 3 for _ in range(5)]
+for row, name in enumerate(names):
+    print(&#39;请输入%s的成绩&#39; % name)
+    scores[row] = [0] * 3
+    for col, subj in enumerate(subjs):
+        scores[row][col] = float(input(subj + &#39;: &#39;))
+        print(scores)
+</code></pre>
+<p>如果对内存的使用不是很理解，可以看看<a target="_blank" rel="noopener" href="http://www.pythontutor.com/">PythonTutor网站</a>上提供的代码可视化执行功能，通过可视化执行，我们可以看到内存是如何分配的，从而避免在使用嵌套列表或者复制对象时可能遇到的坑。</p>
+<p><img src="./res/python-tutor-visualize.png"></p>
+<p><img src="./res/python-tutor-visualize2.png"></p>
+<h3 id="坑3-访问修饰符的坑"><a href="#坑3-访问修饰符的坑" class="headerlink" title="坑3 - 访问修饰符的坑"></a>坑3 - 访问修饰符的坑</h3><p>用Python做过面向对象编程的人都知道，Python的类提供了两种访问控制权限，一种是公开，一种是私有（在属性或方法前加上双下划线）。而用惯了Java或C#这类编程语言的人都知道，类中的属性（数据抽象）通常都是私有的，其目的是为了将数据保护起来；而类中的方法（行为抽象）通常都是公开的，因为方法是对象向外界提供的服务。但是Python并没有从语法层面确保私有成员的私密性，因为它只是对类中所谓的私有成员进行了命名的变换，如果知道命名的规则照样可以直接访问私有成员，请看下面的代码。</p>
+<pre><code class="Python">class Student(object):
+
+    def __init__(self, name, age):
+        self.__name = name
+        self.__age = age
+
+    def __str__(self):
+        return self.__name + &#39;: &#39; + str(self.__age)
+
+
+stu = Student(&#39;骆昊&#39;, 38)
+print(stu._Student__name)
+print(stu._Student__age)
+</code></pre>
+<p>Python为什么要做出这样的设定呢？用一句广为流传的格言来解释这个问题：“We are all consenting adults here”（我们都是成年人）。这句话表达了很多Python程序员的一个共同观点，那就是开放比封闭要好，我们应该自己对自己的行为负责而不是从语言层面来限制对数据或方法的访问。</p>
+<p>所以在Python中我们实在没有必要将类中的属性或方法用双下划线开头的命名处理成私有的成员，因为这并没有任何实际的意义。如果想对属性或方法进行保护，我们建议用单下划线开头的受保护成员，虽然它也不能真正保护这些属性或方法，但是它相当于给调用者一个暗示，让调用者知道这是不应该直接访问的属性或方法，而且这样做并不影响子类去继承这些东西。</p>
+<p>需要提醒大家注意的是，Python类中的那些魔法方法，如<code>__str__</code>、<code>__repr__</code>等，这些方法并不是私有成员哦，虽然它们以双下划线开头，但是他们也是以双下划线结尾的，这种命名并不是私有成员的命名，这一点对初学者来说真的很坑。</p>
+
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/index.html">http://example.com/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-Python-100-Days-master/番外篇/英语面试" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:56.847Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E8%8B%B1%E8%AF%AD%E9%9D%A2%E8%AF%95/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="英语面试"><a href="#英语面试" class="headerlink" title="英语面试"></a>英语面试</h2><p>以下用I表示面试官（Interviewer），用C表示面试者（Candidate）。</p>
+<h3 id="开场寒暄"><a href="#开场寒暄" class="headerlink" title="开场寒暄"></a>开场寒暄</h3><ol>
+<li><p>I: Thanks for waiting. (Please follow me.)</p>
+<p>C: It’s no problem.</p>
+</li>
+<li><p>I: How are you doing this morning?</p>
+<p>C: I’m great. / I’m doing fine. Thank you. / How about you?</p>
+</li>
+<li><p>I: How did you get here?</p>
+<p>C: I took the subway here. / I drove here.</p>
+</li>
+<li><p>I: Glad to meet you.</p>
+<p>C: Glad to meet you. / It’s great to finally meet you in person. (之前电话沟通过的)</p>
+</li>
+</ol>
+<h3 id="正式面试"><a href="#正式面试" class="headerlink" title="正式面试"></a>正式面试</h3><h4 id="人力面试"><a href="#人力面试" class="headerlink" title="人力面试"></a>人力面试</h4><ol>
+<li><p>I: Can you tell me a little bit about yourself? (介绍下自己)</p>
+<p>原则：不要谈私生活和奇怪的癖好（英雄联盟干到钻石），因为别人更想知道的是你的专业技能（qulifications）和工作经验（experience），所以重点在你之前的公司（company name）、职位（title）、时间（years）和主要职责（major responsibilities）</p>
+<p>C: Thank you for having me. My name is Dachui WANG. I’m 25 years old, and I’m single. I have a Bachelor’s Degree of Computer Science from Tsinghua University. I was a Junior Java Programmer for ABC Technologies during my college life. Then I become an intermediate Java engineer for XYZ Corporation in last two years. Programming is my everyday life and programming is where my passion is. I think I have a good knowledge of Java enterprise application developement using light-weight frameworks like Spring, Guice, Hibernate and other open source middle-ware like Dubbo, Mycat, rocketmq and so on and so forth. I love reading, travelling and playing basketball in my spare time. That’s all! Thank you!</p>
+</li>
+<li><p>I: How would you describe your personality? (你的性格)</p>
+<p>C: I’m hard working, eager to learn, and very serious about my work. I enjoy working with other people and I love challenges.</p>
+</li>
+<li><p>I: What do you know about our company? (你对我们公司有什么了解)</p>
+<p>(需要做功课，了解公司的状况和企业文化，该公司在这个行业中的一个状况，有什么核心业务，主要的竞争对手有哪些)</p>
+<p>C: The one thing that I like the most about our company is your core values. I think they’re very important in this industry because …(自由发挥的部分)… I personally really believe in the cause as well. Of course, I’m very interested in your products such as …(功课部分)… and the techniques behind them.</p>
+</li>
+<li><p>I: Why are you leaving your last job? (为什么离职)</p>
+<p>C: I want to advance my career and I think this job offers more challenges and  opportunities for me do to that.</p>
+</li>
+<li><p>I: What do you see yourself in 3 or 5 years? (3-5年职业规划)</p>
+<p>C: My long term goals involve growing with the company, where I can continue to learn, to take on additional responsibilities and to contribute as much value as I can. I intend to take advantage of all of these.</p>
+</li>
+<li><p>I: What’s your salary expectation? (期望薪资)</p>
+<p>C: My salary expectation is in line with my experience and qualifications. I believe our company will pay me and every other employee fairly. (把球踢给对方先看看对方报价是多少，如果对方非要你报价再说后面的内容) I think 15 thousands RMB or above is fitting for me to leave in Chengdu.</p>
+</li>
+<li><p>I: Do you have any questions for me? (问面试官的问题)</p>
+<p>C: What’s the growth potential for this position?</p>
+</li>
+</ol>
+<h4 id="技术面试"><a href="#技术面试" class="headerlink" title="技术面试"></a>技术面试</h4><ol>
+<li>I: What’s difference between an interface and an abstract class?</li>
+<li>I: What are pass by reference and pass by value?</li>
+<li>I: What’s the difference between process and threads?</li>
+<li>I: Explain the available thread state in high-level.</li>
+<li>I: What’s deadlocks? How to avoid them?</li>
+<li>I: How HashMap works in Java?</li>
+<li>I: What’s the difference between ArrayList and LinkedList? (类似的问题还有很多，比如比较HashSet和TreeSet、HashMap和Hashtable)</li>
+<li>I: Tell me what you know about garbage collection in Java.</li>
+<li>I: What’re two types of exceptions in Java?</li>
+<li>I: What’s the advantage of PreparedStatement over Statement?</li>
+<li>I: What’s the use of CallableStatement?</li>
+<li>I: What does connection pool mean?</li>
+<li>I: Explain the life cycle of a Servlet.</li>
+<li>I: What’s the difference between redirect and forward?</li>
+<li>I: What’s EL? What’re implicit objects of EL?</li>
+<li>I: Tell me what you know about Spring framework and its benefits.</li>
+<li>I: What’re different types of dependency injection.</li>
+<li>I: Are singleton beans thread safe in Spring framework?</li>
+<li>I: What’re the benefits of Spring framework’s transaction management?</li>
+<li>I: Explain what’s AOP.</li>
+<li>I: What’s a proxy and how to implement proxy pattern?</li>
+<li>I: How Spring MVC works?</li>
+<li>I: What’s the working scenario of Hibernate and MyBatis?</li>
+<li>I: How to implement SOA?</li>
+<li>I: Make a brief introduction of the projects you are involved before?</li>
+</ol>
+<p>上面主要是面试Java程序员的问题，但是整个流程大致如此。</p>
+
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/index.html">http://example.com/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-Python-100-Days-master/番外篇/知乎问题回答" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:56.844Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%9F%A5%E4%B9%8E%E9%97%AE%E9%A2%98%E5%9B%9E%E7%AD%94/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="知乎问题回答"><a href="#知乎问题回答" class="headerlink" title="知乎问题回答"></a>知乎问题回答</h2><h3 id="Python学习完基础语法知识后，如何进一步提高？"><a href="#Python学习完基础语法知识后，如何进一步提高？" class="headerlink" title="Python学习完基础语法知识后，如何进一步提高？"></a>Python学习完基础语法知识后，如何进一步提高？</h3><p>如果你已经完成了Python基础语法的学习，想要知道接下来如何提高，那么你得先问问自己你要用Python来做什么？目前学习Python后可能的就业方向包括以下几个领域，我把每个领域需要的技术作为了一个简单的关键词摘要。</p>
+<blockquote>
+<p>说明：以下数据参考了主要的招聘门户网站以及职友集。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>职位</th>
+<th>所需技能</th>
+<th>招聘需求量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Python后端开发工程师</td>
+<td>Python基础<br>Django / Flask / Tornado / Sanic<br>RESTful / 接口文档撰写<br>MySQL / Redis / MongoDB / ElasticSearch<br>Linux / Git / Scrum / PyCharm</td>
+<td>一般</td>
+</tr>
+<tr>
+<td>Python爬虫开发工程师</td>
+<td>Python基础<br>常用标准库和三方库<br>Scrapy / PySpider<br>Selenium / Appnium<br>Redis / MongoDB / MySQL<br>前端 / HTTP(S) / 抓包工具</td>
+<td>较少</td>
+</tr>
+<tr>
+<td>Python量化交易开发工程师</td>
+<td>Python基础<br>数据结构 / 算法 / 设计模式<br>NoSQL（KV数据库）<br>金融学（两融、期权、期货、股票） / 数字货币</td>
+<td>一般</td>
+</tr>
+<tr>
+<td>Python数据分析工程师 /<br>Python机器学习工程师</td>
+<td>统计学专业 / 数学专业 / 计算机专业<br>Python基础 / 算法设计<br>SQL / NoSQL / Hive / Hadoop / Spark<br>NumPy / Scikit-Learn / Pandas / Seaborn<br>PyTorch / Tensorflow / OpenCV</td>
+<td>大</td>
+</tr>
+<tr>
+<td>Python自动化测试工程师</td>
+<td>Python基础 / 单元测试 / 软件测试基础<br>Linux / Shell / JIRA / 禅道 / Jenkins / CI / CD<br>Selenium / Robot Framework / Appnium<br>ab / sysbench / JMeter / LoadRunner / QTP</td>
+<td>大</td>
+</tr>
+<tr>
+<td>Python自动化运维工程师</td>
+<td>Python基础 / Linux / Shell <br>Fabric / Ansible / Playbook<br>Zabbix / Saltstack / Puppet<br>Docker / paramiko</td>
+<td>大</td>
+</tr>
+<tr>
+<td>Python云平台开发工程师</td>
+<td>Python基础<br>OpenStack / CloudStack<br>Ovirt / KVM<br>Docker / K8S</td>
+<td>较少</td>
+</tr>
+</tbody></table>
+<p>如果弄清了自己将来要做的方向，就可以开始有针对性的学习了，下面给大家一个推荐书籍的清单。</p>
+<ol>
+<li><p>入门读物</p>
+<ul>
+<li>《Python基础教程》（<em>Beginning Python From Novice to Professional</em>）</li>
+<li>《Python学习手册》（<em>Learning Python</em>）</li>
+<li>《Python编程》（<em>Programming Python</em>）</li>
+<li>《Python编程从入门到实践》（<em>Python Crash Course</em>）</li>
+<li>《Python Cookbook》</li>
+</ul>
+</li>
+<li><p>进阶读物</p>
+<ul>
+<li>《软件架构 - Python语言实现》（<em>Software Architecture with Python</em>）</li>
+<li>《流畅的Python》（<em>Fluent Python</em>）</li>
+<li>《Python设计模式》（<em>Learning Python Design Patterns</em>）</li>
+<li>《Python高级编程》（<em>Expert Python Programming</em>）</li>
+<li>《Python性能分析与优化》（<em>Mastering Python High Performance</em>）</li>
+</ul>
+</li>
+<li><p>数据库相关</p>
+<ul>
+<li>《MySQL必知必会》（<em>MySQL Crash Course</em>）</li>
+<li>《深入浅出MySQL - 数据库开发、优化与管理维护》</li>
+<li>《MongoDB权威指南》（<em>MongoDB: The Definitive Guide</em>）</li>
+<li>《Redis实战》（<em>Redis in Action</em>）</li>
+<li>《Redis开发与运维》</li>
+</ul>
+</li>
+<li><p>Linux / Shell / Docker / 运维</p>
+<ul>
+<li>《鸟哥的Linux私房菜》</li>
+<li>《Linux命令行与shell脚本编程大全》（<em>Linux Command Line and Shell Scripting Bible</em>）</li>
+<li>《Python自动化运维:技术与最佳实践》</li>
+<li>《第一本Docker书》（<em>The Docker Book</em>）</li>
+<li>《Docker经典实例》（Docker Cookbook）</li>
+</ul>
+</li>
+<li><p>Django / Flask / Tornado</p>
+<ul>
+<li><p>《Django基础教程》（<em>Tango with Django</em>）</p>
+</li>
+<li><p>《轻量级Django》（<em>Lightweight Django</em>）</p>
+</li>
+<li><p>《精通Django》（<em>Mastering Django: Core</em>）</p>
+</li>
+<li><p>《Python Web开发：测试驱动方法》（<em>Test-Driven Development with Python</em>）</p>
+</li>
+<li><p>《Two Scoops of Django: Best Practice of Django 1.8》</p>
+</li>
+<li><p>《Flask Web开发：基于Python的Web应用开发实战》（<em>Flask Web Development: Developing Web Applications with Python</em>）</p>
+</li>
+<li><p>《深入理解Flask》（<em>Mastering Flask</em>）</p>
+</li>
+<li><p>《Introduction to Tornado》</p>
+</li>
+</ul>
+</li>
+<li><p>爬虫开发</p>
+<ul>
+<li><p>《用Python写网络爬虫》（<em>Web Scraping with Python</em>）</p>
+</li>
+<li><p>《精通Python爬虫框架Scrapy》（<em>Learning Scrapy</em>）</p>
+</li>
+<li><p>《Python网络数据采集》（<em>Web Scraping with Python</em>）</p>
+</li>
+<li><p>《Python爬虫开发与项目实战》</p>
+</li>
+<li><p>《Python 3网络爬虫开发实战》</p>
+</li>
+</ul>
+</li>
+<li><p>数据分析</p>
+<ul>
+<li>《利用Python进行数据分析》（<em>Python for Data Analysis</em>）</li>
+<li>《Python数据科学手册》（<em>Python Data Science Handbook</em>）</li>
+<li>《Python金融大数据分析》（<em>Python for Finance</em>）</li>
+<li>《Python数据可视化编程实战》（<em>Python Data Visualization Cookbook</em>）</li>
+<li>《Python数据处理》（<em>Data Wrangling with Python</em>）</li>
+</ul>
+</li>
+<li><p>机器学习</p>
+<ul>
+<li><p>《Python机器学习基础教程》（<em>Introduction to Machine Learning with Python</em>）</p>
+</li>
+<li><p>《Python机器学习实践指南》（<em>Python Machine Learning Blueprints</em>）</p>
+</li>
+<li><p>《Python机器学习实践：测试驱动的开发方法》（<em>Thoughtful Machine Learning with Python A Test Driven Approach</em>）</p>
+</li>
+<li><p>《Python机器学习经典实例》（<em>Python Machine Learning Cookbook</em>）</p>
+</li>
+<li><p>《TensorFlow：实战Google深度学习框架》</p>
+</li>
+</ul>
+</li>
+<li><p>其他书籍</p>
+<ul>
+<li>《Pro Git》</li>
+<li>《Selenium自动化测试 - 基于Python语言》（<em>Learning Selenium Testing Tools with Python</em>）</li>
+<li>《Selenium自动化测试之道》</li>
+<li>《Scrum敏捷软件开发》（<em>Software Development using Scrum</em>）</li>
+<li>《高效团队开发 - 工具与方法》</li>
+</ul>
+</li>
+</ol>
+<p>当然学习编程，最重要的通过项目实战来提升自己的综合能力，Github上有大量的优质开源项目，其中不乏优质的Python项目。有一个名为<a target="_blank" rel="noopener" href="https://github.com/mahmoud/awesome-python-applications">“awesome-python-applications”</a>的项目对这些优质的资源进行了归类并提供了传送门，大家可以了解下。如果自学能力不是那么强，可以通过网络上免费或者付费的视频课程来学习对应的知识；如果自律性没有那么强，那就只能建议花钱参加培训班了，因为花钱在有人监督的环境下学习对很多人来说确实是一个捷径，但是要记得：“师傅领进门，修行靠各人”。选择自己热爱的东西并全力以赴，不要盲目的跟风学习，这一点算是过来人的忠告吧。记得我自己刚开始进入软件开发这个行业时，有人跟我说过这么一句话，现在也分享出来与诸君共勉：“浮躁的人有两种：只观望而不学习的人，只学习而不坚持的人；浮躁的人都不是高手。”</p>
+
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/index.html">http://example.com/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-Python-100-Days-master/番外篇/用函数还是用复杂的表达式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:56.841Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%94%A8%E5%87%BD%E6%95%B0%E8%BF%98%E6%98%AF%E7%94%A8%E5%A4%8D%E6%9D%82%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="用函数还是用复杂的表达式"><a href="#用函数还是用复杂的表达式" class="headerlink" title="用函数还是用复杂的表达式"></a>用函数还是用复杂的表达式</h2><p>Perl语言的原作者<em>Larry Wall</em>曾经说过，伟大的程序员都有三个优点：懒惰、暴躁和自负。乍一看这三个词语没有一个是褒义词，但在程序员的世界里，这三个词有不同的意义。首先，懒惰会促使程序员去写一些省事儿的程序来辅助自己或别人更好的完成工作，这样我们就无需做那些重复和繁琐的劳动；同理能够用3行代码解决的事情，我们也绝不会写出10行代码来。其次，暴躁会让程序员主动的去完成一些你还没有提出的工作，去优化自己的代码让它更有效率，能够3秒钟完成的任务，我们绝不能容忍1分钟的等待。最后，自负会促使程序员写出可靠无误的代码，我们写代码不是为了接受批评和指责，而是为了让其他人来膜拜。</p>
+<p>那么接下来就有一个很有意思的问题值得探讨一下，我们需要一个程序从输入的三个数中找出最大的那个数。这个程序对任何会编程的人来说都是小菜一碟，甚至不会编程的人经过10分钟的学习也能搞定。下面是用来解决这个问题的Python代码。</p>
+<pre><code class="Python">a = int(input(&#39;a = &#39;))
+b = int(input(&#39;b = &#39;))
+c = int(input(&#39;c = &#39;))
+if a &gt; b:
+    the_max = a
+else:
+    the_max = b
+if c &gt; the_max:
+    the_max = c
+print(&#39;The max is:&#39;, the_max)
+</code></pre>
+<p>但是我们刚才说了，程序员都是懒惰的，很多程序员都会使用三元条件运算符来改写上面的代码。</p>
+<pre><code class="Python">a = int(input(&#39;a = &#39;))
+b = int(input(&#39;b = &#39;))
+c = int(input(&#39;c = &#39;))
+the_max = a if a &gt; b else b
+the_max = c if c &gt; the_max else the_max
+print(&#39;The max is:&#39;, the_max)
+</code></pre>
+<p>需要说明的是，Python在2.5版本以前是没有上面代码第4行和第5行中使用的三元条件运算符的，究其原因是Guido van Rossum（Python之父）认为三元条件运算符并不能帮助 Python变得更加简洁，于是那些习惯了在C/C++或Java中使用三元条件运算符（在这些语言中，三元条件运算符也称为“Elvis运算符”，因为<code>?:</code>放在一起很像著名摇滚歌手猫王Elvis的大背头）的程序员试着用<code>and</code>和<code>or</code>运算符的短路特性来模拟出三元操作符，于是在那个年代，上面的代码是这样写的。</p>
+<pre><code class="Python">a = int(input(&#39;a = &#39;))
+b = int(input(&#39;b = &#39;))
+c = int(input(&#39;c = &#39;))
+the_max = a &gt; b and a or b
+the_max = c &gt; the_max and c or the_max
+print(&#39;The max is:&#39;, the_max)
+</code></pre>
+<p>但是这种做法在某些场景下是不能成立的，且看下面的代码。</p>
+<pre><code class="Python">a = 0
+b = -100
+# 下面的代码本来预期输出a的值，结果却得到了b的值
+# 因为a的值0在进行逻辑运算时会被视为False来处理
+print(True and a or b)
+# print(a if True else b)
+</code></pre>
+<p>所以在Python 2.5以后引入了三元条件运算符来避免上面的风险（上面代码被注释掉的最后一句话）。那么，问题又来了，上面的代码还可以写得更简短吗？答案是肯定的。</p>
+<pre><code class="Python">a = int(input(&#39;a = &#39;))
+b = int(input(&#39;b = &#39;))
+c = int(input(&#39;c = &#39;))
+print(&#39;The max is:&#39;, (a if a &gt; b else b) if (a if a &gt; b else b) &gt; c else c)
+</code></pre>
+<p>但是，这样做真的好吗？如此复杂的表达式是不是让代码变得晦涩了很多呢？我们发现，在实际开发中很多开发者都喜欢过度的使用某种语言的特性或语法糖，于是简单的多行代码变成了复杂的单行表达式，这样做真的好吗？这个问题我也不止一次的问过自己，现在我能给出的答案是下面的代码，使用辅助函数。</p>
+<pre><code class="Python">def the_max(x, y):
+    return x if x &gt; y else y
+
+
+a = int(input(&#39;a = &#39;))
+b = int(input(&#39;b = &#39;))
+c = int(input(&#39;c = &#39;))
+print(&#39;The max is:&#39;, the_max(the_max(a, b), c))
+</code></pre>
+<p>上面的代码中，我定义了一个辅助函数<code>the_max</code>用来找出参数传入的两个值中较大的那一个，于是下面的输出语句可以通过两次调用<code>the_max</code>函数来找出三个数中的最大值，现在代码的可读性是不是好了很多。用辅助函数来替代复杂的表达式真的是一个不错的选择，关键是比较大小的逻辑转移到这个辅助函数后不仅可以反复调用它，而且还可以进行级联操作。</p>
+<p>当然，很多语言中比较大小的函数根本没有必要自己来实现（通常都是内置函数），Python也是如此。Python内置的max函数利用了Python对可变参数的支持，允许一次性传入多个值或者一个迭代器并找出那个最大值，所以上面讨论的问题在Python中也就是一句话的事，但是从复杂表达式到使用辅助函数简化复杂表达式这个思想是非常值得玩味的，所以分享出来跟大家做一个交流。</p>
+<pre><code class="Python">a = int(input(&#39;a = &#39;))
+b = int(input(&#39;b = &#39;))
+c = int(input(&#39;c = &#39;))
+print(&#39;The max is:&#39;, max(a, b, c))
+</code></pre>
+
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/index.html">http://example.com/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-Python-100-Days-master/番外篇/玩转PyCharm" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:56.837Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%8E%A9%E8%BD%ACPyCharm/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="玩转PyCharm"><a href="#玩转PyCharm" class="headerlink" title="玩转PyCharm"></a>玩转PyCharm</h2><p>PyCharm是由JetBrains公司开发的提供给Python专业的开发者的一个集成开发环境，它最大的优点是能够大大提升Python开发者的工作效率，为开发者集成了很多用起来非常顺手的功能，包括代码调试、高亮语法、代码跳转、智能提示、自动补全、单元测试、版本控制等等。此外，PyCharm还提供了对一些高级功能的支持，包括支持基于Django框架的Web开发。</p>
+<h3 id="PyCharm的下载和安装"><a href="#PyCharm的下载和安装" class="headerlink" title="PyCharm的下载和安装"></a>PyCharm的下载和安装</h3><p>可以在<a target="_blank" rel="noopener" href="https://www.jetbrains.com/">JetBrains公司的官方网站</a>找到PyCharm的<a target="_blank" rel="noopener" href="https://www.jetbrains.com/pycharm/download/">下载链接</a>，有两个可供下载的版本，一个是社区版（PyCharm CE），一个是专业版（PyCharm Professional）。社区版在Apache许可证下发布，可以免费使用；专业版在专用许可证下发布，需要购买授权后才能使用，但新用户可以试用30天。很显然，专业版提供了更为强大的功能和对企业级开发的各种支持，但是对于初学者来说，社区版已经足够强大和好用了。安装PyCharm只需要直接运行下载的安装程序，然后持续的点击“Next”（下一步）按钮就可以啦。下面是我在Windows系统下安装PyCharm的截图，安装完成后点击“Finish”（结束）按钮关闭安装向导，然后可以通过双击桌面的快捷方式来运行PyCharm。</p>
+<p><img src="res/pycharm-installation.png"></p>
+<h3 id="首次使用的设置"><a href="#首次使用的设置" class="headerlink" title="首次使用的设置"></a>首次使用的设置</h3><p>第一次使用PyCharm时，会有一个导入设置的向导，如果之前没有使用PyCharm或者没有保存过设置的就直接选择“Do not import settings”进入下一步即可，下面是我在macOS系统下第一次使用PyCharm时的截图。</p>
+<p><img src="res/pycharm-import-settings.png"></p>
+<p>专业版的PyCharm是需要激活的，<strong>强烈建议大家在条件允许的情况下支付费用来支持优秀的产品</strong>，如果不用做商业用途或者不需要使用PyCharm的高级功能，我们可以暂时选择试用30天或者使用社区版的PyCharm。如果你是一名学生，希望购买PyCharm来使用，可以看看<a target="_blank" rel="noopener" href="https://sales.jetbrains.com/hc/zh-cn/articles/207154369">教育优惠官方申请指南</a>。如下图所示，我们需要点击“Evaluate”按钮来试用专业版PyCharm。</p>
+<p><img src="res/pycharm-activation.png"></p>
+<p>接下来是选择UI主题，可以根据个人喜好进行选择，深色的主题比较护眼而浅色的主题对比度更好。</p>
+<p><img src="res/pycharm-ui-themes.png"></p>
+<p>再接下来是创建可以在“终端”或“命令行提示符”中运行PyCharm的启动脚本，当然也可以不做任何勾选，直接点击“Next: Featured plugins”按钮进入下一环节。</p>
+<p><img src="res/pycharm-create-launcher.png"></p>
+<p>然后可以选择需要安装哪些插件，我们可以暂时什么都不安装，等需要的时候再来决定。</p>
+<p><img src="res/pycharm-install-plugins.png"></p>
+<p>最后点击上图右下角的“Start using PyCharm”（开始使用PyCharm）就可以开启你的PyCharm之旅了。</p>
+<h3 id="用PyCharm创建项目"><a href="#用PyCharm创建项目" class="headerlink" title="用PyCharm创建项目"></a>用PyCharm创建项目</h3><p>启动PyCharm之后会来到一个欢迎页，在欢迎页上我们可以选择“创建新项目”（Create New Project）、“打开已有项目”（Open）和“从版本控制系统中检出项目”（Get from Version Control）。</p>
+<p><img src="res/pycharm-welcome.png"></p>
+<p>如果选择了“Create New Project”来创建新项目就会打一个创建项目的向导页。下图所示是PyCharm专业版创建新项目的向导页，可以看出专业版支持的项目类型非常的多，而社区版只能创建纯Python项目（Pure Python），没有这一系列的选项。</p>
+<p><img src="res/pycharm-project-wizard.png"></p>
+<p>接下来，我们要为项目创建专属的虚拟环境，每个Python项目最好都在自己专属的虚拟环境中运行，因为每个项目对Python解释器和三方库的需求并不相同，虚拟环境对不同的项目进行了隔离。在上图所示的界面在，我们可以选择新建虚拟环境（New environment using Virtualenv），这里的“Virtualenv”是PyCharm默认选择的创建虚拟环境的工具，我们就保留这个默认的选项就可以了。</p>
+<p>项目创建完成后就可以开始新建各种文件来书写Python代码了，如下图所示。左侧是项目浏览器，可以看到刚才创建的项目文件夹以及虚拟环境文件夹。我们可以在项目上点击鼠标右键，选择“New”，在选择“Python File”来创建Python代码文件，下图中我们创建了两个Python文件，分别是<code>poker_game.py</code>和<code>salary_system.py</code>。当然，如果愿意，也可以使用复制粘贴的方式把其他地方的Python代码文件复制到项目文件夹下。</p>
+<p><img src="res/pycharm-workspace.png"></p>
+<p>在工作窗口点击鼠标右键可以在上下文菜单中找到“Run”选项，例如要运行<code>salary_system.py</code>文件，右键菜单会显示“Run ‘salary_system’”选项，点击这个选项我们就可以运行Python代码啦，运行结果在屏幕下方的窗口可以看到，如下图所示。</p>
+<p><img src="res/pycharm-run-result.png"></p>
+<h3 id="常用操作和快捷键"><a href="#常用操作和快捷键" class="headerlink" title="常用操作和快捷键"></a>常用操作和快捷键</h3><p>PyCharm为写Python代码提供了自动补全和高亮语法功能，这也是PyCharm作为集成开发环境（IDE）的基本功能。PyCharm的“File”菜单有一个“Settings”菜单项（macOS上是在“PyCharm”菜单的“Preferences…”菜单项），这个菜单项会打开设置窗口，可以在此处对PyCharm进行设置，如下图所示。</p>
+<p><img src="/Users/Hao/Desktop/Python-Core-50-Courses/res/pycharm-settings.png"></p>
+<p>PyCharm的菜单项中有一个非常有用的“Code”菜单，菜单中提供了自动生成代码、自动补全代码、格式化代码、移动代码等选项，这些功能对开发者来说是非常有用的，大家可以尝试使用这些菜单项或者记住它们对应的快捷键，例如在macOS上，格式化代码这个菜单项对应的快捷键是<code>alt+command+L</code>。除此之外，“Refactor”菜单也非常有用，它提供了一些重构代码的选项。所谓重构是在不改变代码执行结果的前提下调整代码的结构，这也是资深程序员的一项重要技能。还有一个值得一提的菜单是“VCS”，VCS是“Version Control System”（版本控制系统）的缩写，这个菜单提供了对代码版本管理的支持。版本控制的知识会在其他的课程中为大家讲解。</p>
+<p>下表列出了一些PyCharm中特别常用的快捷键，当然如果愿意，也可以通过设置窗口中“Keymap”菜单项自定义快捷键，PyCharm本身也针对不同的操作系统和使用习惯对快捷键进行了分组。</p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>command + j</code></td>
+<td>显示可用的代码模板</td>
+</tr>
+<tr>
+<td><code>command + b</code></td>
+<td>查看函数、类、方法的定义</td>
+</tr>
+<tr>
+<td><code>ctrl + space</code></td>
+<td>万能代码提示快捷键，一下不行按两下</td>
+</tr>
+<tr>
+<td><code>command + alt + l</code></td>
+<td>格式化代码</td>
+</tr>
+<tr>
+<td><code>alt + enter</code></td>
+<td>万能代码修复快捷键</td>
+</tr>
+<tr>
+<td><code>ctrl + /</code></td>
+<td>注释/反注释代码</td>
+</tr>
+<tr>
+<td><code>shift + shift</code></td>
+<td>万能搜索快捷键</td>
+</tr>
+<tr>
+<td><code>command + d</code> / <code>command + y</code></td>
+<td>复制/删除一行代码</td>
+</tr>
+<tr>
+<td><code>command + shift + -</code> / <code>command + shift + +</code></td>
+<td>折叠/展开所有代码</td>
+</tr>
+<tr>
+<td><code>F2</code></td>
+<td>快速定位到错误代码</td>
+</tr>
+<tr>
+<td><code>command+ alt + F7</code></td>
+<td>查看哪些地方用到了指定的函数、类、方法</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>说明</strong>：Windows系统下如果使用PyCharm的默认设置，可以将上面的<code>command</code>键换成<code>ctrl</code>键即可，唯一的例外是<code>ctrl + space</code>那个快捷键，因为它跟Windows系统切换输入法的快捷键是冲突的，所以在Windows系统下默认没有与之对应的快捷键。</p>
+</blockquote>
+
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/index.html">http://example.com/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-Python-100-Days-master/番外篇/接口文档参考示例" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:56.834Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E5%8F%82%E8%80%83%E7%A4%BA%E4%BE%8B/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="接口文档参考示例"><a href="#接口文档参考示例" class="headerlink" title="接口文档参考示例"></a>接口文档参考示例</h2><ol start="0">
+<li><p>用户登录 - <strong>POST</strong> <code>/api/login/</code></p>
+<p>   开发者：骆昊</p>
+<p>   版本号：v1</p>
+<p>   最后修改时间：</p>
+<p>   接口说明：登录成功后，会生成或更新用户令牌（token）。</p>
+<p>   使用帮助：测试数据库中预设了四个可供使用的账号，如下表所示。</p>
+<table>
+<thead>
+<tr>
+<th>用户名</th>
+<th>用户口令</th>
+<th>角色</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>jackfrued</td>
+<td>123456</td>
+<td>管理员</td>
+</tr>
+<tr>
+<td>wangdachui</td>
+<td>123123</td>
+<td>普通用户</td>
+</tr>
+<tr>
+<td>hellokitty</td>
+<td>123123</td>
+<td>房地产经理人</td>
+</tr>
+<tr>
+<td>wuzetian</td>
+<td>123456</td>
+<td>房东</td>
+</tr>
+</tbody></table>
+<p>   请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必填</th>
+<th>参数位置</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>username</td>
+<td>字符串</td>
+<td>是</td>
+<td>消息体</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td>password</td>
+<td>字符串</td>
+<td>是</td>
+<td>消息体</td>
+<td>用户口令</td>
+</tr>
+</tbody></table>
+<p>   响应信息：</p>
+<ul>
+<li><p>登录成功：</p>
+<pre><code class="JSON">&#123;
+    &quot;code&quot;: 30000,
+    &quot;message&quot;: &quot;用户登录成功&quot;,
+    &quot;token&quot;: &quot;f83e0f624e2311e9af1f00163e02b646&quot;
+&#125;
+</code></pre>
+</li>
+<li><p>登录失败：</p>
+<pre><code class="JSON">&#123;
+    &quot;code&quot;: 30001,
+    &quot;message&quot;: &quot;用户名或密码错误&quot;
+&#125;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>发送短信验证码 - <strong>GET</strong> <code>/api/mobile_code/&#123;国内手机号&#125;/</code></p>
+<p>开发者：骆昊</p>
+<p>版本号：v1</p>
+<p>接口说明：给指定手机号发送短信验证码的接口，手机号必须是国内手机号，作为路径参数写到URL中。接口显示短信发送成功时，指定的手机号并不会收到短息，因为使用的三方短信平台赠送的测试短信已经用完了。</p>
+<p>使用帮助：国内手机号暂不支持国际区号。</p>
+<p>请求参数：暂无。</p>
+<p>响应信息：</p>
+<ul>
+<li><p>请求成功：</p>
+<pre><code class="JSON">&#123;
+    &quot;code&quot;: 10001,
+    &quot;msg&quot;: &quot;短信验证码发送成功&quot;
+&#125;
+</code></pre>
+</li>
+<li><p>两次请求间隔小于60秒：</p>
+<pre><code class="JSON">&#123;
+    &quot;code&quot;: 10002,
+    &quot;msg&quot;: &quot;请不要在60秒以内重复发送手机验证码&quot;
+&#125;
+</code></pre>
+</li>
+<li><p>手机号无效：</p>
+<pre><code class="JSON">&#123;
+    &quot;code&quot;: 10003,
+    &quot;msg&quot;: &quot;请提供有效的手机号&quot;
+&#125;
+</code></pre>
+</li>
+<li><p>短信服务平台故障：</p>
+<pre><code class="JSON">&#123;
+    &quot;code&quot;: 10004,
+    &quot;msg&quot;: &quot;短信服务暂时无法使用&quot;
+&#125;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>获取所有省级行政单位 - <strong>GET</strong> <code>/api/districts/</code></p>
+<p>开发者：骆昊</p>
+<p>版本号：v1</p>
+<p>接口说明：暂无。</p>
+<p>使用帮助：暂无。</p>
+<p>请求参数：暂无。</p>
+<p>响应信息：</p>
+<pre><code class="JSON">[
+    &#123;
+        &quot;distid&quot;: 110000,
+        &quot;name&quot;: &quot;北京市&quot;
+    &#125;,
+    &#123;
+        &quot;distid&quot;: 120000,
+        &quot;name&quot;: &quot;天津市&quot;
+    &#125;
+]
+</code></pre>
+</li>
+<li><p>获取指定行政单位详情及其管辖的行政单位 - <strong>GET</strong> <code>/api/districts/&#123;行政单位编号&#125;/</code></p>
+<p>开发者：骆昊</p>
+<p>版本号：v1</p>
+<p>接口说明：通过URL参数指定行政单位编号，如果行政单位编号为省级行政单位编号，则返回该省以及该省所辖市级行政单位的信息；如果行政单位编号为市级行政单位编号，则返回该市以及该市所辖区县的信息；如果行政单位编号为区县一级行政单位编号，则返回该区县的信息，下级行政单位<code>cities</code>属性值为<code>[]</code>。</p>
+<p>使用帮助：数据库中除四川省外其他行政单位的“intro”数据都没有录入，该字段可能为空字符串。</p>
+<p>请求参数：暂无。</p>
+<p>响应信息：</p>
+<pre><code class="JSON">&#123;
+    &quot;distid&quot;: 510000,
+    &quot;name&quot;: &quot;四川省&quot;,
+    &quot;intro&quot;: &quot;位于中国西南地区内陆，东连重庆，南邻云南、贵州，西接西藏，北界陕西、甘肃、青海，四川省总面积48.6万平方千米，省会成都。截至2018年底，四川省下辖18个省辖市，3个自治州，17个县级市，108个县，4个自治县，54个市辖区。&quot;,
+    &quot;cities&quot;: [
+        &#123;
+            &quot;distid&quot;: 510100,
+            &quot;name&quot;: &quot;成都市&quot;
+        &#125;,
+        &#123;
+            &quot;distid&quot;: 510300,
+            &quot;name&quot;: &quot;自贡市&quot;
+        &#125;,
+        &#123;
+            &quot;distid&quot;: 510400,
+            &quot;name&quot;: &quot;攀枝花市&quot;
+        &#125;
+    ]
+&#125;
+</code></pre>
+</li>
+<li><p>获取热门城市 - <strong>GET</strong> <code>/api/hotcities/</code></p>
+<p>开发者：骆昊</p>
+<p>版本号：v1</p>
+<p>接口说明：暂无。</p>
+<p>使用帮助：暂无。</p>
+<p>请求参数：暂无。</p>
+<p>响应信息：</p>
+<pre><code class="JSON">[
+    &#123;
+        &quot;distid&quot;: 110100,
+        &quot;name&quot;: &quot;北京市&quot;
+    &#125;,
+    &#123;
+        &quot;distid&quot;: 120100,
+        &quot;name&quot;: &quot;天津市&quot;
+    &#125;,
+    &#123;
+        &quot;distid&quot;: 130100,
+        &quot;name&quot;: &quot;石家庄&quot;
+    &#125;
+]
+</code></pre>
+</li>
+<li><p>分页获取房地产经理人信息 - <strong>GET</strong> <code>/api/agents/</code></p>
+<p>开发者：骆昊</p>
+<p>版本号：v1</p>
+<p>接口说明：经理人姓名按照前缀模糊匹配的方式进行处理；经理人服务星级是指经理人服务星级不得低于该星级；经理人是否持证只有0（未持证上岗）和1（持证上岗）两个选项。三个参数代表的筛选条件之间是而且的关系。返回结果为分页之后的房地产经理人信息。</p>
+<p>使用帮助：暂无。</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必填</th>
+<th>参数位置</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>字符串</td>
+<td>否</td>
+<td>查询参数</td>
+<td>经理人姓名</td>
+</tr>
+<tr>
+<td>key</td>
+<td>字符串</td>
+<td>否</td>
+<td>查询参数</td>
+<td>经理人服务星级</td>
+</tr>
+<tr>
+<td>cert</td>
+<td>字符串</td>
+<td>否</td>
+<td>查询参数</td>
+<td>经理人是否持证</td>
+</tr>
+<tr>
+<td>page</td>
+<td>整数</td>
+<td>否</td>
+<td>查询参数</td>
+<td>页码，默认值为1</td>
+</tr>
+<tr>
+<td>size</td>
+<td>整数</td>
+<td>否</td>
+<td>查询参数</td>
+<td>页面大小，默认值为5，最大值不超过50</td>
+</tr>
+</tbody></table>
+<p>响应信息：</p>
+<pre><code class="JSON">&#123;
+    &quot;count&quot;: 1,
+    &quot;next&quot;: null,
+    &quot;previous&quot;: null,
+    &quot;results&quot;: [
+        &#123;
+            &quot;agentid&quot;: 6,
+            &quot;estates&quot;: [
+                &#123;
+                    &quot;estateid&quot;: 11,
+                    &quot;name&quot;: &quot;灵芝新村&quot;,
+                    &quot;hot&quot;: 20
+                &#125;
+            ],
+            &quot;name&quot;: &quot;肖利丽&quot;,
+            &quot;tel&quot;: &quot;13040813886&quot;,
+            &quot;servstar&quot;: 4,
+            &quot;realstar&quot;: 4,
+            &quot;profstar&quot;: 4,
+            &quot;certificated&quot;: false
+        &#125;
+    ]
+&#125;
+</code></pre>
+</li>
+<li><p>新增房地产经理人 - <strong>POST</strong> <code>/api/agents/</code></p>
+<p>开发者：骆昊</p>
+<p>版本号：v1</p>
+<p>接口说明：暂无。</p>
+<p>使用帮助：需要登录且拥有管理员权限，用户身份令牌在请求头中提供。</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必填</th>
+<th>参数位置</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>字符串</td>
+<td>是</td>
+<td>消息体</td>
+<td>经理人姓名</td>
+</tr>
+<tr>
+<td>tel</td>
+<td>字符串</td>
+<td>是</td>
+<td>消息体</td>
+<td>经理人手机</td>
+</tr>
+<tr>
+<td>servstar</td>
+<td>整数</td>
+<td>否</td>
+<td>消息体</td>
+<td>默认值0</td>
+</tr>
+<tr>
+<td>realstar</td>
+<td>整数</td>
+<td>否</td>
+<td>消息体</td>
+<td>默认值0</td>
+</tr>
+<tr>
+<td>profstar</td>
+<td>整数</td>
+<td>否</td>
+<td>消息体</td>
+<td>默认值0</td>
+</tr>
+<tr>
+<td>certificated</td>
+<td>整数</td>
+<td>否</td>
+<td>消息体</td>
+<td>默认值0</td>
+</tr>
+<tr>
+<td>token</td>
+<td>字符串</td>
+<td>是</td>
+<td>请求头</td>
+<td>用户身份认证令牌</td>
+</tr>
+</tbody></table>
+<p>响应信息：</p>
+<ul>
+<li><p>新增成功 - 状态码<strong>201</strong>：</p>
+<pre><code class="JSON">&#123;
+    &quot;agentid&quot;: 8,
+    &quot;estates&quot;: [],
+    &quot;name&quot;: &quot;孙小美&quot;,
+    &quot;tel&quot;: &quot;13800991234&quot;,
+    &quot;servstar&quot;: 0,
+    &quot;realstar&quot;: 0,
+    &quot;profstar&quot;: 0,
+    &quot;certificated&quot;: false
+&#125;
+</code></pre>
+</li>
+<li><p>未提供身份认证信息 - 状态码<strong>401</strong>：</p>
+<pre><code class="JSON">&#123;
+    &quot;detail&quot;: &quot;不正确的身份认证信息。&quot;
+&#125;
+</code></pre>
+</li>
+<li><p>当前用户没有操作权限 - 状态码<strong>403</strong>：</p>
+<pre><code class="JSON">&#123;
+    &quot;detail&quot;: &quot;您没有执行该操作的权限。&quot;
+&#125;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>编辑房地产经理人信息 - <strong>PUT</strong> <code>/api/agents/&#123;房地产经理人编号&#125;/</code></p>
+<p> 开发者：骆昊</p>
+<p> 版本号：v1</p>
+<p> 接口说明：暂无。</p>
+<p> 使用帮助：需要登录且拥有管理员权限，用户身份令牌在请求头中提供。</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必填</th>
+<th>参数位置</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>字符串</td>
+<td>是</td>
+<td>消息体</td>
+<td>经理人姓名</td>
+</tr>
+<tr>
+<td>tel</td>
+<td>字符串</td>
+<td>是</td>
+<td>消息体</td>
+<td>经理人手机</td>
+</tr>
+<tr>
+<td>servstar</td>
+<td>整数</td>
+<td>否</td>
+<td>消息体</td>
+<td>默认值0</td>
+</tr>
+<tr>
+<td>realstar</td>
+<td>整数</td>
+<td>否</td>
+<td>消息体</td>
+<td>默认值0</td>
+</tr>
+<tr>
+<td>profstar</td>
+<td>整数</td>
+<td>否</td>
+<td>消息体</td>
+<td>默认值0</td>
+</tr>
+<tr>
+<td>certificated</td>
+<td>整数</td>
+<td>否</td>
+<td>消息体</td>
+<td>默认值0</td>
+</tr>
+<tr>
+<td>token</td>
+<td>字符串</td>
+<td>是</td>
+<td>请求头</td>
+<td>用户身份认证令牌</td>
+</tr>
+</tbody></table>
+<p> 响应信息：</p>
+<ul>
+<li>更新成功 - 状态码<strong>200</strong>：</li>
+</ul>
+<pre><code class="JSON">&#123;
+    &quot;agentid&quot;: 1,
+    &quot;estates&quot;: [
+        &#123;
+            &quot;estateid&quot;: 1,
+            &quot;name&quot;: &quot;今日家园&quot;,
+            &quot;hot&quot;: 20
+        &#125;,
+        &#123;
+            &quot;estateid&quot;: 2,
+            &quot;name&quot;: &quot;翡翠园&quot;,
+            &quot;hot&quot;: 30
+        &#125;,
+        &#123;
+            &quot;estateid&quot;: 3,
+            &quot;name&quot;: &quot;万科城市花园&quot;,
+            &quot;hot&quot;: 22
+        &#125;
+    ],
+    &quot;name&quot;: &quot;袁晓梦&quot;,
+    &quot;tel&quot;: &quot;158173555285&quot;,
+    &quot;servstar&quot;: 5,
+    &quot;realstar&quot;: 4,
+    &quot;profstar&quot;: 3,
+    &quot;certificated&quot;: true
+&#125;
+</code></pre>
+<ul>
+<li>未提供身份认证信息 - 状态码<strong>403</strong> - 与新增类同</li>
+<li>当前用户没有操作权限 - 状态码<strong>403</strong> - 与新增类同</li>
+</ul>
+</li>
+<li><p>删除房地产经理人 - <strong>DELETE</strong> <code>/api/agents/&#123;房地产经理人编号&#125;/</code></p>
+<p> 开发者：骆昊</p>
+<p> 版本号：v1</p>
+<p> 接口说明：暂无。</p>
+<p> 使用说明：暂无。</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必填</th>
+<th>参数位置</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>token</td>
+<td>字符串</td>
+<td>是</td>
+<td>请求头</td>
+<td>用户身份认证令牌</td>
+</tr>
+</tbody></table>
+<p> 响应信息：</p>
+<ul>
+<li>删除成功 - 状态码<strong>204</strong></li>
+<li>未提供身份认证信息 - 状态码<strong>403</strong> - 与新增类同</li>
+<li>当前用户没有操作权限 - 状态码<strong>403</strong> - 与新增类同</li>
+</ul>
+</li>
+<li><p>分页获取楼盘信息 - <strong>GET</strong> <code>/api/estates/</code></p>
+<p> 开发者：骆昊</p>
+<p> 版本号：v1</p>
+<p> 接口说明：经理人姓名按照前缀模糊匹配的方式进行处理；经理人服务星级是指经理人服务星级不得低于该星级；经理人是否持证只有0（未持证上岗）和1（持证上岗）两个选项。三个参数代表的筛选条件之间是而且的关系。返回结果为分页之后的房地产经理人信息。</p>
+<p> 使用帮助：暂无。</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必填</th>
+<th>参数位置</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>字符串</td>
+<td>否</td>
+<td>查询参数</td>
+<td>楼盘名（模糊匹配）</td>
+</tr>
+<tr>
+<td>dist</td>
+<td>字符串</td>
+<td>否</td>
+<td>查询参数</td>
+<td>楼盘所在地区编号</td>
+</tr>
+<tr>
+<td>page</td>
+<td>整数</td>
+<td>否</td>
+<td>查询参数</td>
+<td>页码，默认值为1</td>
+</tr>
+<tr>
+<td>size</td>
+<td>整数</td>
+<td>否</td>
+<td>查询参数</td>
+<td>页面大小，默认值为5，最大值不超过50</td>
+</tr>
+</tbody></table>
+<p> 响应信息：</p>
+<pre><code class="JSON">&#123;
+    &quot;count&quot;: 16,
+    &quot;next&quot;: &quot;https://120.77.222.217/api/estates/?page=2&quot;,
+    &quot;previous&quot;: null,
+    &quot;results&quot;: [
+        &#123;
+            &quot;estateid&quot;: 6,
+            &quot;district&quot;: &#123;
+                &quot;distid&quot;: 440303,
+                &quot;name&quot;: &quot;罗湖区&quot;
+            &#125;,
+            &quot;agents&quot;: [
+                &#123;
+                    &quot;agentid&quot;: 2,
+                    &quot;name&quot;: &quot;杨伟&quot;,
+                    &quot;tel&quot;: &quot;13352939550&quot;,
+                    &quot;servstar&quot;: 3
+                &#125;,
+                &#123;
+                    &quot;agentid&quot;: 4,
+                    &quot;name&quot;: &quot;郭志鹏&quot;,
+                    &quot;tel&quot;: &quot;13686810707&quot;,
+                    &quot;servstar&quot;: 4
+                &#125;
+            ],
+            &quot;name&quot;: &quot;幸福里&quot;,
+            &quot;hot&quot;: 300,
+            &quot;intro&quot;: &quot;&quot;
+        &#125;
+    ]
+&#125;
+</code></pre>
+</li>
+<li><p>新增楼盘 - <strong>POST</strong> <code>/api/estates/</code></p>
+</li>
+</ol>
+<p>  开发者：骆昊</p>
+<p>  版本号：v1</p>
+<p>  接口说明：暂无。</p>
+<p>  使用帮助：需要登录且拥有管理员权限，用户身份令牌在请求头中提供。</p>
+<p>  请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必填</th>
+<th>参数位置</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>字符串</td>
+<td>是</td>
+<td>消息体</td>
+<td>楼盘名称</td>
+</tr>
+<tr>
+<td>hot</td>
+<td>整数</td>
+<td>否</td>
+<td>消息体</td>
+<td>楼盘热度，默认值0</td>
+</tr>
+<tr>
+<td>intro</td>
+<td>字符串</td>
+<td>否</td>
+<td>消息体</td>
+<td>楼盘介绍，默认值空字符串</td>
+</tr>
+<tr>
+<td>distid</td>
+<td>整数</td>
+<td>是</td>
+<td>消息体</td>
+<td>楼盘所在地区编号</td>
+</tr>
+<tr>
+<td>token</td>
+<td>字符串</td>
+<td>是</td>
+<td>请求头</td>
+<td>用户身份认证令牌</td>
+</tr>
+</tbody></table>
+<p>  响应信息：</p>
+<ul>
+<li><p>新增成功 - 状态码<strong>201</strong>：</p>
+<pre><code class="JSON">&#123;
+    &quot;estateid&quot;: 17,
+    &quot;district&quot;: 510107,
+    &quot;name&quot;: &quot;世纪锦苑&quot;,
+    &quot;hot&quot;: 100,
+    &quot;intro&quot;: &quot;&quot;
+&#125;
+</code></pre>
+</li>
+<li><p>未提供身份认证信息 - 状态码<strong>403</strong>：</p>
+<pre><code class="JSON">&#123;
+    &quot;detail&quot;: &quot;请提供有效的身份认证信息&quot;
+&#125;
+</code></pre>
+</li>
+<li><p>当前用户没有操作权限 - 状态码<strong>403</strong>：</p>
+<pre><code class="JSON">&#123;
+    &quot;detail&quot;: &quot;You do not have permission to perform this action.&quot;
+&#125;
+</code></pre>
+</li>
+</ul>
+<ol start="11">
+<li><p>编辑楼盘信息 - <strong>PUT</strong> <code>/api/estates/&#123;楼盘编号&#125;</code></p>
+</li>
+<li><p>删除楼盘信 - <strong>DELETE</strong> <code>/api/estates/&#123;楼盘编号&#125;</code></p>
+</li>
+<li><p>获取所有户型信息 - <strong>GET</strong> <code>/api/housetypes/</code></p>
+</li>
+<li><p>新增户型 - <strong>POST</strong> <code>/api/housetypes/</code></p>
+</li>
+<li><p>编辑户型信息 - <strong>PUT</strong> <code>/api/housetypes/&#123;户型编号&#125;</code></p>
+</li>
+<li><p>删除户型 - <strong>DELETE</strong> <code>/api/housetypes/&#123;户型编号&#125;</code></p>
+</li>
+<li><p>分页获取房源信息 - <strong>GET</strong> <code>/api/houseinfos/</code></p>
+<p> 开发者：骆昊</p>
+<p> 版本号：v1</p>
+<p> 接口说明：暂无。</p>
+<p> 使用帮助：暂无。</p>
+<p> 请求参数：    </p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>是否必填</th>
+<th>参数位置</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>字符串</td>
+<td>否</td>
+<td>查询参数</td>
+<td>房源标题关键词</td>
+</tr>
+<tr>
+<td>dist</td>
+<td>整数</td>
+<td>否</td>
+<td>查询参数</td>
+<td>楼盘所在地区编号</td>
+</tr>
+<tr>
+<td>min_price</td>
+<td>整数</td>
+<td>否</td>
+<td>查询参数</td>
+<td>价格区间下限</td>
+</tr>
+<tr>
+<td>max_price</td>
+<td>整数</td>
+<td>否</td>
+<td>查询参数</td>
+<td>价格区间上限</td>
+</tr>
+<tr>
+<td>type</td>
+<td>整数</td>
+<td>否</td>
+<td>查询参数</td>
+<td>户型编号</td>
+</tr>
+<tr>
+<td>page</td>
+<td>整数</td>
+<td>否</td>
+<td>查询参数</td>
+<td>页码，默认值为1</td>
+</tr>
+<tr>
+<td>size</td>
+<td>整数</td>
+<td>否</td>
+<td>查询参数</td>
+<td>页面大小，默认值为5，最大值不超过50</td>
+</tr>
+</tbody></table>
+<p> 响应信息：</p>
+<pre><code class="JSON">&#123;
+    &quot;count&quot;: 7,
+    &quot;next&quot;: &quot;http://localhost:8000/api/houseinfos/?dist=440303&amp;page=2&quot;,
+    &quot;previous&quot;: null,
+    &quot;results&quot;: [
+
+    ]
+&#125;
+</code></pre>
+</li>
+<li><p>查看房源详情 - <strong>GET</strong> <code>/api/houseinfos/&#123;房源编号&#125;</code></p>
+</li>
+<li><p>新增房源 - <strong>POST</strong> <code>/api/houseinfos/</code></p>
+</li>
+<li><p>编辑房源信息 - <strong>PUT</strong> <code>/api/houseinfos/&#123;房源编号&#125;</code></p>
+</li>
+<li><p>删除房源 - <strong>DELETE</strong> <code>/api/houseinfos/&#123;房源编号&#125;</code></p>
+</li>
+<li><p>随机获取指定数量的房源标签 - <strong>GET</strong> <code>/api/tags/</code></p>
+</li>
+<li><p>分页查看房源标签 - <strong>GET</strong> <code>/api/tags/</code></p>
+</li>
+<li><p>新增房源标签 - <strong>POST</strong> <code>/api/tags/</code></p>
+</li>
+<li><p>删除房源标签 - <strong>DELETE</strong>  <code>/api/tags/&#123;房源编号&#125;</code></p>
+</li>
+<li><p>查看房源的图片 - <strong>GET</strong> <code>/api/houseinfos/&#123;房源编号&#125;/photos/</code></p>
+</li>
+<li><p>为房源添加图片 - <strong>POST</strong> <code>/api/houseinfos/&#123;房源编号&#125;/photos/</code></p>
+</li>
+<li><p>删除房源图片 - <strong>DELETE</strong> <code>/api/houseinfos/&#123;房源编号&#125;/photos/&#123;图片编号&#125;</code></p>
+</li>
+</ol>
+
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/index.html">http://example.com/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-Python-100-Days-master/番外篇/我为什么选择了Python" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:56.831Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9%E4%BA%86Python/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="我为什么选择了Python"><a href="#我为什么选择了Python" class="headerlink" title="我为什么选择了Python"></a>我为什么选择了Python</h2><p>目前，Python语言的发展势头在国内国外都是不可阻挡的，Python凭借其简单优雅的语法，强大的生态圈从众多语言中脱颖而出，如今已经是稳坐编程语言排行榜前三的位置。国内很多Python开发者都是从Java开发者跨界过来的，我自己也不例外。我简单的跟大家交代一下，我为什么选择了Python。</p>
+<h3 id="Python-vs-Java"><a href="#Python-vs-Java" class="headerlink" title="Python vs. Java"></a>Python vs. Java</h3><p>我们通过几个例子来比较一下，做同样的事情Java和Python的代码都是怎么写的。</p>
+<p>例子1：在终端中输出“hello, world”。</p>
+<p>Java代码：</p>
+<pre><code class="Java">class Test &#123;
+    
+    public static void main(String[] args) &#123;
+        System.out.println(&quot;hello, world&quot;);
+    &#125;
+&#125;
+</code></pre>
+<p>Python代码：</p>
+<pre><code class="Python">print(&#39;hello, world&#39;)
+</code></pre>
+<p>例子2：从1到100求和。</p>
+<p>Java代码：</p>
+<pre><code class="Java">class Test &#123;
+    
+    public static void main(String[] args) &#123;
+        int total = 0;
+        for (int i = 1; i &lt;= 100; i += 1) &#123;
+            total += i;
+        &#125;
+        System.out.println(total);
+    &#125;
+&#125;
+</code></pre>
+<p>Python代码：</p>
+<pre><code class="Python">print(sum(range(1, 101)))
+</code></pre>
+<p>例子3：双色球随机选号。</p>
+<p>Java代码：</p>
+<pre><code class="Java">import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+
+class Test &#123;
+
+    /**
+     * 产生[min, max)范围的随机整数
+     */
+    public static int randomInt(int min, int max) &#123;
+        return (int) (Math.random() * (max - min) + min);
+    &#125;
+
+    public static void main(String[] args) &#123;
+        // 初始化备选红色球
+        List&lt;Integer&gt; redBalls = new ArrayList&lt;&gt;();
+        for (int i = 1; i &lt;= 33; ++i) &#123;
+            redBalls.add(i);
+        &#125;
+        List&lt;Integer&gt; selectedBalls = new ArrayList&lt;&gt;();
+        // 选出六个红色球
+        for (int i = 0; i &lt; 6; ++i) &#123;
+            selectedBalls.add(redBalls.remove(randomInt(0, redBalls.size())));
+        &#125;
+        // 对红色球进行排序
+        Collections.sort(selectedBalls);
+        // 添加一个蓝色球
+        selectedBalls.add(randomInt(1, 17));
+        // 输出选中的随机号码
+        for (int i = 0; i &lt; selectedBalls.size(); ++i) &#123;
+            System.out.printf(&quot;%02d &quot;, selectedBalls.get(i));
+            if (i == selectedBalls.size() - 2) &#123;
+                System.out.print(&quot;| &quot;);
+            &#125;
+        &#125;
+        System.out.println();
+    &#125;
+&#125;
+</code></pre>
+<p>Python代码：</p>
+<pre><code class="Python">from random import randint, sample
+
+# 初始化备选红色球
+red_balls = [x for x in range(1, 34)]
+# 选出六个红色球
+selected_balls = sample(red_balls, 6)
+# 对红色球进行排序
+selected_balls.sort()
+# 添加一个蓝色球
+selected_balls.append(randint(1, 16))
+# 输出选中的随机号码
+for index, ball in enumerate(selected_balls):
+    print(&#39;%02d&#39; % ball, end=&#39; &#39;)
+    if index == len(selected_balls) - 2:
+        print(&#39;|&#39;, end=&#39; &#39;)
+print()
+</code></pre>
+<p>相信，看完这些例子后，你一定感受到了我选择了Python是有道理的。</p>
+
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/index.html">http://example.com/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-Python-100-Days-master/番外篇/常见反爬策略及应对方案" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:56.828Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E5%B8%B8%E8%A7%81%E5%8F%8D%E7%88%AC%E7%AD%96%E7%95%A5%E5%8F%8A%E5%BA%94%E5%AF%B9%E6%96%B9%E6%A1%88/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="常见反爬策略及应对方案"><a href="#常见反爬策略及应对方案" class="headerlink" title="常见反爬策略及应对方案"></a>常见反爬策略及应对方案</h2><ol>
+<li><p>构造合理的HTTP请求头。</p>
+<ul>
+<li><p>Accept</p>
+</li>
+<li><p>User-Agent</p>
+</li>
+<li><p>Referer</p>
+</li>
+<li><p>Accept-Encoding</p>
+</li>
+<li><p>Accept-Language</p>
+</li>
+</ul>
+</li>
+<li><p>检查网站生成的Cookie。</p>
+<ul>
+<li>有用的插件：<a target="_blank" rel="noopener" href="http://www.editthiscookie.com/">EditThisCookie</a></li>
+<li>如何处理脚本动态生成的Cookie</li>
+</ul>
+</li>
+<li><p>抓取动态内容。</p>
+<ul>
+<li>Selenium + WebDriver</li>
+<li>Chrome / Firefox - Driver</li>
+</ul>
+</li>
+<li><p>限制爬取的速度。</p>
+</li>
+<li><p>处理表单中的隐藏域。</p>
+<ul>
+<li>在读取到隐藏域之前不要提交表单</li>
+<li>用RoboBrowser这样的工具辅助提交表单</li>
+</ul>
+</li>
+<li><p>处理表单中的验证码。</p>
+<ul>
+<li><p>OCR（Tesseract） - 商业项目一般不考虑 </p>
+</li>
+<li><p>专业识别平台 - 超级鹰 / 云打码</p>
+<pre><code class="Python">from hashlib import md5
+
+class ChaoClient(object):
+
+    def __init__(self, username, password, soft_id):
+        self.username = username
+        password =  password.encode(&#39;utf-8&#39;)
+        self.password = md5(password).hexdigest()
+        self.soft_id = soft_id
+        self.base_params = &#123;
+            &#39;user&#39;: self.username,
+            &#39;pass2&#39;: self.password,
+            &#39;softid&#39;: self.soft_id,
+        &#125;
+        self.headers = &#123;
+            &#39;Connection&#39;: &#39;Keep-Alive&#39;,
+            &#39;User-Agent&#39;: &#39;Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)&#39;,
+        &#125;
+
+    def post_pic(self, im, codetype):
+        params = &#123;
+            &#39;codetype&#39;: codetype,
+        &#125;
+        params.update(self.base_params)
+        files = &#123;&#39;userfile&#39;: (&#39;captcha.jpg&#39;, im)&#125;
+        r = requests.post(&#39;http://upload.chaojiying.net/Upload/Processing.php&#39;, data=params, files=files, headers=self.headers)
+        return r.json()
+
+
+if __name__ == &#39;__main__&#39;:
+    client = ChaoClient(&#39;用户名&#39;, &#39;密码&#39;, &#39;软件ID&#39;)
+    with open(&#39;captcha.jpg&#39;, &#39;rb&#39;) as file:                                                
+        print(client.post_pic(file, 1902))                                          
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>绕开“陷阱”。</p>
+<ul>
+<li>网页上有诱使爬虫爬取的爬取的隐藏链接（陷阱或蜜罐）</li>
+<li>通过Selenium+WebDriver+Chrome判断链接是否可见或在可视区域</li>
+</ul>
+</li>
+<li><p>隐藏身份。</p>
+<ul>
+<li><p>代理服务 -  快代理 / 讯代理 / 芝麻代理 / 蘑菇代理 / 云代理</p>
+<p><a target="_blank" rel="noopener" href="https://cuiqingcai.com/5094.html">《爬虫代理哪家强？十大付费代理详细对比评测出炉！》</a></p>
+</li>
+<li><p>洋葱路由 - 国内需要翻墙才能使用</p>
+<pre><code class="Shell">yum -y install tor
+useradd admin -d /home/admin
+passwd admin
+chown -R admin:admin /home/admin
+chown -R admin:admin /var/run/tor
+tor
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/index.html">http://example.com/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-Python-100-Days-master/番外篇/一个小例子助你彻底理解协程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:56.822Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E4%B8%80%E4%B8%AA%E5%B0%8F%E4%BE%8B%E5%AD%90%E5%8A%A9%E4%BD%A0%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3%E5%8D%8F%E7%A8%8B/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="一个小例子助你彻底理解协程"><a href="#一个小例子助你彻底理解协程" class="headerlink" title="一个小例子助你彻底理解协程"></a>一个小例子助你彻底理解协程</h2><p>协程，可能是Python中最让初学者困惑的知识点之一，它也是Python中实现并发编程的一种重要方式。Python中可以使用多线程和多进程来实现并发，这两种方式相对来说是大家比较熟悉的。事实上，还有一种实现并发的方式叫做异步编程，而协程就是实现异步编程的必要方式。</p>
+<p>所谓协程，可以简单的理解为多个相互协作的子程序。在同一个线程中，当一个子程序阻塞时，我们可以让程序马上从一个子程序切换到另一个子程序，从而避免CPU因程序阻塞而闲置，这样就可以提升CPU的利用率，相当于用一种协作的方式加速了程序的执行。所以，我们可以言简意赅的说：<strong>协程实现了协作式并发</strong>。</p>
+<p>接下来用一个小例子帮助大家理解什么是协作式并发，先看看下面的代码。</p>
+<pre><code class="Python">import time
+
+
+def display(num):
+    time.sleep(1)
+    print(num)
+
+
+for num in range(10):
+    display(num)
+</code></pre>
+<p>上面这段代码相信大家很容看懂，程序会输出0到9的数字，每隔1秒中输出一个数字，因此整个程序的执行需要大约10秒时间。值得注意的是，因为没有使用多线程或多进程，程序中只有一个执行单元，而<code>time.sleep(1)</code>的休眠操作会让整个线程停滞1秒钟，对于上面的代码来说，在这段时间里面CPU是完全闲置的没有做什么事情。</p>
+<p>我们再来看看使用协程会发生什么事情。从Python 3.5开始，使用协程实现协作式编发有了更为便捷的语法，我们可以使用<code>async</code>来定义异步函数，可以使用<code>await</code>让一个阻塞的子程序将CPU让给与它协作的子程序。在Python 3.7中，<code>asyanc</code>和<code>await</code>成为了正式的关键字，让开发者有一种喜大普奔的感觉。我们先看看如何定义一个异步函数。</p>
+<pre><code class="Python">import asyncio
+
+
+async def display(num):
+    await asyncio.sleep(1)
+    print(num)
+</code></pre>
+<p>接下来敲黑板说重点。异步函数不同于普通函数，调用普通函数会得到返回值，而调用异步函数会得到一个协程对象。我们需要将协程对象放到一个事件循环中才能达到与其他协程对象协作的效果，因为事件循环会负责处理子程序切换的操作，简单的说就是让阻塞的子程序让出CPU给可以执行的子程序。</p>
+<p>我们先通过下面的列表生成式来代码10个协程对象，跟刚才在循环中调用display函数的道理一致。</p>
+<pre><code class="Python">coroutines = [display(num) for num in range(10)]
+</code></pre>
+<p>通过下面的代码可以获取事件循环并将协程对象放入事件循环中。</p>
+<pre><code class="Python">loop = asyncio.get_event_loop()
+loop.run_until_complete(asyncio.wait(coroutines))
+loop.close()
+</code></pre>
+<p>执行上面的代码会发现，10个分别会阻塞1秒钟的协程总共只阻塞了约1秒种的时间，这就说明<strong>协程对象一旦阻塞会将CPU让出而不是让CPU处于闲置状态</strong>，这样就大大的<strong>提升了CPU的利用率</strong>。而且我们还会注意到，0到9的数字并不是按照我们创建协程对象的顺序打印出来的，这正是我们想要的结果啊；另外，多次执行该程序会发现每次输出的结果都不太一样，这正是并发程序本身执行顺序不确定性造成的结果。</p>
+<p>上面的例子来自于著名的“花书”（《Python高级并发编程》），为了让大家对协程的体会更加深刻，对原书的代码做了小的改动，这个例子虽然简单，但是它已经让你体会到了协作式并发的魅力。在商业项目中，如果需要使用协作式并发，还可以将系统默认的事件循环替换为<code>uvloop</code>提供的事件循环，这样会获得更好的性能，因为<code>uvloop</code>是基于著名的跨平台异步I/O库libuv实现的。另外，如果要做基于HTTP的网络编程，三方库<strong>aiohttp</strong>是不错的选择，它基于asyncio实现了异步的HTTP服务器和客户端。</p>
+
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/index.html">http://example.com/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+  <article id="post-Python-100-Days-master/番外篇/Python编程惯例" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:56.819Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/Python%E7%BC%96%E7%A8%8B%E6%83%AF%E4%BE%8B/#comments" class="article-comment-link">
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Python编程惯例"><a href="#Python编程惯例" class="headerlink" title="Python编程惯例"></a>Python编程惯例</h2><p>“惯例”这个词指的是“习惯的做法，常规的办法，一贯的做法”，与这个词对应的英文单词叫“idiom”。由于Python跟其他很多编程语言在语法和使用上还是有比较显著的差别，因此作为一个Python开发者如果不能掌握这些惯例，就无法写出“Pythonic”的代码。下面我们总结了一些在Python开发中的惯用的代码。</p>
+<ol>
+<li><p>让代码既可以被导入又可以被执行。</p>
+<pre><code class="Python">if __name__ == &#39;__main__&#39;:
+</code></pre>
+</li>
+</ol>
+<ol start="2">
+<li><p>用下面的方式判断逻辑“真”或“假”。</p>
+<pre><code class="Python">if x:
+if not x:
+</code></pre>
+<p><strong>好</strong>的代码：</p>
+<pre><code class="Python">name = &#39;jackfrued&#39;
+fruits = [&#39;apple&#39;, &#39;orange&#39;, &#39;grape&#39;]
+owners = &#123;&#39;1001&#39;: &#39;骆昊&#39;, &#39;1002&#39;: &#39;王大锤&#39;&#125;
+if name and fruits and owners:
+    print(&#39;I love fruits!&#39;)
+</code></pre>
+<p><strong>不好</strong>的代码：</p>
+<pre><code class="Python">name = &#39;jackfrued&#39;
+fruits = [&#39;apple&#39;, &#39;orange&#39;, &#39;grape&#39;]
+owners = &#123;&#39;1001&#39;: &#39;骆昊&#39;, &#39;1002&#39;: &#39;王大锤&#39;&#125;
+if name != &#39;&#39; and len(fruits) &gt; 0 and owners != &#123;&#125;:
+    print(&#39;I love fruits!&#39;)
+</code></pre>
+</li>
+<li><p>善于使用in运算符。</p>
+<pre><code class="Python">if x in items: # 包含
+for x in items: # 迭代
+</code></pre>
+<p><strong>好</strong>的代码：</p>
+<pre><code class="Python">name = &#39;Hao LUO&#39;
+if &#39;L&#39; in name:
+    print(&#39;The name has an L in it.&#39;)
+</code></pre>
+<p><strong>不好</strong>的代码：</p>
+<pre><code class="Python">name = &#39;Hao LUO&#39;
+if name.find(&#39;L&#39;) != -1:
+    print(&#39;This name has an L in it!&#39;)
+</code></pre>
+</li>
+<li><p>不使用临时变量交换两个值。</p>
+<pre><code class="Python">a, b = b, a
+</code></pre>
+</li>
+<li><p>用序列构建字符串。</p>
+<p><strong>好</strong>的代码：</p>
+<pre><code class="Python">chars = [&#39;j&#39;, &#39;a&#39;, &#39;c&#39;, &#39;k&#39;, &#39;f&#39;, &#39;r&#39;, &#39;u&#39;, &#39;e&#39;, &#39;d&#39;]
+name = &#39;&#39;.join(chars)
+print(name)  # jackfrued
+</code></pre>
+<p><strong>不好</strong>的代码：</p>
+<pre><code class="Python">chars = [&#39;j&#39;, &#39;a&#39;, &#39;c&#39;, &#39;k&#39;, &#39;f&#39;, &#39;r&#39;, &#39;u&#39;, &#39;e&#39;, &#39;d&#39;]
+name = &#39;&#39;
+for char in chars:
+    name += char
+print(name)  # jackfrued
+</code></pre>
+</li>
+<li><p>EAFP优于LBYL。</p>
+<p>EAFP - <strong>E</strong>asier to <strong>A</strong>sk <strong>F</strong>orgiveness than <strong>P</strong>ermission.</p>
+<p>LBYL - <strong>L</strong>ook <strong>B</strong>efore <strong>Y</strong>ou <strong>L</strong>eap.</p>
+<p><strong>好</strong>的代码：</p>
+<pre><code class="Python">d = &#123;&#39;x&#39;: &#39;5&#39;&#125;
+try:
+    value = int(d[&#39;x&#39;])
+    print(value)
+except (KeyError, TypeError, ValueError):
+    value = None
+</code></pre>
+<p><strong>不好</strong>的代码：</p>
+<pre><code class="Python">d = &#123;&#39;x&#39;: &#39;5&#39;&#125;
+if &#39;x&#39; in d and isinstance(d[&#39;x&#39;], str) \
+        and d[&#39;x&#39;].isdigit():
+    value = int(d[&#39;x&#39;])
+    print(value)
+else:
+    value = None
+</code></pre>
+</li>
+<li><p>使用enumerate进行迭代。</p>
+<p><strong>好</strong>的代码：</p>
+<pre><code class="Python">fruits = [&#39;orange&#39;, &#39;grape&#39;, &#39;pitaya&#39;, &#39;blueberry&#39;]
+for index, fruit in enumerate(fruits):
+    print(index, &#39;:&#39;, fruit)
+</code></pre>
+<p><strong>不好</strong>的代码：</p>
+<pre><code class="Python">fruits = [&#39;orange&#39;, &#39;grape&#39;, &#39;pitaya&#39;, &#39;blueberry&#39;]
+index = 0
+for fruit in fruits:
+    print(index, &#39;:&#39;, fruit)
+    index += 1
+</code></pre>
+</li>
+<li><p>用生成式生成列表。</p>
+<p><strong>好</strong>的代码：</p>
+<pre><code class="Python">data = [7, 20, 3, 15, 11]
+result = [num * 3 for num in data if num &gt; 10]
+print(result)  # [60, 45, 33]
+</code></pre>
+<p><strong>不好</strong>的代码：</p>
+<pre><code class="Python">data = [7, 20, 3, 15, 11]
+result = []
+for i in data:
+    if i &gt; 10:
+        result.append(i * 3)
+print(result)  # [60, 45, 33]
+</code></pre>
+</li>
+<li><p>用zip组合键和值来创建字典。</p>
+<p><strong>好</strong>的代码：</p>
+<pre><code class="Python">keys = [&#39;1001&#39;, &#39;1002&#39;, &#39;1003&#39;]
+values = [&#39;骆昊&#39;, &#39;王大锤&#39;, &#39;白元芳&#39;]
+d = dict(zip(keys, values))
+print(d)
+</code></pre>
+<p><strong>不好</strong>的代码：</p>
+<pre><code class="Python">keys = [&#39;1001&#39;, &#39;1002&#39;, &#39;1003&#39;]
+values = [&#39;骆昊&#39;, &#39;王大锤&#39;, &#39;白元芳&#39;]
+d = &#123;&#125;
+for i, key in enumerate(keys):
+    d[key] = values[i]
+print(d)
+</code></pre>
+</li>
+</ol>
+<blockquote>
+<p><strong>说明</strong>：这篇文章的内容来自于网络，有兴趣的读者可以阅读<a target="_blank" rel="noopener" href="http://safehammad.com/downloads/python-idioms-2014-01-16.pdf">原文</a>。</p>
+</blockquote>
+
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/index.html">http://example.com/index.html</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+      
+    </footer>
+  </div>
+</article>
+
+
+
+    <nav id="page-nav">
+
+<span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/2/">Next</a>
+</nav>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> Recent</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E4%BB%AC%E8%B8%A9%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E8%8B%B1%E8%AF%AD%E9%9D%A2%E8%AF%95/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%9F%A5%E4%B9%8E%E9%97%AE%E9%A2%98%E5%9B%9E%E7%AD%94/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%94%A8%E5%87%BD%E6%95%B0%E8%BF%98%E6%98%AF%E7%94%A8%E5%A4%8D%E6%9D%82%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%8E%A9%E8%BD%ACPyCharm/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/PEP8/" style="font-size: 10px;">PEP8</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-classify"></i> Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> Archive</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021年10月</a><span class="archive-list-count">173</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019年08月</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/PEP8/" rel="tag">PEP8</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> Blogroll</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example1.com/">site-name1</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example2.com/">site-name2</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example3.com/">site-name3</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">Site Map</a>
+        <span> | </span><a href="/atom.xml">Subscribe to this site</a>
+        <span> | </span><a href="/about/">Contact the blogger</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2021 John Doe.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+<script src="/localshare/js/social-share.js"></script>
+
+  
+<script src="/localshare/js/qrcode.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
 </body>
-<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
-
-<script src="/js/script.js?v=1.1.0" ></script>
-<script>
-    var img_resize = 'default';
-    function initArticle() {
-        /*渲染对应的表格样式*/
-        
-            $("#post .pjax table").addClass("green_title");
-        
-
-        /*渲染打赏样式*/
-        
-        $("input[name=pay]").on("click", function () {
-            if($("input[name=pay]:checked").val()=="weixin"){
-                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
-            } else {
-                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
-            }
-        })
-        
-
-        /*高亮代码块行号*/
-        
-
-        /*访问数量*/
-        
-        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
-        
-
-        /*代码高亮，行号对齐*/
-        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
-
-        
-        
-    }
-
-    /*打赏页面隐藏与展示*/
-    
-    function dashangToggle() {
-        $(".shang_box").fadeToggle();
-        $(".hide_box").fadeToggle();
-    }
-    
-
-</script>
-
-<!--加入行号的高亮代码块样式-->
-
-<!--自定义样式设置-->
-<style>
-    
-    
-    .nav {
-        width: 542px;
-    }
-    .nav.fullscreen {
-        margin-left: -542px;
-    }
-    .nav-left {
-        width: 120px;
-    }
-    
-    
-    @media screen and (max-width: 1468px) {
-        .nav {
-            width: 492px;
-        }
-        .nav.fullscreen {
-            margin-left: -492px;
-        }
-        .nav-left {
-            width: 100px;
-        }
-    }
-    
-    
-    @media screen and (max-width: 1024px) {
-        .nav {
-            width: 492px;
-            margin-left: -492px
-        }
-        .nav.fullscreen {
-            margin-left: 0;
-        }
-    }
-    
-    @media screen and (max-width: 426px) {
-        .nav {
-            width: 100%;
-        }
-        .nav-left {
-            width: 100%;
-        }
-    }
-    
-    
-    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
-        color: #383636;
-    }
-    
-    
-    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
-        color: #5e5e5f;
-    }
-    
-    
-    .nav-right nav a.hover, #local-search-result a.hover{
-        background-color: #e2e0e0;
-    }
-    
-    
-
-    /*列表样式*/
-    
-
-    /* 背景图样式 */
-    
-    
-
-
-    /*引用块样式*/
-    
-
-    /*文章列表背景图*/
-    
-
-    
-</style>
-
-
-
-
-
-
-
-
-
 </html>

@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
+
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> Home</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> Archive</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> About</a>
+        
+          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> RSS</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="search"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Python-100-Days-master/Day66-70/68.Pandas的应用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:55.775Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/Day66-70/68.Pandas%E7%9A%84%E5%BA%94%E7%94%A8/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Pandas的应用"><a href="#Pandas的应用" class="headerlink" title="Pandas的应用"></a>Pandas的应用</h2><p>Pandas是Wes McKinney在2008年开发的一个强大的<strong>分析结构化数据</strong>的工具集。Pandas以NumPy为基础（数据表示和运算），提供了用于数据处理的函数和方法，对数据分析和数据挖掘提供了很好的支持；同时Pandas还可以跟数据可视化工具Matplotlib很好的整合在一起，非常轻松愉快的实现数据的可视化展示。</p>
+<p>Pandas核心的数据类型是<code>Series</code>（数据系列）、<code>DataFrame</code>（数据表/数据框），分别用于处理一维和二维的数据，除此之外还有一个名为<code>Index</code>的类型及其子类型，它为<code>Series</code>和<code>DataFrame</code>提供了索引功能。日常工作中以<code>DataFrame</code>使用最为广泛，因为二维的数据本质就是一个有行有列的表格（想一想Excel电子表格和关系型数据库中的二维表）。上述这些类型都提供了大量的处理数据的方法，数据分析师可以以此为基础实现对数据的各种常规处理。</p>
+<h3 id="Series的应用"><a href="#Series的应用" class="headerlink" title="Series的应用"></a>Series的应用</h3><p>Pandas库中的<code>Series</code>对象可以用来表示一维数据结构，跟数组非常类似，但是多了一些额外的功能。<code>Series</code>的内部结构包含了两个数组，其中一个用来保存数据，另一个用来保存数据的索引。</p>
+<h4 id="创建Series对象"><a href="#创建Series对象" class="headerlink" title="创建Series对象"></a>创建Series对象</h4><blockquote>
+<p><strong>提示</strong>：在执行下面的代码之前，请先导入<code>pandas</code>以及相关的库文件，具体的做法可以参考上一章。</p>
+</blockquote>
+<ul>
+<li><p>方法1：通过列表或数组创建Series对象。</p>
+<p>  代码：</p>
+<pre><code class="Python"># data参数表示数据，index参数表示数据的索引（标签）
+# 如果没有指定index属性，默认使用数字索引
+ser1 = pd.Series(data=[320, 180, 300, 405], index=[&#39;一季度&#39;, &#39;二季度&#39;, &#39;三季度&#39;, &#39;四季度&#39;])
+ser1
+</code></pre>
+<p>  输出：</p>
+<pre><code>一季度    320
+二季度    180
+三季度    300
+四季度    405
+dtype: int64
+</code></pre>
+</li>
+<li><p>方法2：通过字典创建Series对象。</p>
+<p>  代码：</p>
+<pre><code class="Python"># 字典中的键就是数据的索引（标签），字典中的值就是数据
+ser2 = pd.Series(&#123;&#39;一季度&#39;: 320, &#39;二季度&#39;: 180, &#39;三季度&#39;: 300, &#39;四季度&#39;: 405&#125;)
+ser2
+</code></pre>
+<p>  输出：</p>
+<pre><code>一季度    320
+二季度    180
+三季度    300
+四季度    405
+dtype: int64
+</code></pre>
+</li>
+</ul>
+<h4 id="索引和切片"><a href="#索引和切片" class="headerlink" title="索引和切片"></a>索引和切片</h4><p>跟数组一样，Series对象也可以进行索引和切片操作，不同的是Series对象因为内部维护了一个保存索引的数组，所以除了可以使用整数索引通过位置检索数据外，还可以通过自己设置的索引标签获取对应的数据。</p>
+<ul>
+<li><p>使用整数索引</p>
+<p>  代码：</p>
+<pre><code class="Python">print(ser2[0], ser[1], ser[2], ser[3])
+ser2[0], ser2[3] = 350, 360
+print(ser2)
+</code></pre>
+<p>  输出：</p>
+<pre><code>320 180 300 405
+一季度    350
+二季度    180
+三季度    300
+四季度    360
+dtype: int64
+</code></pre>
+<blockquote>
+<p><strong>提示</strong>：如果要使用负向索引，必须在创建<code>Series</code>对象时通过<code>index</code>属性指定非数值类型的标签。</p>
+</blockquote>
+</li>
+<li><p>使用自己设置的标签索引</p>
+<p>  代码：</p>
+<pre><code class="Python">print(ser2[&#39;一季度&#39;], ser2[&#39;三季度&#39;])
+ser2[&#39;一季度&#39;] = 380
+print(ser2)
+</code></pre>
+<p>  输出：</p>
+<pre><code>350 300
+一季度    380
+二季度    180
+三季度    300
+四季度    360
+dtype: int64
+</code></pre>
+</li>
+<li><p>切片操作</p>
+<p>  代码：</p>
+<pre><code class="Python">print(ser2[1:3])
+print(ser2[&#39;二季度&#39;:&#39;四季度&#39;])
+</code></pre>
+<p>  输出：</p>
+<pre><code>二季度    180
+三季度    300
+dtype: int64
+二季度    500
+三季度    500
+四季度    520
+dtype: int64
+</code></pre>
+<p>  代码：</p>
+<pre><code class="Python">ser2[1:3] = 400, 500
+ser2
+</code></pre>
+<p>  输出：</p>
+<pre><code>一季度    380
+二季度    400
+三季度    500
+四季度    360
+dtype: int64
+</code></pre>
+</li>
+<li><p>花式索引</p>
+<p>  代码：</p>
+<pre><code class="Python">print(ser2[[&#39;二季度&#39;, &#39;四季度&#39;]])
+ser2[[&#39;二季度&#39;, &#39;四季度&#39;]] = 500, 520
+print(ser2)
+</code></pre>
+<p>  输出：</p>
+<pre><code>二季度    400
+四季度    360
+dtype: int64
+一季度    380
+二季度    500
+三季度    500
+四季度    520
+dtype: int64
+</code></pre>
+</li>
+<li><p>布尔索引</p>
+<p>  代码：</p>
+<pre><code class="Python">ser2[ser2 &gt;= 500]
+</code></pre>
+<p>  输出：</p>
+<pre><code>二季度    500
+三季度    500
+四季度    520
+dtype: int64
+</code></pre>
+</li>
+</ul>
+<p>####属性和方法</p>
+<p>Series对象的常用属性如下表所示。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>dtype</code> / <code>dtypes</code></td>
+<td>返回<code>Series</code>对象的数据类型</td>
+</tr>
+<tr>
+<td><code>hasnans</code></td>
+<td>判断<code>Series</code>对象中有没有空值</td>
+</tr>
+<tr>
+<td><code>at</code> / <code>iat</code></td>
+<td>通过索引访问<code>Series</code>对象中的单个值</td>
+</tr>
+<tr>
+<td><code>loc</code> / <code>iloc</code></td>
+<td>通过一组索引访问<code>Series</code>对象中的一组值</td>
+</tr>
+<tr>
+<td><code>index</code></td>
+<td>返回<code>Series</code>对象的索引</td>
+</tr>
+<tr>
+<td><code>is_monotonic</code></td>
+<td>判断<code>Series</code>对象中的数据是否单调</td>
+</tr>
+<tr>
+<td><code>is_monotonic_increasing</code></td>
+<td>判断<code>Series</code>对象中的数据是否单调递增</td>
+</tr>
+<tr>
+<td><code>is_monotonic_decreasing</code></td>
+<td>判断<code>Series</code>对象中的数据是否单调递减</td>
+</tr>
+<tr>
+<td><code>is_unique</code></td>
+<td>判断<code>Series</code>对象中的数据是否独一无二</td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td>返回<code>Series</code>对象中元素的个数</td>
+</tr>
+<tr>
+<td><code>values</code></td>
+<td>以<code>ndarray</code>的方式返回<code>Series</code>对象中的值</td>
+</tr>
+</tbody></table>
+<p><code>Series</code>对象的方法很多，我们通过下面的代码为大家介绍一些常用的方法。</p>
+<ul>
+<li><p>统计相关方法</p>
+<p>  代码：</p>
+<pre><code class="Python"># 求和
+print(ser2.sum())
+# 求均值
+print(ser2.mean())
+# 求最大
+print(ser2.max())
+# 求最小
+print(ser2.min())
+# 计数
+print(ser2.count())
+# 求标准差
+print(ser2.std())
+# 求方差
+print(ser2.var())
+# 求中位数
+print(ser2.median())
+</code></pre>
+<p>  输出：</p>
+<pre><code>1900
+475.0
+520
+380
+4
+64.03124237432849
+4100.0
+500.0
+</code></pre>
+<p>  <code>Series</code>对象还有一个名为<code>describe()</code>的方法，可以获得上述所有的描述性统计信息，如下所示。</p>
+<p>  代码：</p>
+<pre><code class="Python">ser2.describe()
+</code></pre>
+<p>  输出：</p>
+<pre><code>count      4.000000
+mean     475.000000
+std       64.031242
+min      380.000000
+25%      470.000000
+50%      500.000000
+75%      505.000000
+max      520.000000
+dtype: float64
+</code></pre>
+<blockquote>
+<p><strong>提示</strong>：因为<code>describe()</code>返回的也是一个<code>Series</code>对象，所以可以用<code>ser2.describe()[&#39;mean&#39;]</code>来获取平均值。</p>
+</blockquote>
+<p>  如果<code>Series</code>对象的数据中有重复元素，我们可以使用<code>unique()</code>方法获得去重之后的<code>Series</code>对象，如果想要统计重复元素重复的次数，可以使用<code>value_counts()</code>方法，这个方法会返回一个<code>Series</code>对象，它的索引就是原来的<code>Series</code>对象中的元素，而每个元素出现的次数就是返回的<code>Series</code>对象中的数据，在默认情况下会按照元素出现次数做降序排列。</p>
+<p>  代码：</p>
+<pre><code class="Python">ser3 = pd.Series(data=[&#39;apple&#39;, &#39;banana&#39;, &#39;apple&#39;, &#39;pitaya&#39;, &#39;apple&#39;, &#39;pitaya&#39;, &#39;durian&#39;])
+ser3.value_counts()
+</code></pre>
+<p>  输出：</p>
+<pre><code>apple     3
+pitaya    2
+durian    1
+banana    1
+dtype: int64
+</code></pre>
+</li>
+<li><p>数据处理方法</p>
+<p>  <code>Series</code>对象的<code>dropna</code>和<code>fillna</code>方法分别用来删除空值和填充空值，具体的用法如下所示。</p>
+<p>  代码：</p>
+<pre><code class="Python">ser4 = pd.Series(data=[10, 20, np.NaN, 30, np.NaN])
+ser4.dropna()
+</code></pre>
+<p>  输出：</p>
+<pre><code>0    10.0
+1    20.0
+3    30.0
+dtype: float64
+</code></pre>
+<p>  代码：</p>
+<pre><code class="Python"># 将空值填充为40
+ser4.fillna(value=40)
+</code></pre>
+<p>  输出：</p>
+<pre><code>0    10.0
+1    20.0
+2    40.0
+3    30.0
+4    40.0
+dtype: float64
+</code></pre>
+<p>  代码：</p>
+<pre><code class="Python"># backfill或bfill表示用后一个元素的值填充空值
+# ffill或pad表示用前一个元素的值填充空值
+ser4.fillna(method=&#39;ffill&#39;)
+</code></pre>
+<p>  输出：</p>
+<pre><code>0    10.0
+1    20.0
+2    20.0
+3    30.0
+4    30.0
+dtype: float64
+</code></pre>
+<p>  需要提醒大家注意的是，<code>dropna</code>和<code>fillna</code>方法都有一个名为<code>inplace</code>的参数，它的默认值是<code>False</code>，表示删除空值或填充空值不会修改原来的<code>Series</code>对象，而是返回一个新的<code>Series</code>对象来表示删除或填充空值后的数据系列，如果将<code>inplace</code>参数的值修改为<code>True</code>，那么删除或填充空值会就地操作，直接修改原来的<code>Series</code>对象，那么方法的返回值是<code>None</code>。后面我们会接触到的很多方法，包括<code>DataFrame</code>对象的很多方法都会有这个参数，它们的意义跟这里是一样的。</p>
+<p>  <code>Series</code>对象的<code>mask</code>和<code>where</code>方法可以将满足或不满足条件的值进行替换，如下所示。</p>
+<p>  代码：</p>
+<pre><code class="Python">ser5 = pd.Series(range(5))
+ser5.where(ser5 &gt; 0)
+</code></pre>
+<p>  输出：</p>
+<pre><code>0    NaN
+1    1.0
+2    2.0
+3    3.0
+4    4.0
+dtype: float64
+</code></pre>
+<p>  代码：</p>
+<pre><code class="Python">ser5.where(ser5 &gt; 1, 10)
+</code></pre>
+<p>  输出：</p>
+<pre><code>0    10
+1    10
+2     2
+3     3
+4     4
+dtype: int64
+</code></pre>
+<p>  代码：</p>
+<pre><code class="Python">ser5.mask(ser5 &gt; 1, 10)
+</code></pre>
+<p>  输出：</p>
+<pre><code>0     0
+1     1
+2    10
+3    10
+4    10
+dtype: int64
+</code></pre>
+<p>  <code>Series</code>对象的<code>apply</code>和<code>map</code>方法可以用于对数据进行处理，代码如下所示。</p>
+<p>  代码：</p>
+<pre><code class="Python">ser6 = pd.Series([&#39;cat&#39;, &#39;dog&#39;, np.nan, &#39;rabbit&#39;])
+ser6
+</code></pre>
+<p>  输出：</p>
+<pre><code>0       cat
+1       dog
+2       NaN
+3    rabbit
+dtype: object
+</code></pre>
+<p>  代码：</p>
+<pre><code class="Python">ser6.map(&#123;&#39;cat&#39;: &#39;kitten&#39;, &#39;dog&#39;: &#39;puppy&#39;&#125;)
+</code></pre>
+<p>  输出：</p>
+<pre><code>0    kitten
+1     puppy
+2       NaN
+3       NaN
+dtype: object
+</code></pre>
+<p>  代码：</p>
+<pre><code class="Python">ser6.map(&#39;I am a &#123;&#125;&#39;.format, na_action=&#39;ignore&#39;)
+</code></pre>
+<p>  输出：</p>
+<pre><code>0       I am a cat
+1       I am a dog
+2              NaN
+3    I am a rabbit
+dtype: object
+</code></pre>
+<p>  代码：</p>
+<pre><code class="Python">ser7 = pd.Series([20, 21, 12],  index=[&#39;London&#39;, &#39;New York&#39;, &#39;Helsinki&#39;])
+ser7
+</code></pre>
+<p>  输出：</p>
+<pre><code>London      20
+New York    21
+Helsinki    12
+dtype: int64
+</code></pre>
+<p>  代码：</p>
+<pre><code class="Python">ser7.apply(np.square)
+</code></pre>
+<p>  输出：</p>
+<pre><code>London      400
+New York    441
+Helsinki    144
+dtype: int64
+</code></pre>
+<p>  代码：</p>
+<pre><code class="Python">ser7.apply(lambda x, value: x - value, args=(5, ))
+</code></pre>
+<p>  输出：</p>
+<pre><code>London      15
+New York    16
+Helsinki     7
+dtype: int64
+</code></pre>
+<p>  <code>Series</code>对象的<code>sort_index</code>和<code>sort_values</code>方法可以用于对索引和数据的排序，排序方法有一个名为<code>ascending</code>的布尔类型参数，该参数用于控制排序的结果是升序还是降序；而名为<code>kind</code>的参数则用来控制排序使用的算法，默认使用了<code>quicksort</code>，也可以选择<code>mergesort</code>或<code>heapsort</code>；如果存在空值，那么可以用<code>na_position</code>参数空值放在最前还是最后，默认是<code>last</code>。</p>
+</li>
+</ul>
+<h4 id="绘制图表"><a href="#绘制图表" class="headerlink" title="绘制图表"></a>绘制图表</h4><p>Series对象有一个名为<code>plot</code>的方法可以用来生成图表，如果选择生成折线图、饼图、柱状图等，默认会使用Series对象的索引作为横坐标，使用Series对象的数据作为纵坐标。</p>
+<p>首先导入<code>matplotlib</code>中<code>pyplot</code>模块并进行必要的配置。</p>
+<pre><code class="Python">import matplotlib.pyplot as plt
+
+# 配置支持中文的非衬线字体（默认的字体无法显示中文）
+plt.rcParams[&#39;font.sans-serif&#39;] = [&#39;SimHei&#39;, ]
+# 使用指定的中文字体时需要下面的配置来避免负号无法显示
+plt.rcParams[&#39;axes.unicode_minus&#39;] = False
+</code></pre>
+<p>创建<code>Series</code>对象并绘制对应的柱状图。</p>
+<pre><code class="Python">ser8 = pd.Series(&#123;&#39;一季度&#39;: 400, &#39;二季度&#39;: 520, &#39;三季度&#39;: 180, &#39;四季度&#39;: 380&#125;)
+# 通过Series对象的plot方法绘图（kind=&#39;bar&#39;表示绘制柱状图）
+ser8.plot(kind=&#39;bar&#39;, color=[&#39;r&#39;, &#39;g&#39;, &#39;b&#39;, &#39;y&#39;])
+# x轴的坐标旋转到0度（中文水平显示）
+plt.xticks(rotation=0)
+# 在柱状图的柱子上绘制数字
+for i in range(4):
+    plt.text(i, ser8[i] + 5, ser8[i], ha=&#39;center&#39;)
+# 显示图像
+plt.show()
+</code></pre>
+<p><img src="res/series-bar-graph.png"></p>
+<p>绘制反映每个季度占比的饼图。</p>
+<pre><code class="Python"># autopct参数可以配置在饼图上显示每块饼的占比
+ser8.plot(kind=&#39;pie&#39;, autopct=&#39;%.1f%%&#39;)
+# 设置y轴的标签（显示在饼图左侧的文字）
+plt.ylabel(&#39;各季度占比&#39;)
+plt.show()
+</code></pre>
+<p><img src="res/series-pie-graph.png"></p>
+<h3 id="DataFrame的应用"><a href="#DataFrame的应用" class="headerlink" title="DataFrame的应用"></a>DataFrame的应用</h3><h4 id="创建DataFrame对象"><a href="#创建DataFrame对象" class="headerlink" title="创建DataFrame对象"></a>创建DataFrame对象</h4><h4 id="基本属性和方法"><a href="#基本属性和方法" class="headerlink" title="基本属性和方法"></a>基本属性和方法</h4><h4 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h4><ol>
+<li>索引和切片</li>
+<li>数据筛选</li>
+</ol>
+<h4 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h4><ol>
+<li>数据清洗<ul>
+<li>缺失值处理</li>
+<li>重复值处理</li>
+<li>异常值处理</li>
+</ul>
+</li>
+<li>数据转换<ul>
+<li><code>apply</code>和<code>applymap</code>方法</li>
+<li>字符串向量</li>
+<li>时间日期向量</li>
+</ul>
+</li>
+<li>数据合并<ul>
+<li><code>concat</code>函数</li>
+<li><code>merge</code>函数</li>
+</ul>
+</li>
+</ol>
+<h4 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h4><ol>
+<li>描述性统计信息</li>
+<li>分组聚合操作<ul>
+<li><code>groupby</code>方法</li>
+<li>透视表和交叉表</li>
+<li>数据分箱</li>
+</ul>
+</li>
+</ol>
+<h4 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h4><ol>
+<li>用<code>plot</code>方法出图</li>
+<li>其他方法</li>
+</ol>
+
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Pandas%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">Pandas的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Series%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">Series的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BASeries%E5%AF%B9%E8%B1%A1"><span class="toc-text">创建Series对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E5%92%8C%E5%88%87%E7%89%87"><span class="toc-text">索引和切片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E5%9B%BE%E8%A1%A8"><span class="toc-text">绘制图表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DataFrame%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">DataFrame的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BADataFrame%E5%AF%B9%E8%B1%A1"><span class="toc-text">创建DataFrame对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95"><span class="toc-text">基本属性和方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-text">获取数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86"><span class="toc-text">数据处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="toc-text">数据分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-text">数据可视化</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </div>
+
+
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/2021/10/17/Python-100-Days-master/Day66-70/68.Pandas的应用/">http://example.com/2021/10/17/Python-100-Days-master/Day66-70/68.Pandas的应用/</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2021/10/17/Python-100-Days-master/Day66-70/69.%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/10/17/Python-100-Days-master/Day66-70/67.NumPy%E7%9A%84%E5%BA%94%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+      
+      
+        
+
+
+
+
+
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> Recent</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E4%BB%AC%E8%B8%A9%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E8%8B%B1%E8%AF%AD%E9%9D%A2%E8%AF%95/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%9F%A5%E4%B9%8E%E9%97%AE%E9%A2%98%E5%9B%9E%E7%AD%94/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%94%A8%E5%87%BD%E6%95%B0%E8%BF%98%E6%98%AF%E7%94%A8%E5%A4%8D%E6%9D%82%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%8E%A9%E8%BD%ACPyCharm/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/PEP8/" style="font-size: 10px;">PEP8</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-classify"></i> Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> Archive</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021年10月</a><span class="archive-list-count">173</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019年08月</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/PEP8/" rel="tag">PEP8</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> Blogroll</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example1.com/">site-name1</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example2.com/">site-name2</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example3.com/">site-name3</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">Site Map</a>
+        <span> | </span><a href="/atom.xml">Subscribe to this site</a>
+        <span> | </span><a href="/about/">Contact the blogger</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2021 John Doe.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+<script src="/localshare/js/social-share.js"></script>
+
+  
+<script src="/localshare/js/qrcode.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

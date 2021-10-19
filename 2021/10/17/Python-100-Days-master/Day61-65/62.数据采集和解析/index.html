@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
+
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> Home</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> Archive</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> About</a>
+        
+          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> RSS</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="search"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Python-100-Days-master/Day61-65/62.数据采集和解析" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:55.573Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/Day61-65/62.%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E5%92%8C%E8%A7%A3%E6%9E%90/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="数据采集和解析"><a href="#数据采集和解析" class="headerlink" title="数据采集和解析"></a>数据采集和解析</h2><p>通过上一个章节的讲解，我们已经了解到了开发一个爬虫需要做的工作以及一些常见的问题，下面我们给出一个爬虫开发相关技术的清单以及这些技术涉及到的标准库和第三方库，稍后我们会一一介绍这些内容。</p>
+<ol>
+<li>下载数据 - <strong>urllib</strong> / <strong>requests</strong> / <strong>aiohttp</strong> / <strong>httpx</strong>。</li>
+<li>解析数据 - <strong>re</strong> / <strong>lxml</strong> / <strong>beautifulsoup4</strong> / <strong>pyquery</strong>。</li>
+<li>缓存和持久化 - <strong>mysqlclient</strong> / <strong>sqlalchemy</strong> / <strong>peewee</strong> / <strong>redis</strong> / <strong>pymongo</strong>。</li>
+<li>生成数字签名 - <strong>hashlib</strong>。</li>
+<li>序列化和压缩 - <strong>pickle</strong> / <strong>json</strong> / <strong>zlib</strong>。</li>
+<li>调度器 - <strong>multiprocessing</strong> / <strong>threading</strong> / <strong>concurrent.futures</strong>。</li>
+</ol>
+<h3 id="HTML页面"><a href="#HTML页面" class="headerlink" title="HTML页面"></a>HTML页面</h3><pre><code class="HTML">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Home&lt;/title&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+            /* 此处省略层叠样式表代码 */
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;wrapper&quot;&gt;
+            &lt;header&gt;
+                &lt;h1&gt;Yoko&#39;s Kitchen&lt;/h1&gt;
+                &lt;nav&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;&quot; class=&quot;current&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;&quot;&gt;Classes&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;&quot;&gt;Catering&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/header&gt;
+            &lt;section class=&quot;courses&quot;&gt;
+                &lt;article&gt;
+                    &lt;figure&gt;
+                        &lt;img src=&quot;images/bok-choi.jpg&quot; alt=&quot;Bok Choi&quot; /&gt;
+                        &lt;figcaption&gt;Bok Choi&lt;/figcaption&gt;
+                    &lt;/figure&gt;
+                    &lt;hgroup&gt;
+                        &lt;h2&gt;Japanese Vegetarian&lt;/h2&gt;
+                        &lt;h3&gt;Five week course in London&lt;/h3&gt;
+                    &lt;/hgroup&gt;
+                    &lt;p&gt;A five week introduction to traditional Japanese vegetarian meals, teaching you a selection of rice and noodle dishes.&lt;/p&gt;
+                &lt;/article&gt;    
+                &lt;article&gt;
+                    &lt;figure&gt;
+                        &lt;img src=&quot;images/teriyaki.jpg&quot; alt=&quot;Teriyaki sauce&quot; /&gt;
+                        &lt;figcaption&gt;Teriyaki Sauce&lt;/figcaption&gt;
+                    &lt;/figure&gt;
+                    &lt;hgroup&gt;
+                        &lt;h2&gt;Sauces Masterclass&lt;/h2&gt;
+                        &lt;h3&gt;One day workshop&lt;/h3&gt;
+                    &lt;/hgroup&gt;
+                    &lt;p&gt;An intensive one-day course looking at how to create the most delicious sauces for use in a range of Japanese cookery.&lt;/p&gt;
+                &lt;/article&gt;    
+            &lt;/section&gt;
+            &lt;aside&gt;
+                &lt;section class=&quot;popular-recipes&quot;&gt;
+                    &lt;h2&gt;Popular Recipes&lt;/h2&gt;
+                    &lt;a href=&quot;&quot;&gt;Yakitori (grilled chicken)&lt;/a&gt;
+                    &lt;a href=&quot;&quot;&gt;Tsukune (minced chicken patties)&lt;/a&gt;
+                    &lt;a href=&quot;&quot;&gt;Okonomiyaki (savory pancakes)&lt;/a&gt;
+                    &lt;a href=&quot;&quot;&gt;Mizutaki (chicken stew)&lt;/a&gt;
+                &lt;/section&gt;
+                &lt;section class=&quot;contact-details&quot;&gt;
+                    &lt;h2&gt;Contact&lt;/h2&gt;
+                    &lt;p&gt;Yoko&#39;s Kitchen&lt;br&gt;
+                        27 Redchurch Street&lt;br&gt;
+                        Shoreditch&lt;br&gt;
+                        London E2 7DP&lt;/p&gt;
+                &lt;/section&gt;
+            &lt;/aside&gt;
+            &lt;footer&gt;
+                &amp;copy; 2011 Yoko&#39;s Kitchen
+            &lt;/footer&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+            /* 此处省略JavaScript代码 */
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>如上所示的HTML页面通常由三部分构成，分别是用来承载内容的Tag（标签）、负责渲染页面的CSS（层叠样式表）以及控制交互式行为的JavaScript。通常，我们可以在浏览器的右键菜单中通过“查看网页源代码”的方式获取网页的代码并了解页面的结构；当然，我们也可以通过浏览器提供的开发人员工具来了解更多的信息。</p>
+<h4 id="使用requests获取页面"><a href="#使用requests获取页面" class="headerlink" title="使用requests获取页面"></a>使用requests获取页面</h4><p>在上一节课的代码中我们使用了三方库<code>requests</code>来获取页面，下面我们对<code>requests</code>库的用法做进一步说明。</p>
+<ol>
+<li><p>GET请求和POST请求。</p>
+<pre><code class="Python">import requests
+
+resp = requests.get(&#39;http://www.baidu.com/index.html&#39;)
+print(resp.status_code)
+print(resp.headers)
+print(resp.cookies)
+print(resp.content.decode(&#39;utf-8&#39;))
+
+resp = requests.post(&#39;http://httpbin.org/post&#39;, data=&#123;&#39;name&#39;: &#39;Hao&#39;, &#39;age&#39;: 40&#125;)
+print(resp.text)
+data = resp.json()
+print(type(data))
+</code></pre>
+</li>
+<li><p>URL参数和请求头。</p>
+<pre><code class="Python">resp = requests.get(
+    url=&#39;https://movie.douban.com/top250&#39;,
+    headers=&#123;
+        &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) &#39;
+                      &#39;AppleWebKit/537.36 (KHTML, like Gecko) &#39;
+                      &#39;Chrome/83.0.4103.97 Safari/537.36&#39;,
+        &#39;Accept&#39;: &#39;text/html,application/xhtml+xml,application/xml;&#39;
+                  &#39;q=0.9,image/webp,image/apng,*/*;&#39;
+                  &#39;q=0.8,application/signed-exchange;v=b3;q=0.9&#39;,
+        &#39;Accept-Language&#39;: &#39;zh-CN,zh;q=0.9,en;q=0.8&#39;,
+    &#125;
+)
+print(resp.status_code)
+</code></pre>
+</li>
+<li><p>复杂的POST请求（文件上传）。</p>
+<pre><code class="Python">resp = requests.post(
+    url=&#39;http://httpbin.org/post&#39;,
+    files=&#123;&#39;file&#39;: open(&#39;data.xlsx&#39;, &#39;rb&#39;)&#125;
+)
+print(resp.text)
+</code></pre>
+</li>
+<li><p>操作Cookie。</p>
+<pre><code class="Python">cookies = &#123;&#39;key1&#39;: &#39;value1&#39;, &#39;key2&#39;: &#39;value2&#39;&#125;
+resp = requests.get(&#39;http://httpbin.org/cookies&#39;, cookies=cookies)
+print(resp.text)
+
+jar = requests.cookies.RequestsCookieJar()
+jar.set(&#39;tasty_cookie&#39;, &#39;yum&#39;, domain=&#39;httpbin.org&#39;, path=&#39;/cookies&#39;)
+jar.set(&#39;gross_cookie&#39;, &#39;blech&#39;, domain=&#39;httpbin.org&#39;, path=&#39;/elsewhere&#39;)
+resp = requests.get(&#39;http://httpbin.org/cookies&#39;, cookies=jar)
+print(resp.text)
+</code></pre>
+</li>
+<li><p>设置代理服务器。</p>
+<pre><code class="Python">requests.get(&#39;https://www.taobao.com&#39;, proxies=&#123;
+    &#39;http&#39;: &#39;http://10.10.1.10:3128&#39;,
+    &#39;https&#39;: &#39;http://10.10.1.10:1080&#39;,
+&#125;)
+</code></pre>
+<blockquote>
+<p><strong>说明</strong>：关于<code>requests</code>库的相关知识，还是强烈建议大家自行阅读它的<a target="_blank" rel="noopener" href="https://requests.readthedocs.io/zh_CN/latest/">官方文档</a>。</p>
+</blockquote>
+</li>
+<li><p>设置请求超时。</p>
+<pre><code class="Python">requests.get(&#39;https://github.com&#39;, timeout=10)
+</code></pre>
+</li>
+</ol>
+<h3 id="页面解析"><a href="#页面解析" class="headerlink" title="页面解析"></a>页面解析</h3><h4 id="几种解析方式的比较"><a href="#几种解析方式的比较" class="headerlink" title="几种解析方式的比较"></a>几种解析方式的比较</h4><table>
+<thead>
+<tr>
+<th>解析方式</th>
+<th>对应的模块</th>
+<th>速度</th>
+<th>使用难度</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>正则表达式解析</td>
+<td>re</td>
+<td>快</td>
+<td>困难</td>
+<td>常用正则表达式<br/>在线正则表达式测试</td>
+</tr>
+<tr>
+<td>XPath解析</td>
+<td>lxml</td>
+<td>快</td>
+<td>一般</td>
+<td>需要安装C语言依赖库<br/>唯一支持XML的解析器</td>
+</tr>
+<tr>
+<td>CSS选择器解析</td>
+<td>bs4 / pyquery</td>
+<td>不确定</td>
+<td>简单</td>
+<td></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>说明</strong>：<code>BeautifulSoup</code>可选的解析器包括：Python标准库中的<code>html.parser</code>、<code>lxml</code>的HTML解析器、<code>lxml</code>的XML解析器和<code>html5lib</code>。</p>
+</blockquote>
+<h4 id="使用正则表达式解析页面"><a href="#使用正则表达式解析页面" class="headerlink" title="使用正则表达式解析页面"></a>使用正则表达式解析页面</h4><p>如果你对正则表达式没有任何的概念，那么推荐先阅读<a target="_blank" rel="noopener" href="https://deerchao.cn/tutorials/regex/regex.htm">《正则表达式30分钟入门教程》</a>，然后再阅读我们之前讲解在Python中如何使用正则表达式一文。</p>
+<p>下面的例子演示了如何用正则表达式解析“豆瓣电影Top250”中的中文电影名称。</p>
+<pre><code class="Python">import random
+import re
+import time
+
+import requests
+
+PATTERN = re.compile(r&#39;&lt;a[^&gt;]*?&gt;\s*&lt;span class=&quot;title&quot;&gt;(.*?)&lt;/span&gt;&#39;)
+
+for page in range(10):
+    resp = requests.get(
+        url=f&#39;https://movie.douban.com/top250?start=&#123;page * 25&#125;&#39;,
+        headers=&#123;
+            &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) &#39;
+                          &#39;AppleWebKit/537.36 (KHTML, like Gecko) &#39;
+                          &#39;Chrome/83.0.4103.97 Safari/537.36&#39;,
+            &#39;Accept&#39;: &#39;text/html,application/xhtml+xml,application/xml;&#39;
+                      &#39;q=0.9,image/webp,image/apng,*/*;&#39;
+                      &#39;q=0.8,application/signed-exchange;v=b3;q=0.9&#39;,
+            &#39;Accept-Language&#39;: &#39;zh-CN,zh;q=0.9,en;q=0.8&#39;,
+        &#125;,
+    )
+    items = PATTERN.findall(resp.text)
+    for item in items:
+        print(item)
+    time.sleep(random.randint(1, 5))
+</code></pre>
+<h4 id="XPath解析和lxml"><a href="#XPath解析和lxml" class="headerlink" title="XPath解析和lxml"></a>XPath解析和lxml</h4><p>XPath是在XML文档中查找信息的一种语法，它使用路径表达式来选取XML文档中的节点或者节点集。这里所说的XPath节点包括元素、属性、文本、命名空间、处理指令、注释、根节点等。</p>
+<pre><code class="XML">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;bookstore&gt;
+    &lt;book&gt;
+      &lt;title lang=&quot;eng&quot;&gt;Harry Potter&lt;/title&gt;
+      &lt;price&gt;29.99&lt;/price&gt;
+    &lt;/book&gt;
+    &lt;book&gt;
+      &lt;title lang=&quot;zh&quot;&gt;三国演义&lt;/title&gt;
+      &lt;price&gt;39.95&lt;/price&gt;
+    &lt;/book&gt;
+&lt;/bookstore&gt;
+</code></pre>
+<p>对于上面的XML文件，我们可以用如下所示的XPath语法获取文档中的节点。</p>
+<table>
+<thead>
+<tr>
+<th>路径表达式</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bookstore</td>
+<td>选取 bookstore 元素的所有子节点。</td>
+</tr>
+<tr>
+<td>/bookstore</td>
+<td>选取根元素 bookstore。注释：假如路径起始于正斜杠( / )，则此路径始终代表到某元素的绝对路径！</td>
+</tr>
+<tr>
+<td>bookstore/book</td>
+<td>选取属于 bookstore 的子元素的所有 book 元素。</td>
+</tr>
+<tr>
+<td>//book</td>
+<td>选取所有 book 子元素，而不管它们在文档中的位置。</td>
+</tr>
+<tr>
+<td>bookstore//book</td>
+<td>选择属于 bookstore 元素的后代的所有 book 元素，而不管它们位于 bookstore 之下的什么位置。</td>
+</tr>
+<tr>
+<td>//@lang</td>
+<td>选取名为 lang 的所有属性。</td>
+</tr>
+</tbody></table>
+<p>在使用XPath语法时，还可以使用XPath中的谓词。</p>
+<table>
+<thead>
+<tr>
+<th>路径表达式</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/bookstore/book[1]</td>
+<td>选取属于 bookstore 子元素的第一个 book 元素。</td>
+</tr>
+<tr>
+<td>/bookstore/book[last()]</td>
+<td>选取属于 bookstore 子元素的最后一个 book 元素。</td>
+</tr>
+<tr>
+<td>/bookstore/book[last()-1]</td>
+<td>选取属于 bookstore 子元素的倒数第二个 book 元素。</td>
+</tr>
+<tr>
+<td>/bookstore/book[position()&lt;3]</td>
+<td>选取最前面的两个属于 bookstore 元素的子元素的 book 元素。</td>
+</tr>
+<tr>
+<td>//title[@lang]</td>
+<td>选取所有拥有名为 lang 的属性的 title 元素。</td>
+</tr>
+<tr>
+<td>//title[@lang=’eng’]</td>
+<td>选取所有 title 元素，且这些元素拥有值为 eng 的 lang 属性。</td>
+</tr>
+<tr>
+<td>/bookstore/book[price&gt;35.00]</td>
+<td>选取 bookstore 元素的所有 book 元素，且其中的 price 元素的值须大于 35.00。</td>
+</tr>
+<tr>
+<td>/bookstore/book[price&gt;35.00]/title</td>
+<td>选取 bookstore 元素中的 book 元素的所有 title 元素，且其中的 price 元素的值须大于 35.00。</td>
+</tr>
+</tbody></table>
+<p>XPath还支持通配符用法，如下所示。</p>
+<table>
+<thead>
+<tr>
+<th>路径表达式</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/bookstore/*</td>
+<td>选取 bookstore 元素的所有子元素。</td>
+</tr>
+<tr>
+<td>//*</td>
+<td>选取文档中的所有元素。</td>
+</tr>
+<tr>
+<td>//title[@*]</td>
+<td>选取所有带有属性的 title 元素。</td>
+</tr>
+</tbody></table>
+<p>如果要选取多个节点，可以使用如下所示的方法。</p>
+<table>
+<thead>
+<tr>
+<th>路径表达式</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>//book/title | //book/price</td>
+<td>选取 book 元素的所有 title 和 price 元素。</td>
+</tr>
+<tr>
+<td>//title | //price</td>
+<td>选取文档中的所有 title 和 price 元素。</td>
+</tr>
+<tr>
+<td>/bookstore/book/title | //price</td>
+<td>选取属于 bookstore 元素的 book 元素的所有 title 元素，以及文档中所有的 price 元素。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>说明</strong>：上面的例子来自于菜鸟教程网站上<a target="_blank" rel="noopener" href="https://www.runoob.com/xpath/xpath-tutorial.html">XPath教程</a>，有兴趣的读者可以自行阅读原文。</p>
+</blockquote>
+<p>当然，如果不理解或者不太熟悉XPath语法，可以在Chrome浏览器中按照如下所示的方法查看元素的XPath语法。</p>
+<p><img src="./res/douban-xpath.png"></p>
+<p>下面的例子演示了如何用XPath解析“豆瓣电影Top250”中的中文电影名称。</p>
+<pre><code class="Python">from lxml import etree
+
+import requests
+
+for page in range(10):
+    resp = requests.get(
+        url=f&#39;https://movie.douban.com/top250?start=&#123;page * 25&#125;&#39;,
+        headers=&#123;
+            &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) &#39;
+                          &#39;AppleWebKit/537.36 (KHTML, like Gecko) &#39;
+                          &#39;Chrome/83.0.4103.97 Safari/537.36&#39;,
+            &#39;Accept&#39;: &#39;text/html,application/xhtml+xml,application/xml;&#39;
+                      &#39;q=0.9,image/webp,image/apng,*/*;&#39;
+                      &#39;q=0.8,application/signed-exchange;v=b3;q=0.9&#39;,
+            &#39;Accept-Language&#39;: &#39;zh-CN,zh;q=0.9,en;q=0.8&#39;,
+        &#125;
+    )
+    html = etree.HTML(resp.text)
+    spans = html.xpath(&#39;/html/body/div[3]/div[1]/div/div[1]/ol/li/div/div[2]/div[1]/a/span[1]&#39;)
+    for span in spans:
+        print(span.text)
+</code></pre>
+<h3 id="BeautifulSoup的使用"><a href="#BeautifulSoup的使用" class="headerlink" title="BeautifulSoup的使用"></a>BeautifulSoup的使用</h3><p>BeautifulSoup是一个可以从HTML或XML文件中提取数据的Python库。它能够通过你喜欢的转换器实现惯用的文档导航、查找、修改文档的方式。</p>
+<ol>
+<li>遍历文档树<ul>
+<li>获取标签</li>
+<li>获取标签属性</li>
+<li>获取标签内容</li>
+<li>获取子（孙）节点</li>
+<li>获取父节点/祖先节点</li>
+<li>获取兄弟节点</li>
+</ul>
+</li>
+<li>搜索树节点<ul>
+<li>find / find_all</li>
+<li>select_one / select</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p><strong>说明</strong>：更多内容可以参考BeautifulSoup的<a target="_blank" rel="noopener" href="https://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/">官方文档</a>。</p>
+</blockquote>
+<p>下面的例子演示了如何用CSS选择器解析“豆瓣电影Top250”中的中文电影名称。</p>
+<pre><code class="Python">import random
+import time
+
+import bs4
+import requests
+
+for page in range(10):
+    resp = requests.get(
+        url=f&#39;https://movie.douban.com/top250?start=&#123;page * 25&#125;&#39;,
+        headers=&#123;
+            &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) &#39;
+                          &#39;AppleWebKit/537.36 (KHTML, like Gecko) &#39;
+                          &#39;Chrome/83.0.4103.97 Safari/537.36&#39;,
+            &#39;Accept&#39;: &#39;text/html,application/xhtml+xml,application/xml;&#39;
+                      &#39;q=0.9,image/webp,image/apng,*/*;&#39;
+                      &#39;q=0.8,application/signed-exchange;v=b3;q=0.9&#39;,
+            &#39;Accept-Language&#39;: &#39;zh-CN,zh;q=0.9,en;q=0.8&#39;,
+        &#125;,
+    )
+    soup = bs4.BeautifulSoup(resp.text, &#39;lxml&#39;)
+    elements = soup.select(&#39;.info&gt;div&gt;a&#39;)
+    for element in elements:
+        span = element.select_one(&#39;.title&#39;)
+        print(span.text)
+    time.sleep(random.random() * 5)
+</code></pre>
+<h3 id="例子-获取知乎发现上的问题链接"><a href="#例子-获取知乎发现上的问题链接" class="headerlink" title="例子 - 获取知乎发现上的问题链接"></a>例子 - 获取知乎发现上的问题链接</h3><pre><code class="Python">import re
+from urllib.parse import urljoin
+
+import bs4
+import requests
+
+
+def main():
+    headers = &#123;&#39;user-agent&#39;: &#39;Baiduspider&#39;&#125;
+    base_url = &#39;https://www.zhihu.com/&#39;
+    resp = requests.get(urljoin(base_url, &#39;explore&#39;), headers=headers)
+    soup = bs4.BeautifulSoup(resp.text, &#39;lxml&#39;)
+    href_regex = re.compile(r&#39;^/question&#39;)
+    links_set = set()
+    for a_tag in soup.find_all(&#39;a&#39;, &#123;&#39;href&#39;: href_regex&#125;):
+        if &#39;href&#39; in a_tag.attrs:
+            href = a_tag.attrs[&#39;href&#39;]
+            full_url = urljoin(base_url, href)
+            links_set.add(full_url)
+    print(&#39;Total %d question pages found.&#39; % len(links_set))
+    print(links_set)
+
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E5%92%8C%E8%A7%A3%E6%9E%90"><span class="toc-text">数据采集和解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML%E9%A1%B5%E9%9D%A2"><span class="toc-text">HTML页面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8requests%E8%8E%B7%E5%8F%96%E9%A1%B5%E9%9D%A2"><span class="toc-text">使用requests获取页面</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E8%A7%A3%E6%9E%90"><span class="toc-text">页面解析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%A0%E7%A7%8D%E8%A7%A3%E6%9E%90%E6%96%B9%E5%BC%8F%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-text">几种解析方式的比较</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%A7%A3%E6%9E%90%E9%A1%B5%E9%9D%A2"><span class="toc-text">使用正则表达式解析页面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#XPath%E8%A7%A3%E6%9E%90%E5%92%8Clxml"><span class="toc-text">XPath解析和lxml</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BeautifulSoup%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">BeautifulSoup的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90-%E8%8E%B7%E5%8F%96%E7%9F%A5%E4%B9%8E%E5%8F%91%E7%8E%B0%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98%E9%93%BE%E6%8E%A5"><span class="toc-text">例子 - 获取知乎发现上的问题链接</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/2021/10/17/Python-100-Days-master/Day61-65/62.数据采集和解析/">http://example.com/2021/10/17/Python-100-Days-master/Day61-65/62.数据采集和解析/</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2021/10/17/Python-100-Days-master/Day61-65/63.%E5%AD%98%E5%82%A8%E6%95%B0%E6%8D%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/10/17/Python-100-Days-master/Day61-65/61.%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%92%8C%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+      
+      
+        
+
+
+
+
+
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> Recent</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E4%BB%AC%E8%B8%A9%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E8%8B%B1%E8%AF%AD%E9%9D%A2%E8%AF%95/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%9F%A5%E4%B9%8E%E9%97%AE%E9%A2%98%E5%9B%9E%E7%AD%94/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%94%A8%E5%87%BD%E6%95%B0%E8%BF%98%E6%98%AF%E7%94%A8%E5%A4%8D%E6%9D%82%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%8E%A9%E8%BD%ACPyCharm/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/PEP8/" style="font-size: 10px;">PEP8</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-classify"></i> Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> Archive</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021年10月</a><span class="archive-list-count">173</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019年08月</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/PEP8/" rel="tag">PEP8</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> Blogroll</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example1.com/">site-name1</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example2.com/">site-name2</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example3.com/">site-name3</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">Site Map</a>
+        <span> | </span><a href="/atom.xml">Subscribe to this site</a>
+        <span> | </span><a href="/about/">Contact the blogger</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2021 John Doe.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+<script src="/localshare/js/social-share.js"></script>
+
+  
+<script src="/localshare/js/qrcode.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

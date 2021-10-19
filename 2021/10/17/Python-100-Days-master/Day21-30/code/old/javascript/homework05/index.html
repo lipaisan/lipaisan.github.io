@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
+
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> Home</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> Archive</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> About</a>
+        
+          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> RSS</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="search"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Python-100-Days-master/Day21-30/code/old/javascript/homework05" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:54.924Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework05/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* { 
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				width: 960px;
+				margin: 20px auto;
+			}
+			#cart {
+				margin: 0 auto;
+				width: 850px;
+			}
+			#cart-header {
+				height: 40px;
+				background-color: lightgray;
+				margin-bottom: 20px;
+			}
+			#cart-header div {
+				line-height: 40px;
+			}
+			.left {
+				float: left;
+			}
+			.right {
+				float: right;
+			}
+			.w110 {
+				width: 100px;
+			}
+			.ml10 {
+				margin-left: 10px;
+			}
+			.w120 {
+				width: 120px;
+			}
+			.w250 {
+				width: 250px;
+			}
+			.center {
+				text-align: center;
+			}
+			.w20 {
+				width: 20px;
+			}
+			.w90 {
+				width: 90px;
+			}
+			.clear {
+				clear: both;
+			}
+			#cart-items>div {
+				height: 100px;
+			}
+			#cart-items>div>div {
+				line-height: 100px;
+			}
+			.w250 span {
+				display: inline-block;
+				font-size: 12px;
+				line-height: 16px !important;
+			}
+			.single-item {
+				border-bottom: 1px solid gray;
+			}
+			.small-button {
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				border: none;
+			}
+			.big-button {
+				color: white;
+				background-color: red;
+				display: inline-block;
+				width: 120px;
+				height: 40px;
+				border: none;
+				font-size: 22px;
+			}
+			#totalCount, #totalPrice {
+				color: red;
+			}
+			#totalPrice {
+				font: bolder 20px Arial;
+				display: inline-block;
+				width: 150px;
+			}
+			#cart a {
+				text-decoration: none;
+			}
+			#cart a:link, #cart a:visited, #cart a:active {
+				color: gray;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="cart">
+			<div id="cart-header">
+				<div class="left w110 ml10">
+					<input id="selectAll" type="checkbox">
+					<label for="selectAll">全选</label>
+				</div>
+				<div class="left w250">商品</div>
+				<div class="left w120 center">单价</div>
+				<div class="left w120 center">数量</div>
+				<div class="left w120 center">小计</div>
+				<div class="left w120 center">操作</div>
+			</div>
+			<div id="cart-items">
+				<div class="clear single-item">
+					<div class="left w20 ml10">
+						<input name="selectOne" type="checkbox">
+					</div>
+					<div class="left w90">
+						<a href="">
+							<img src="img/a1.jpg">
+						</a>
+					</div>
+					<div class="left w250">
+						<span>
+						海澜之家/Heilan Home春装商务白衬衫男修身HNCAD3A067Y 漂白(69) 漂
+						</span>
+					</div>
+					<div class="left w120 center">&yen;<span class="price">138.00</span></div>
+					<div class="left w120 center">
+						<button class="small-button">-</button>
+						<input class="center count" readonly type="text" size="3" value="1">
+						<button class="small-button">+</button>
+					</div>
+					<div class="left w120 center">&yen;<span>138.00</span></div>
+					<div class="left w120 center">
+						<a href="javascript:void(0);">删除</a>
+					</div>
+				</div>
+				<div class="clear single-item">
+					<div class="left w20 ml10">
+						<input name="selectOne" type="checkbox">
+					</div>
+					<div class="left w90">
+						<a href="">
+							<img src="img/a2.jpg">
+						</a>
+					</div>
+					<div class="left w250">
+						<span>
+						HLA海澜之家长袖衬衫男牛津纺休闲干净透气HNEAJ1E048A浅灰
+						</span>
+					</div>
+					<div class="left w120 center">&yen;<span class="price">128.00</span></div>
+					<div class="left w120 center">
+						<button class="small-button">-</button>
+						<input class="center count" readonly type="text" size="3" value="1">
+						<button class="small-button">+</button>
+					</div>
+					<div class="left w120 center">&yen;<span>128.00</span></div>
+					<div class="left w120 center">
+						<a href="javascript:void(0);">删除</a>
+					</div>
+				</div>
+				<div class="clear single-item">
+					<div class="left w20 ml10">
+						<input name="selectOne" type="checkbox">
+					</div>
+					<div class="left w90">
+						<a href="">
+							<img src="img/a3.jpg">
+						</a>
+					</div>
+					<div class="left w250">
+						<span>
+						HLA海澜之家牛津纺清新休闲衬衫2018春季新品质感柔软长袖衬衫男
+						</span>
+					</div>
+					<div class="left w120 center">&yen;<span class="price">99.00</span></div>
+					<div class="left w120 center">
+						<button class="small-button">-</button>
+						<input class="center count" readonly type="text" size="3" value="1">
+						<button class="small-button">+</button>
+					</div>
+					<div class="left w120 center">&yen;99.00</div>
+					<div class="left w120 center">
+						<a href="javascript:void(0);">删除</a>
+					</div>
+				</div>
+			</div>
+			<div id="cart-footer">
+				<div class="clear left">
+					<a id="clearSelected" href="javascript:void(0);">删除选中商品</a>
+				</div>
+				<div class="right">
+					<span>总共选中了<span id="totalCount">0</span>件商品</span>
+					<span>总计: <span id="totalPrice">&yen;0.00</span></span>
+					<button id="pay" class="big-button">去结算</button>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			function calcTotal() {
+				var amountsInput = $('.single-item input[type=text]');
+				var pricesSpan = $('.single-item .price');
+				var checkboxes = $('.single-item input[type=checkbox]');
+				var totalAmount = 0;
+				var totalPrice = 0;
+				amountsInput.each(function(index) {
+					if (checkboxes[index].checked) {
+						var amount = parseInt($(this).val());
+						totalAmount += amount;
+						var price = parseFloat($(pricesSpan[index]).text());
+						var currentPrice = (price * amount).toFixed(2);
+						$(this).parent().next().find('span').text(currentPrice);
+						totalPrice += parseFloat(currentPrice);
+					}
+				});
+				$('#totalCount').text(totalAmount);
+				$('#totalPrice').text('￥' + totalPrice.toFixed(2));
+			}
+			
+			$(function() {				
+				$('#selectAll').on('click', function(evt) {
+					$('.single-item input[type=checkbox]').prop('checked', evt.target.checked);
+					calcTotal();
+				});
+				
+				$('.single-item button').on('click', function(evt) {
+					var op = $(evt.target).text();
+					if (op == '-') {
+						var numInput = $(evt.target).next();
+						var num = parseInt(numInput.val());
+						if (num > 1) {
+							numInput.val(num - 1);
+						}
+					} else {
+						var numInput = $(evt.target).prev();
+						var num = parseInt(numInput.val());
+						if (num < 200) {
+							numInput.val(num + 1);
+						}
+					}
+					$(evt.target).parent().parent().find('input[type=checkbox]').prop('checked', true);
+					calcTotal();
+				});
+				
+				$('.single-item input[type=checkbox]').on('click', function() {
+					calcTotal();
+				});
+				
+				$('.single-item a').on('click', function(evt) {
+					if (confirm('确定要删除该商品吗?')) {
+						$(evt.target).parent().parent().remove();
+						calcTotal();
+					}
+				});
+				
+				$('#clearSelected').on('click', function() {
+					if (confirm('确定要删除选中的商品吗?')) {
+						$('.single-item').each(function() {
+							if ($(this).find('input:checkbox').prop('checked')) {
+								$(this).remove();
+							}
+						});
+						calcTotal();
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
+
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
+    <div class="widget">
+      
+    </div>
+  </div>
+
+
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework05/">http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework05/</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework06/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework04/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+      
+      
+        
+
+
+
+
+
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> Recent</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E4%BB%AC%E8%B8%A9%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E8%8B%B1%E8%AF%AD%E9%9D%A2%E8%AF%95/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%9F%A5%E4%B9%8E%E9%97%AE%E9%A2%98%E5%9B%9E%E7%AD%94/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%94%A8%E5%87%BD%E6%95%B0%E8%BF%98%E6%98%AF%E7%94%A8%E5%A4%8D%E6%9D%82%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%8E%A9%E8%BD%ACPyCharm/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/PEP8/" style="font-size: 10px;">PEP8</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-classify"></i> Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> Archive</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021年10月</a><span class="archive-list-count">173</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019年08月</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/PEP8/" rel="tag">PEP8</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> Blogroll</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example1.com/">site-name1</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example2.com/">site-name2</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example3.com/">site-name3</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">Site Map</a>
+        <span> | </span><a href="/atom.xml">Subscribe to this site</a>
+        <span> | </span><a href="/about/">Contact the blogger</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2021 John Doe.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+<script src="/localshare/js/social-share.js"></script>
+
+  
+<script src="/localshare/js/qrcode.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

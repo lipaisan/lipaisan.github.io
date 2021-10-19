@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
+
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> Home</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> Archive</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> About</a>
+        
+          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> RSS</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="search"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Python-100-Days-master/Day01-15/15.图像和办公文档处理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:53.692Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/Day01-15/15.%E5%9B%BE%E5%83%8F%E5%92%8C%E5%8A%9E%E5%85%AC%E6%96%87%E6%A1%A3%E5%A4%84%E7%90%86/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="图像和办公文档处理"><a href="#图像和办公文档处理" class="headerlink" title="图像和办公文档处理"></a>图像和办公文档处理</h2><p>用程序来处理图像和办公文档经常出现在实际开发中，Python的标准库中虽然没有直接支持这些操作的模块，但我们可以通过Python生态圈中的第三方模块来完成这些操作。</p>
+<h3 id="操作图像"><a href="#操作图像" class="headerlink" title="操作图像"></a>操作图像</h3><h4 id="计算机图像相关知识"><a href="#计算机图像相关知识" class="headerlink" title="计算机图像相关知识"></a>计算机图像相关知识</h4><ol>
+<li><p>颜色。如果你有使用颜料画画的经历，那么一定知道混合红、黄、蓝三种颜料可以得到其他的颜色，事实上这三种颜色就是被我们称为美术三原色的东西，它们是不能再分解的基本颜色。在计算机中，我们可以将红、绿、蓝三种色光以不同的比例叠加来组合成其他的颜色，因此这三种颜色就是色光三原色，所以我们通常会将一个颜色表示为一个RGB值或RGBA值（其中的A表示Alpha通道，它决定了透过这个图像的像素，也就是透明度）。</p>
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">RGBA值</th>
+<th align="center">名称</th>
+<th align="center">RGBA值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">White</td>
+<td align="center">(255, 255, 255, 255)</td>
+<td align="center">Red</td>
+<td align="center">(255, 0, 0, 255)</td>
+</tr>
+<tr>
+<td align="center">Green</td>
+<td align="center">(0, 255, 0, 255)</td>
+<td align="center">Blue</td>
+<td align="center">(0, 0, 255, 255)</td>
+</tr>
+<tr>
+<td align="center">Gray</td>
+<td align="center">(128, 128, 128, 255)</td>
+<td align="center">Yellow</td>
+<td align="center">(255, 255, 0, 255)</td>
+</tr>
+<tr>
+<td align="center">Black</td>
+<td align="center">(0, 0, 0, 255)</td>
+<td align="center">Purple</td>
+<td align="center">(128, 0, 128, 255)</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>像素。对于一个由数字序列表示的图像来说，最小的单位就是图像上单一颜色的小方格，这些小方块都有一个明确的位置和被分配的色彩数值，而这些一小方格的颜色和位置决定了该图像最终呈现出来的样子，它们是不可分割的单位，我们通常称之为像素（pixel）。每一个图像都包含了一定量的像素，这些像素决定图像在屏幕上所呈现的大小。</p>
+</li>
+</ol>
+<h4 id="用Pillow操作图像"><a href="#用Pillow操作图像" class="headerlink" title="用Pillow操作图像"></a>用Pillow操作图像</h4><p>Pillow是由从著名的Python图像处理库PIL发展出来的一个分支，通过Pillow可以实现图像压缩和图像处理等各种操作。可以使用下面的命令来安装Pillow。</p>
+<pre><code class="Shell">pip install pillow
+</code></pre>
+<p>Pillow中最为重要的是Image类，读取和处理图像都要通过这个类来完成。</p>
+<pre><code class="Python">&gt;&gt;&gt; from PIL import Image
+&gt;&gt;&gt;
+&gt;&gt;&gt; image = Image.open(&#39;./res/guido.jpg&#39;)
+&gt;&gt;&gt; image.format, image.size, image.mode
+(&#39;JPEG&#39;, (500, 750), &#39;RGB&#39;)
+&gt;&gt;&gt; image.show()
+</code></pre>
+<p><img src="./res/image-show.png"></p>
+<ol>
+<li><p>剪裁图像</p>
+<pre><code class="Python">&gt;&gt;&gt; image = Image.open(&#39;./res/guido.jpg&#39;)
+&gt;&gt;&gt; rect = 80, 20, 310, 360
+&gt;&gt;&gt; image.crop(rect).show()
+</code></pre>
+<p><img src="./res/image-crop.png"></p>
+</li>
+<li><p>生成缩略图</p>
+<pre><code class="Python">&gt;&gt;&gt; image = Image.open(&#39;./res/guido.jpg&#39;)
+&gt;&gt;&gt; size = 128, 128
+&gt;&gt;&gt; image.thumbnail(size)
+&gt;&gt;&gt; image.show()
+</code></pre>
+<p><img src="./res/image-thumbnail.png"></p>
+</li>
+<li><p>缩放和黏贴图像</p>
+<pre><code class="Python">&gt;&gt;&gt; image1 = Image.open(&#39;./res/luohao.png&#39;)
+&gt;&gt;&gt; image2 = Image.open(&#39;./res/guido.jpg&#39;)
+&gt;&gt;&gt; rect = 80, 20, 310, 360
+&gt;&gt;&gt; guido_head = image2.crop(rect)
+&gt;&gt;&gt; width, height = guido_head.size
+&gt;&gt;&gt; image1.paste(guido_head.resize((int(width / 1.5), int(height / 1.5))), (172, 40))
+</code></pre>
+<p><img src="./res/image-paste.png"></p>
+</li>
+<li><p>旋转和翻转</p>
+<pre><code class="Python">&gt;&gt;&gt; image = Image.open(&#39;./res/guido.png&#39;)
+&gt;&gt;&gt; image.rotate(180).show()
+&gt;&gt;&gt; image.transpose(Image.FLIP_LEFT_RIGHT).show()
+</code></pre>
+<p><img src="./res/image-rotate.png"></p>
+<p><img src="./res/image-transpose.png"></p>
+</li>
+<li><p>操作像素</p>
+<pre><code class="Python">&gt;&gt;&gt; image = Image.open(&#39;./res/guido.jpg&#39;)
+&gt;&gt;&gt; for x in range(80, 310):
+...     for y in range(20, 360):
+...         image.putpixel((x, y), (128, 128, 128))
+... 
+&gt;&gt;&gt; image.show()
+</code></pre>
+<p><img src="./res/image-putpixel.png"></p>
+</li>
+<li><p>滤镜效果</p>
+<pre><code class="Python">&gt;&gt;&gt; from PIL import Image, ImageFilter
+&gt;&gt;&gt;
+&gt;&gt;&gt; image = Image.open(&#39;./res/guido.jpg&#39;)
+&gt;&gt;&gt; image.filter(ImageFilter.CONTOUR).show()
+</code></pre>
+<p><img src="./res/image-filter.png"></p>
+</li>
+</ol>
+<h3 id="处理Excel电子表格"><a href="#处理Excel电子表格" class="headerlink" title="处理Excel电子表格"></a>处理Excel电子表格</h3><p>Python的openpyxl模块让我们可以在Python程序中读取和修改Excel电子表格，由于微软从Office 2007开始使用了新的文件格式，这使得Office Excel和LibreOffice Calc、OpenOffice Calc是完全兼容的，这就意味着openpyxl模块也能处理来自这些软件生成的电子表格。</p>
+<pre><code class="Python">import datetime
+
+from openpyxl import Workbook
+
+wb = Workbook()
+ws = wb.active
+
+ws[&#39;A1&#39;] = 42
+ws.append([1, 2, 3])
+ws[&#39;A2&#39;] = datetime.datetime.now()
+
+wb.save(&quot;sample.xlsx&quot;)
+</code></pre>
+<h3 id="处理Word文档"><a href="#处理Word文档" class="headerlink" title="处理Word文档"></a>处理Word文档</h3><p>利用python-docx模块，Python可以创建和修改Word文档，当然这里的Word文档不仅仅是指通过微软的Office软件创建的扩展名为docx的文档，LibreOffice Writer和OpenOffice Writer都是免费的字处理软件。</p>
+<pre><code class="Python">from docx import Document
+from docx.shared import Inches
+
+document = Document()
+
+document.add_heading(&#39;Document Title&#39;, 0)
+
+p = document.add_paragraph(&#39;A plain paragraph having some &#39;)
+p.add_run(&#39;bold&#39;).bold = True
+p.add_run(&#39; and some &#39;)
+p.add_run(&#39;italic.&#39;).italic = True
+
+document.add_heading(&#39;Heading, level 1&#39;, level=1)
+document.add_paragraph(&#39;Intense quote&#39;, style=&#39;Intense Quote&#39;)
+
+document.add_paragraph(
+    &#39;first item in unordered list&#39;, style=&#39;List Bullet&#39;
+)
+document.add_paragraph(
+    &#39;first item in ordered list&#39;, style=&#39;List Number&#39;
+)
+
+document.add_picture(&#39;monty-truth.png&#39;, width=Inches(1.25))
+
+records = (
+    (3, &#39;101&#39;, &#39;Spam&#39;),
+    (7, &#39;422&#39;, &#39;Eggs&#39;),
+    (4, &#39;631&#39;, &#39;Spam, spam, eggs, and spam&#39;)
+)
+
+table = document.add_table(rows=1, cols=3)
+hdr_cells = table.rows[0].cells
+hdr_cells[0].text = &#39;Qty&#39;
+hdr_cells[1].text = &#39;Id&#39;
+hdr_cells[2].text = &#39;Desc&#39;
+for qty, id, desc in records:
+    row_cells = table.add_row().cells
+    row_cells[0].text = str(qty)
+    row_cells[1].text = id
+    row_cells[2].text = desc
+
+document.add_page_break()
+
+document.save(&#39;demo.docx&#39;)
+</code></pre>
+
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%92%8C%E5%8A%9E%E5%85%AC%E6%96%87%E6%A1%A3%E5%A4%84%E7%90%86"><span class="toc-text">图像和办公文档处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E5%9B%BE%E5%83%8F"><span class="toc-text">操作图像</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%83%8F%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86"><span class="toc-text">计算机图像相关知识</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8Pillow%E6%93%8D%E4%BD%9C%E5%9B%BE%E5%83%8F"><span class="toc-text">用Pillow操作图像</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%84%E7%90%86Excel%E7%94%B5%E5%AD%90%E8%A1%A8%E6%A0%BC"><span class="toc-text">处理Excel电子表格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%84%E7%90%86Word%E6%96%87%E6%A1%A3"><span class="toc-text">处理Word文档</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/2021/10/17/Python-100-Days-master/Day01-15/15.图像和办公文档处理/">http://example.com/2021/10/17/Python-100-Days-master/Day01-15/15.图像和办公文档处理/</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2021/10/17/Python-100-Days-master/Day16-20/16-20.Python%E8%AF%AD%E8%A8%80%E8%BF%9B%E9%98%B6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/10/17/Python-100-Days-master/Day01-15/14.%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8%E5%92%8C%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+      
+      
+        
+
+
+
+
+
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> Recent</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E4%BB%AC%E8%B8%A9%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E8%8B%B1%E8%AF%AD%E9%9D%A2%E8%AF%95/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%9F%A5%E4%B9%8E%E9%97%AE%E9%A2%98%E5%9B%9E%E7%AD%94/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%94%A8%E5%87%BD%E6%95%B0%E8%BF%98%E6%98%AF%E7%94%A8%E5%A4%8D%E6%9D%82%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%8E%A9%E8%BD%ACPyCharm/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/PEP8/" style="font-size: 10px;">PEP8</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-classify"></i> Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> Archive</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021年10月</a><span class="archive-list-count">173</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019年08月</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/PEP8/" rel="tag">PEP8</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> Blogroll</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example1.com/">site-name1</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example2.com/">site-name2</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example3.com/">site-name3</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">Site Map</a>
+        <span> | </span><a href="/atom.xml">Subscribe to this site</a>
+        <span> | </span><a href="/about/">Contact the blogger</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2021 John Doe.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+<script src="/localshare/js/social-share.js"></script>
+
+  
+<script src="/localshare/js/qrcode.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

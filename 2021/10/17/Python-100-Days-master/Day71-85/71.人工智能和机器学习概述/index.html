@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
+
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> Home</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> Archive</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> About</a>
+        
+          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> RSS</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="search"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Python-100-Days-master/Day71-85/71.人工智能和机器学习概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:55.936Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/Day71-85/71.%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%92%8C%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%BF%B0/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="人工智能和机器学习概述"><a href="#人工智能和机器学习概述" class="headerlink" title="人工智能和机器学习概述"></a>人工智能和机器学习概述</h2><p>所谓“人工智能”通常是泛指让机器具有像人一样的智慧的技术，其目的是让机器像人一样能够感知、思考和解决问题；而“机器学习”通常是指让计算机通过学习现有的数据，实现认知的更新和进步。显然，机器学习是实现人工智能的一种途径，这也是我们的课程要讨论的内容。现如今，“机器学习”和“大数据”可以说是最时髦的两个词汇，而在弱人工智能阶段，无论是“机器学习”还是“大数据”最终要解决的问题本质上是一样的，就是让计算机将纷繁复杂的数据处理成有用的信息，这样就可以发掘出数据带来的意义以及隐藏在数据背后的规律，简单的说就是用现有的数据对将来的状况做出预测和判断。</p>
+<p>在讨论机器学习相关内容之前，我们先按照问题的“输入”和“输出”对用计算机求解的问题进行一个分类，如下所示：</p>
+<ol>
+<li>输入的信息是精确的，要求输出最优解。</li>
+<li>输入的信息是精确的，无法找到最优解，只能获得满意解。</li>
+<li>输入的信息是模糊的，要求输出最优解。</li>
+<li>输入的信息是模糊的，无法找到最优解，只能获得满意解。</li>
+</ol>
+<p>在上面的四大类问题中，第1类问题是计算机最擅长解决的，这类问题其实就是“数值计算”和“逻辑推理”方面的问题，而传统意义上的人工智能也就是利用逻辑推理来解决问题（如早期的“人机对弈”）。一直以来，我们都习惯于将计算机称为“电脑”，而基于“冯诺依曼”体系结构的“电脑”实际上只是实现了“人脑”理性思维这部分的功能，而且在这一点上“电脑”的表现通常是优于“人脑”的；但是“人脑”在处理模糊输入信息时表现出来的强大处理能力，在很多场景下“电脑”是难以企及的。所以我们研究机器学习的算法，就是要解决在输入模糊信息时让计算机给出满意解甚至是最优解的问题。</p>
+<p>人类通过记忆和归纳这两种方式进行学习，通过记忆可以积累单个事实，使用归纳可以从旧的事实推导出新的事实。所以机器学习其实是一种训练，让计算机通过这种训练能够学会根据数据隐含模式进行合理推断的能力，其基本流程如下所示：</p>
+<ol>
+<li>观察一组实例，通常称为训练数据，它们可以表示某种统计现象的不完整信息;</li>
+<li>对观测到的实例进行扩展，并使用推断技术对扩展过程建模;</li>
+<li>使用这个模型对未知实例进行预测。</li>
+</ol>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h4 id="监督学习和非监督学习"><a href="#监督学习和非监督学习" class="headerlink" title="监督学习和非监督学习"></a>监督学习和非监督学习</h4><p>监督学习是从给定的训练数据集中学习得到一个函数，当新的数据到来时，可以根据这个函数预测结果，监督学习的训练集包括输入和输出，也可以说是特征和目标。监督学习的目标是由人来标注的，而非监督学习的数据没有类别信息，训练集也没有人为标注结果，通过无监督学习可以减少数据特征的维度，以便我们可以使用二维或三维图形更加直观地展示数据中的信息 。</p>
+<h4 id="特征向量和特征工程"><a href="#特征向量和特征工程" class="headerlink" title="特征向量和特征工程"></a>特征向量和特征工程</h4><h4 id="距离度量"><a href="#距离度量" class="headerlink" title="距离度量"></a>距离度量</h4><ol>
+<li>欧氏距离</li>
+</ol>
+<p>$$<br>d = \sqrt{\sum_{k=1}^n(x_{1k}-x_{2k})^2}<br>$$</p>
+<ol start="2">
+<li>曼哈顿距离</li>
+</ol>
+<p>$$<br>d = \sum_{k=1}^n \mid {x_{1k}-x_{2k}} \mid<br>$$</p>
+<ol start="3">
+<li>切比雪夫距离</li>
+</ol>
+<p>$$<br>d = max(\mid x_{1k}-x_{2k} \mid)<br>$$</p>
+<ol start="4">
+<li>闵可夫斯基距离<ul>
+<li>当$p=1$时，就是曼哈顿距离</li>
+<li>当$p=2$时，就是欧式距离</li>
+<li>当$p \to \infty$时，就是切比雪夫距离</li>
+</ul>
+</li>
+</ol>
+<p>$$<br>d = \sqrt[p]{\sum_{k=1}^n \mid x_{1k}-x_{2k} \mid ^p}<br>$$</p>
+<ol start="5">
+<li>余弦距离<br> $$<br> cos(\theta) = \frac{\sum_{k=1}^n x_{1k}x_{2k}}{\sqrt{\sum_{k=1}^n x_{1k}^2} \sqrt{\sum_{k=1}^n x_{2k}^2}}<br> $$</li>
+</ol>
+<h3 id="机器学习的定义和应用领域"><a href="#机器学习的定义和应用领域" class="headerlink" title="机器学习的定义和应用领域"></a>机器学习的定义和应用领域</h3><p>根据上面的论述，我们可以给“机器学习”下一个正式的定义：<strong>机器学习是一门专门研究计算机怎样模拟或实现人类的学习行为，以获取新的知识或技能，重新组织已有的知识结构使之不断改善自身性能的学科</strong>。即使对于机器学习这个概念不那么熟悉，但是机器学习的成果已经广泛渗透到了生产生活的各个领域，下面的这些场景对于你来说一定不陌生。</p>
+<p>场景1：搜索引擎会根据搜索和使用习惯，优化下一次搜索的结果。</p>
+<p>场景2：电商网站会根据你的访问历史自动推荐你可能感兴趣的商品。</p>
+<p>场景3：金融类产品会通过你最近的金融活动信息综合评定你的贷款申请。</p>
+<p>场景4：视频和直播平台会自动识别图片和视频中有没有不和谐的内容。</p>
+<p>场景5：智能家电和智能汽车会根据你的语音指令做出相应的动作。</p>
+<p>简单的总结一下，机器学习可以应用到但不限于以下领域：</p>
+<ol>
+<li><p>计算机视觉。计算机视觉是指机器感知环境的能力，目前在<a target="_blank" rel="noopener" href="https://pjreddie.com/darknet/yolo/"><strong>物体检测</strong></a>和<strong>人脸识别</strong>这两个领域已经非常成熟且产生了大量的应用。</p>
+<ul>
+<li><p>刷脸支付</p>
+<p>  <img src="res/face_paying.png"></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://quickdraw.withgoogle.com/">涂鸦识别</a></p>
+<p>  <img src="res/quickdraw.png"></p>
+</li>
+</ul>
+</li>
+<li><p>自然语言处理（NLP）。自然语言处理是目前机器学习中一个非常热门的分支，具体的又可以分为三类应用场景。其中文本挖掘主要是对文本进行分类，包括句法分析、情绪分析和垃圾信息检测等；而机器翻译和语音识别相信不用太多的解释大家也都清楚。</p>
+<ul>
+<li><p>文本挖掘</p>
+</li>
+<li><p>机器翻译</p>
+</li>
+<li><p>语音识别</p>
+<p>  <img src="res/xiaomi_ai_voice_box.png"></p>
+</li>
+</ul>
+</li>
+<li><p>机器人。机器人可以分为固定机器人和移动机器人两大类。固定机器人通常被用于工业生产，例如用于装配流水线。常见的移动机器人应用有货运机器人、空中机器人和自动载具。机器人需要软硬件的协作才能实现最优的作业，其中硬件包含传感器、反应器和控制器等，而软件主要是实现感知能力，包括定位、测绘、目标检测和识别等。</p>
+<ul>
+<li><p>机甲大师</p>
+<p>  <img src="res/dajiang_robomaster.png"></p>
+</li>
+<li><p>扫地机器人</p>
+<p>  <img src="res/sweep_robot.jpg"></p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="机器学习实施步骤"><a href="#机器学习实施步骤" class="headerlink" title="机器学习实施步骤"></a>机器学习实施步骤</h3><p>实现机器学习的一般步骤：</p>
+<ol>
+<li>数据收集</li>
+<li>数据准备</li>
+<li>数据分析</li>
+<li>训练算法</li>
+<li>测试算法</li>
+<li>应用算法</li>
+</ol>
+<h3 id="Scikit-learn介绍"><a href="#Scikit-learn介绍" class="headerlink" title="Scikit-learn介绍"></a>Scikit-learn介绍</h3><p><img src="res/scikit-learn-logo.png"></p>
+<p>Scikit-learn源于Google Summer of Code项目，由David Cournapeau在2007年发起，它提供了机器学习可能用到的工具，包括数据预处理、监督学习（分类、回归）、非监督学习（聚类）、模型选择、降维等。</p>
+<p>官网地址：<a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/index.html">https://scikit-learn.org/stable/index.html</a></p>
+<p>安装方法：<code>pip install scikit-learn</code></p>
+
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%92%8C%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%BF%B0"><span class="toc-text">人工智能和机器学习概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E5%92%8C%E9%9D%9E%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0"><span class="toc-text">监督学习和非监督学习</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F%E5%92%8C%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B"><span class="toc-text">特征向量和特征工程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%9D%E7%A6%BB%E5%BA%A6%E9%87%8F"><span class="toc-text">距离度量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E5%BA%94%E7%94%A8%E9%A2%86%E5%9F%9F"><span class="toc-text">机器学习的定义和应用领域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%96%BD%E6%AD%A5%E9%AA%A4"><span class="toc-text">机器学习实施步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scikit-learn%E4%BB%8B%E7%BB%8D"><span class="toc-text">Scikit-learn介绍</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/2021/10/17/Python-100-Days-master/Day71-85/71.人工智能和机器学习概述/">http://example.com/2021/10/17/Python-100-Days-master/Day71-85/71.人工智能和机器学习概述/</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2021/10/17/Python-100-Days-master/Day71-85/72.k%E6%9C%80%E8%BF%91%E9%82%BB%E5%88%86%E7%B1%BB/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/10/17/Python-100-Days-master/Day66-70/70.%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+      
+      
+        
+
+
+
+
+
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> Recent</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E4%BB%AC%E8%B8%A9%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E8%8B%B1%E8%AF%AD%E9%9D%A2%E8%AF%95/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%9F%A5%E4%B9%8E%E9%97%AE%E9%A2%98%E5%9B%9E%E7%AD%94/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%94%A8%E5%87%BD%E6%95%B0%E8%BF%98%E6%98%AF%E7%94%A8%E5%A4%8D%E6%9D%82%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%8E%A9%E8%BD%ACPyCharm/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/PEP8/" style="font-size: 10px;">PEP8</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-classify"></i> Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> Archive</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021年10月</a><span class="archive-list-count">173</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019年08月</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/PEP8/" rel="tag">PEP8</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> Blogroll</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example1.com/">site-name1</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example2.com/">site-name2</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example3.com/">site-name3</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">Site Map</a>
+        <span> | </span><a href="/atom.xml">Subscribe to this site</a>
+        <span> | </span><a href="/about/">Contact the blogger</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2021 John Doe.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+<script src="/localshare/js/social-share.js"></script>
+
+  
+<script src="/localshare/js/qrcode.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

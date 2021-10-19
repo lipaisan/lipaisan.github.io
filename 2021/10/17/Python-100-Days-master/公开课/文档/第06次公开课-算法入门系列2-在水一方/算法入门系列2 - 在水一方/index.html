@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
+
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> Home</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> Archive</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> About</a>
+        
+          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> RSS</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="search"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Python-100-Days-master/公开课/文档/第06次公开课-算法入门系列2-在水一方/算法入门系列2 - 在水一方" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:56.748Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/%E5%85%AC%E5%BC%80%E8%AF%BE/%E6%96%87%E6%A1%A3/%E7%AC%AC06%E6%AC%A1%E5%85%AC%E5%BC%80%E8%AF%BE-%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%972-%E5%9C%A8%E6%B0%B4%E4%B8%80%E6%96%B9/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%972%20-%20%E5%9C%A8%E6%B0%B4%E4%B8%80%E6%96%B9/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="算法入门系列2-在水一方"><a href="#算法入门系列2-在水一方" class="headerlink" title="算法入门系列2 - 在水一方"></a>算法入门系列2 - 在水一方</h2><p>在第一次的公开课中，我们讲到了穷举法。穷举法也被称为暴力搜索法，今天我们要讲的回溯法就是暴力搜索法的一种。接下来我们讲到的很多算法跟“递归”这个概念有或多或少的关系，所以我们先说说“递归”。</p>
+<h3 id="现实中的递归"><a href="#现实中的递归" class="headerlink" title="现实中的递归"></a>现实中的递归</h3><p>从前有座山，山里有座庙，庙里有个老和尚，正在给小和尚讲故事呢！故事是什么呢？从前有座山，山里有座庙，庙里有个老和尚，正在给小和尚讲故事呢！故事是什么呢？从前有座山，山里有座庙，庙里有个老和尚，正在给小和尚讲故事呢！故事是什么呢？……</p>
+<p>野比大雄在房间里，用时光电视看着未来的情况。电视画面中，野比大雄在房间里，用时光电视看着未来的情况。电视画面中，野比大雄在房间里，用时光电视看着未来的情况……</p>
+<p>阶乘的递归定义：$$0! = 1$$，$$n!=n*(n-1)!$$ ，使用被定义对象的自身来为其下定义称为递归定义。</p>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%BE%B7%E7%BD%97%E6%96%AF%E7%89%B9%E6%95%88%E5%BA%94">德罗斯特效应</a>是递归的一种视觉形式。图中女性手持的物体中有一幅她本人手持同一物体的小图片，进而小图片中还有更小的一幅她手持同一物体的图片……</p>
+<p><img src="./res/droste.png"></p>
+<h3 id="递归的应用"><a href="#递归的应用" class="headerlink" title="递归的应用"></a>递归的应用</h3><p>在程序中，一个函数如果直接或者间接的调用了自身，我们就称之为递归函数。</p>
+<p>写递归函数有两个要点：</p>
+<ol>
+<li>收敛条件 - 什么时候结束递归。</li>
+<li>递归公式 - 每一项与前一项（前<em>N</em>项）的关系。</li>
+</ol>
+<p>例子1：求阶乘。</p>
+<pre><code class="Python">def fac(num):
+    if num == 0:
+        return 1
+    return num * fac(num - 1)
+</code></pre>
+<p>Python对递归的深度加以了限制（默认1000层函数调用），如果想突破这个限制，可以使用下面的方法。</p>
+<pre><code class="Python">import sys
+
+sys.setrecursionlimit(10000)
+</code></pre>
+<p>例子2：爬楼梯 - 楼梯有<em>n</em>个台阶，一步可以走1阶、2阶或3阶，走完<em>n</em>个台阶共有多少种不同的走法。</p>
+<pre><code class="Python">def climb(num):
+    if num == 0:
+        return 1
+    elif num &lt; 0:
+        return 0
+    return climb(num - 1) + climb(num - 2) + climb(num - 3)
+</code></pre>
+<p><strong>注意</strong>：上面的递归函数性能会非常的差，因为时间复杂度是几何级数级的。</p>
+<p>优化后的代码。</p>
+<pre><code class="Python">from functools import lru_cache
+
+
+@lru_cache()
+def climb(num):
+    if num == 0:
+        return 1
+    elif num &lt; 0:
+        return 0
+    return climb(num - 1) + climb(num - 2) + climb(num - 3)
+</code></pre>
+<p>不使用的递归的代码。</p>
+<pre><code class="Python">def climb(num):
+    a, b, c = 1, 2, 4
+    for _ in range(num - 1):
+        a, b, c = b, c, a + b + c
+    return a
+</code></pre>
+<p><strong>重点</strong>：有更好的办法的时候，请不要考虑递归。</p>
+<h3 id="回溯法"><a href="#回溯法" class="headerlink" title="回溯法"></a>回溯法</h3><p><strong>回溯法</strong>是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%9A%B4%E5%8A%9B%E6%90%9C%E5%B0%8B%E6%B3%95">暴力搜索法</a>中的一种。对于某些计算问题而言，回溯法是一种可以找出所有（或一部分）解的一般性算法，尤其适用于约束满足问题（在解决约束满足问题时，我们逐步构造更多的候选解，并且在确定某一部分候选解不可能补全成正确解之后放弃继续搜索这个部分候选解本身及其可以拓展出的子候选解，转而测试其他的部分候选解）。</p>
+<h3 id="经典案例"><a href="#经典案例" class="headerlink" title="经典案例"></a>经典案例</h3><p>例子1：<strong>迷宫寻路</strong>。</p>
+<p><img src="./res/maze.png"></p>
+<pre><code class="Python">&quot;&quot;&quot;
+迷宫寻路
+&quot;&quot;&quot;
+import random
+import sys
+
+WALL = -1
+ROAD = 0
+
+ROWS = 10
+COLS = 10
+
+
+def find_way(maze, i=0, j=0, step=1):
+    &quot;&quot;&quot;走迷宫&quot;&quot;&quot;
+    if 0 &lt;= i &lt; ROWS and 0 &lt;= j &lt; COLS and maze[i][j] == 0:
+        maze[i][j] = step
+        if i == ROWS - 1 and j == COLS - 1:
+            print(&#39;=&#39; * 20)
+            display(maze)
+            sys.exit(0)
+        find_way(maze, i + 1, j, step + 1)
+        find_way(maze, i, j + 1, step + 1)
+        find_way(maze, i - 1, j, step + 1)
+        find_way(maze, i, j - 1, step + 1)
+        maze[i][j] = ROAD
+
+
+def reset(maze):
+    &quot;&quot;&quot;重置迷宫&quot;&quot;&quot;
+    for i in range(ROWS):
+        for j in range(COLS):
+            num = random.randint(1, 10)
+            maze[i][j] = WALL if num &gt; 7 else ROAD
+    maze[0][0] = maze[ROWS - 1][COLS - 1] = ROAD
+
+
+def display(maze):
+    &quot;&quot;&quot;显示迷宫&quot;&quot;&quot;
+    for row in maze:
+        for col in row:
+            if col == -1:
+                print(&#39;■&#39;, end=&#39; &#39;)
+            elif col == 0:
+                print(&#39;□&#39;, end=&#39; &#39;)
+            else:
+                print(f&#39;&#123;col&#125;&#39;.ljust(2), end=&#39;&#39;)
+        print()
+
+
+def main():
+    &quot;&quot;&quot;主函数&quot;&quot;&quot;
+    maze = [[0] * COLS for _ in range(ROWS)]
+    reset(maze)
+    display(maze)
+    find_way(maze)
+    print(&#39;没有出路!!!&#39;)
+
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<p><strong>说明：</strong>上面的代码用随机放置围墙的方式来生成迷宫，更好的生成迷宫的方式请参考<a target="_blank" rel="noopener" href="https://indienova.com/indie-game-development/generate-tile-based-maze-with-backtracking/">《简单的使用回溯法生成 Tile Based 迷宫》</a>一文。</p>
+<p>例子2：<strong>骑士巡逻</strong> - 国际象棋中的骑士（马），按照骑士的移动规则走遍整个棋盘的每一个方格，而且每个方格只能够经过一次。</p>
+<p><img src="./res/knight_tour.gif"></p>
+<pre><code class="Python">&quot;&quot;&quot;
+骑士巡逻
+&quot;&quot;&quot;
+import sys
+
+SIZE = 8
+
+
+def display(board):
+    &quot;&quot;&quot;显示棋盘&quot;&quot;&quot;
+    for row in board:
+        for col in row:
+            print(f&#39;&#123;col&#125;&#39;.rjust(2, &#39;0&#39;), end=&#39; &#39;)
+        print()
+
+
+def patrol(board, i=0, j=0, step=1):
+    &quot;&quot;&quot;巡逻&quot;&quot;&quot;
+    if 0 &lt;= i &lt; SIZE and 0 &lt;= j &lt; SIZE and board[i][j] == 0:
+        board[i][j] = step
+        if step == SIZE * SIZE:
+            display(board)
+            sys.exit(0)
+        patrol(board, i + 1, j + 2, step + 1)
+        patrol(board, i + 2, j + 1, step + 1)
+        patrol(board, i + 2, j - 1, step + 1)
+        patrol(board, i + 1, j - 2, step + 1)
+        patrol(board, i - 1, j - 2, step + 1)
+        patrol(board, i - 2, j - 1, step + 1)
+        patrol(board, i - 2, j + 1, step + 1)
+        patrol(board, i - 1, j + 2, step + 1)
+        board[i][j] = 0
+
+
+def main():
+    &quot;&quot;&quot;主函数&quot;&quot;&quot;
+    board = [[0] * SIZE for _ in range(SIZE)]
+    patrol(board)
+
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<p>例子3：<strong>八皇后</strong> - 如何能够在8×8的国际象棋棋盘上放置八个皇后，使得任何一个皇后都无法直接吃掉其他的皇后？为了达到此目的，任两个皇后都不能处于同一条横行、纵行或斜线上。</p>
+<p><img src="./res/eight_queen.png"></p>
+<p><strong>说明</strong>：这个问题太经典了，网上有大把的答案，留给大家自己搞定。</p>
+
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%972-%E5%9C%A8%E6%B0%B4%E4%B8%80%E6%96%B9"><span class="toc-text">算法入门系列2 - 在水一方</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%B0%E5%AE%9E%E4%B8%AD%E7%9A%84%E9%80%92%E5%BD%92"><span class="toc-text">现实中的递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">递归的应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E6%BA%AF%E6%B3%95"><span class="toc-text">回溯法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E6%A1%88%E4%BE%8B"><span class="toc-text">经典案例</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/2021/10/17/Python-100-Days-master/公开课/文档/第06次公开课-算法入门系列2-在水一方/算法入门系列2 - 在水一方/">http://example.com/2021/10/17/Python-100-Days-master/公开课/文档/第06次公开课-算法入门系列2-在水一方/算法入门系列2 - 在水一方/</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/PEP8%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/10/17/Python-100-Days-master/%E5%85%AC%E5%BC%80%E8%AF%BE/%E6%96%87%E6%A1%A3/%E7%AC%AC05%E6%AC%A1%E5%85%AC%E5%BC%80%E8%AF%BE-%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%971-%E5%91%A8%E8%80%8C%E5%A4%8D%E5%A7%8B/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%971-%E5%91%A8%E8%80%8C%E5%A4%8D%E5%A7%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+      
+      
+        
+
+
+
+
+
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> Recent</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E4%BB%AC%E8%B8%A9%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E8%8B%B1%E8%AF%AD%E9%9D%A2%E8%AF%95/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%9F%A5%E4%B9%8E%E9%97%AE%E9%A2%98%E5%9B%9E%E7%AD%94/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%94%A8%E5%87%BD%E6%95%B0%E8%BF%98%E6%98%AF%E7%94%A8%E5%A4%8D%E6%9D%82%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%8E%A9%E8%BD%ACPyCharm/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/PEP8/" style="font-size: 10px;">PEP8</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-classify"></i> Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> Archive</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021年10月</a><span class="archive-list-count">173</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019年08月</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/PEP8/" rel="tag">PEP8</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> Blogroll</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example1.com/">site-name1</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example2.com/">site-name2</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example3.com/">site-name3</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">Site Map</a>
+        <span> | </span><a href="/atom.xml">Subscribe to this site</a>
+        <span> | </span><a href="/about/">Contact the blogger</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2021 John Doe.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+<script src="/localshare/js/social-share.js"></script>
+
+  
+<script src="/localshare/js/qrcode.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

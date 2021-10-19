@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
+
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> Home</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> Archive</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> About</a>
+        
+          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> RSS</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="search"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Python-100-Days-master/Day61-65/61.网络爬虫和相关工具" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-10-17T13:24:55.570Z" itemprop="datePublished">2021年10月17日</time>
+</span>
+      
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2021/10/17/Python-100-Days-master/Day61-65/61.%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%92%8C%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="网络爬虫和相关工具"><a href="#网络爬虫和相关工具" class="headerlink" title="网络爬虫和相关工具"></a>网络爬虫和相关工具</h2><h3 id="网络爬虫的概念"><a href="#网络爬虫的概念" class="headerlink" title="网络爬虫的概念"></a>网络爬虫的概念</h3><p>网络爬虫（web crawler），以前经常称之为网络蜘蛛（spider），是按照一定的规则自动浏览万维网并获取信息的机器人程序（或脚本），曾经被广泛的应用于互联网搜索引擎。使用过互联网和浏览器的人都知道，网页中除了供用户阅读的文字信息之外，还包含一些超链接。网络爬虫系统正是通过网页中的超链接信息不断获得网络上的其它页面。正因如此，网络数据采集的过程就像一个爬虫或者蜘蛛在网络上漫游，所以才被形象的称为网络爬虫或者网络蜘蛛。</p>
+<h4 id="爬虫的应用领域"><a href="#爬虫的应用领域" class="headerlink" title="爬虫的应用领域"></a>爬虫的应用领域</h4><p>在理想的状态下，所有ICP（Internet Content Provider）都应该为自己的网站提供API接口来共享它们允许其他程序获取的数据，在这种情况下爬虫就不是必需品，国内比较有名的电商平台（如淘宝、京东等）、社交平台（如腾讯微博等）等网站都提供了自己的Open API，但是这类Open API通常会对可以抓取的数据以及抓取数据的频率进行限制。对于大多数的公司而言，及时的获取行业相关数据是企业生存的重要环节之一，然而大部分企业在行业数据方面的匮乏是其与生俱来的短板，合理的利用爬虫来获取数据并从中提取出有商业价值的信息是至关重要的。当然爬虫还有很多重要的应用领域，下面列举了其中的一部分：</p>
+<ol>
+<li>搜索引擎</li>
+<li>新闻聚合</li>
+<li>社交应用</li>
+<li>舆情监控</li>
+<li>行业数据</li>
+</ol>
+<h3 id="合法性和背景调研"><a href="#合法性和背景调研" class="headerlink" title="合法性和背景调研"></a>合法性和背景调研</h3><h4 id="爬虫合法性探讨"><a href="#爬虫合法性探讨" class="headerlink" title="爬虫合法性探讨"></a>爬虫合法性探讨</h4><ol>
+<li>网络爬虫领域目前还属于拓荒阶段，虽然互联网世界已经通过自己的游戏规则建立起一定的道德规范(Robots协议，全称是“网络爬虫排除标准”)，但法律部分还在建立和完善中，也就是说，现在这个领域暂时还是灰色地带。</li>
+<li>“法不禁止即为许可”，如果爬虫就像浏览器一样获取的是前端显示的数据（网页上的公开信息）而不是网站后台的私密敏感信息，就不太担心法律法规的约束，因为目前大数据产业链的发展速度远远超过了法律的完善程度。</li>
+<li>在爬取网站的时候，需要限制自己的爬虫遵守Robots协议，同时控制网络爬虫程序的抓取数据的速度；在使用数据的时候，必须要尊重网站的知识产权（从Web 2.0时代开始，虽然Web上的数据很多都是由用户提供的，但是网站平台是投入了运营成本的，当用户在注册和发布内容时，平台通常就已经获得了对数据的所有权、使用权和分发权）。如果违反了这些规定，在打官司的时候败诉几率相当高。</li>
+</ol>
+<h4 id="Robots-txt文件"><a href="#Robots-txt文件" class="headerlink" title="Robots.txt文件"></a>Robots.txt文件</h4><p>大多数网站都会定义robots.txt文件，下面以淘宝的<a target="_blank" rel="noopener" href="http://www.taobao.com/robots.txt">robots.txt</a>文件为例，看看该网站对爬虫有哪些限制。</p>
+<pre><code>User-agent:  Baiduspider
+Allow:  /article
+Allow:  /oshtml
+Disallow:  /product/
+Disallow:  /
+
+User-Agent:  Googlebot
+Allow:  /article
+Allow:  /oshtml
+Allow:  /product
+Allow:  /spu
+Allow:  /dianpu
+Allow:  /oversea
+Allow:  /list
+Disallow:  /
+
+User-agent:  Bingbot
+Allow:  /article
+Allow:  /oshtml
+Allow:  /product
+Allow:  /spu
+Allow:  /dianpu
+Allow:  /oversea
+Allow:  /list
+Disallow:  /
+
+User-Agent:  360Spider
+Allow:  /article
+Allow:  /oshtml
+Disallow:  /
+
+User-Agent:  Yisouspider
+Allow:  /article
+Allow:  /oshtml
+Disallow:  /
+
+User-Agent:  Sogouspider
+Allow:  /article
+Allow:  /oshtml
+Allow:  /product
+Disallow:  /
+
+User-Agent:  Yahoo!  Slurp
+Allow:  /product
+Allow:  /spu
+Allow:  /dianpu
+Allow:  /oversea
+Allow:  /list
+Disallow:  /
+
+User-Agent:  *
+Disallow:  /
+</code></pre>
+<p>注意上面robots.txt第一段的最后一行，通过设置“Disallow: /”禁止百度爬虫访问除了“Allow”规定页面外的其他所有页面。因此当你在百度搜索“淘宝”的时候，搜索结果下方会出现：“由于该网站的robots.txt文件存在限制指令（限制搜索引擎抓取），系统无法提供该页面的内容描述”。百度作为一个搜索引擎，至少在表面上遵守了淘宝网的robots.txt协议，所以用户不能从百度上搜索到淘宝内部的产品信息。</p>
+<p><img src="./res/baidu-search-taobao.png"> </p>
+<h3 id="相关工具介绍"><a href="#相关工具介绍" class="headerlink" title="相关工具介绍"></a>相关工具介绍</h3><h4 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h4><p>在开始讲解爬虫之前，我们稍微对HTTP（超文本传输协议）做一些回顾，因为我们在网页上看到的内容通常是浏览器执行HTML语言得到的结果，而HTTP就是传输HTML数据的协议。HTTP和其他很多应用级协议一样是构建在TCP（传输控制协议）之上的，它利用了TCP提供的可靠的传输服务实现了Web应用中的数据交换。按照维基百科上的介绍，设计HTTP最初的目的是为了提供一种发布和接收<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/HTML">HTML</a>页面的方法，也就是说这个协议是浏览器和Web服务器之间传输的数据的载体。关于这个协议的详细信息以及目前的发展状况，大家可以阅读阮一峰老师的<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2016/08/http.html">《HTTP 协议入门》</a>、<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html">《互联网协议入门》</a>系列以及<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2014/09/illustration-ssl.html">《图解HTTPS协议》</a>进行了解，下图是我在四川省网络通信技术重点实验室工作期间用开源协议分析工具Ethereal（抓包工具WireShark的前身）截取的访问百度首页时的HTTP请求和响应的报文（协议数据），由于Ethereal截取的是经过网络适配器的数据，因此可以清晰的看到从物理链路层到应用层的协议数据。</p>
+<p>HTTP请求（请求行+请求头+空行+[消息体]）：</p>
+<p><img src="./res/http-request.png"></p>
+<p>HTTP响应（响应行+响应头+空行+消息体）：</p>
+<p><img src="./res/http-response.png"></p>
+<blockquote>
+<p>说明：但愿这两张如同泛黄照片般的截图帮助你大概的了解到HTTP是一个怎样的协议。 </p>
+</blockquote>
+<h4 id="相关工具"><a href="#相关工具" class="headerlink" title="相关工具"></a>相关工具</h4><ol>
+<li><p>Chrome Developer Tools：谷歌浏览器内置的开发者工具。</p>
+<p><img src="./res/chrome-developer-tools.png"></p>
+</li>
+<li><p>Postman：功能强大的网页调试与RESTful请求工具。</p>
+<p><img src="./res/postman.png"></p>
+</li>
+<li><p>HTTPie：命令行HTTP客户端。</p>
+<pre><code class="Bash">pip3 install httpie
+</code></pre>
+<pre><code class="Bash">http --header http://www.scu.edu.cn
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: private, max-age=600
+Connection: Keep-Alive
+Content-Encoding: gzip
+Content-Language: zh-CN
+Content-Length: 14403
+Content-Type: text/html
+Date: Sun, 27 May 2018 15:38:25 GMT
+ETag: &quot;e6ec-56d3032d70a32-gzip&quot;
+Expires: Sun, 27 May 2018 15:48:25 GMT
+Keep-Alive: timeout=5, max=100
+Last-Modified: Sun, 27 May 2018 13:44:22 GMT
+Server: VWebServer
+Vary: User-Agent,Accept-Encoding
+X-Frame-Options: SAMEORIGIN
+</code></pre>
+</li>
+<li><p><code>builtwith</code>库：识别网站所用技术的工具。</p>
+<pre><code class="Bash">pip3 install builtwith
+</code></pre>
+<pre><code class="Python">&gt;&gt;&gt; import builtwith
+&gt;&gt;&gt; builtwith.parse(&#39;http://www.bootcss.com/&#39;)
+&#123;&#39;web-servers&#39;: [&#39;Nginx&#39;], &#39;font-scripts&#39;: [&#39;Font Awesome&#39;], &#39;javascript-frameworks&#39;: [&#39;Lo-dash&#39;, &#39;Underscore.js&#39;, &#39;Vue.js&#39;, &#39;Zepto&#39;, &#39;jQuery&#39;], &#39;web-frameworks&#39;: [&#39;Twitter Bootstrap&#39;]&#125;
+&gt;&gt;&gt;
+&gt;&gt;&gt; import ssl
+&gt;&gt;&gt; ssl._create_default_https_context = ssl._create_unverified_context
+&gt;&gt;&gt; builtwith.parse(&#39;https://www.jianshu.com/&#39;)
+&#123;&#39;web-servers&#39;: [&#39;Tengine&#39;], &#39;web-frameworks&#39;: [&#39;Twitter Bootstrap&#39;, &#39;Ruby on Rails&#39;], &#39;programming-languages&#39;: [&#39;Ruby&#39;]&#125;
+</code></pre>
+</li>
+<li><p><code>python-whois</code>库：查询网站所有者的工具。</p>
+<pre><code class="Bash">pip3 install python-whois
+</code></pre>
+<pre><code class="Python">&gt;&gt;&gt; import whois
+&gt;&gt;&gt; whois.whois(&#39;baidu.com&#39;)
+&#123;&#39;domain_name&#39;: [&#39;BAIDU.COM&#39;, &#39;baidu.com&#39;], &#39;registrar&#39;: &#39;MarkMonitor, Inc.&#39;, &#39;whois_server&#39;: &#39;whois.markmonitor.com&#39;, &#39;referral_url&#39;: None, &#39;updated_date&#39;: [datetime.datetime(2017, 7, 28, 2, 36, 28), datetime.datetime(2017, 7, 27, 19, 36, 28)], &#39;creation_date&#39;: [datetime.datetime(1999, 10, 11, 11, 5, 17), datetime.datetime(1999, 10, 11, 4, 5, 17)], &#39;expiration_date&#39;: [datetime.datetime(2026, 10, 11, 11, 5, 17), datetime.datetime(2026, 10, 11, 0, 0)], &#39;name_servers&#39;: [&#39;DNS.BAIDU.COM&#39;, &#39;NS2.BAIDU.COM&#39;, &#39;NS3.BAIDU.COM&#39;, &#39;NS4.BAIDU.COM&#39;, &#39;NS7.BAIDU.COM&#39;, &#39;dns.baidu.com&#39;, &#39;ns4.baidu.com&#39;, &#39;ns3.baidu.com&#39;, &#39;ns7.baidu.com&#39;, &#39;ns2.baidu.com&#39;], &#39;status&#39;: [&#39;clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited&#39;, &#39;clientTransferProhibited https://icann.org/epp#clientTransferProhibited&#39;, &#39;clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited&#39;, &#39;serverDeleteProhibited https://icann.org/epp#serverDeleteProhibited&#39;, &#39;serverTransferProhibited https://icann.org/epp#serverTransferProhibited&#39;, &#39;serverUpdateProhibited https://icann.org/epp#serverUpdateProhibited&#39;, &#39;clientUpdateProhibited (https://www.icann.org/epp#clientUpdateProhibited)&#39;, &#39;clientTransferProhibited (https://www.icann.org/epp#clientTransferProhibited)&#39;, &#39;clientDeleteProhibited (https://www.icann.org/epp#clientDeleteProhibited)&#39;, &#39;serverUpdateProhibited (https://www.icann.org/epp#serverUpdateProhibited)&#39;, &#39;serverTransferProhibited (https://www.icann.org/epp#serverTransferProhibited)&#39;, &#39;serverDeleteProhibited (https://www.icann.org/epp#serverDeleteProhibited)&#39;], &#39;emails&#39;: [&#39;abusecomplaints@markmonitor.com&#39;, &#39;whoisrelay@markmonitor.com&#39;], &#39;dnssec&#39;: &#39;unsigned&#39;, &#39;name&#39;: None, &#39;org&#39;: &#39;Beijing Baidu Netcom Science Technology Co., Ltd.&#39;, &#39;address&#39;: None, &#39;city&#39;: None, &#39;state&#39;: &#39;Beijing&#39;, &#39;zipcode&#39;: None, &#39;country&#39;: &#39;CN&#39;&#125;
+</code></pre>
+</li>
+<li><p><code>robotparser</code>模块：解析<code>robots.txt</code>的工具。</p>
+<pre><code class="Python">&gt;&gt;&gt; from urllib import robotparser
+&gt;&gt;&gt; parser = robotparser.RobotFileParser()
+&gt;&gt;&gt; parser.set_url(&#39;https://www.taobao.com/robots.txt&#39;)
+&gt;&gt;&gt; parser.read()
+&gt;&gt;&gt; parser.can_fetch(&#39;Baiduspider&#39;, &#39;http://www.taobao.com/article&#39;)
+True
+&gt;&gt;&gt; parser.can_fetch(&#39;Baiduspider&#39;, &#39;http://www.taobao.com/product&#39;)
+False
+</code></pre>
+</li>
+</ol>
+<h3 id="一个简单的爬虫"><a href="#一个简单的爬虫" class="headerlink" title="一个简单的爬虫"></a>一个简单的爬虫</h3><p>一个基本的爬虫通常分为数据采集（网页下载）、数据处理（网页解析）和数据存储（将有用的信息持久化）三个部分的内容，当然更为高级的爬虫在数据采集和处理时会使用并发编程或分布式技术，这就需要有调度器（安排线程或进程执行对应的任务）、后台管理程序（监控爬虫的工作状态以及检查数据抓取的结果）等的参与。</p>
+<p><img src="./res/crawler-workflow.png"></p>
+<p>一般来说，爬虫的工作流程包括以下几个步骤：</p>
+<ol>
+<li>设定抓取目标（种子页面/起始页面）并获取网页。</li>
+<li>当服务器无法访问时，按照指定的重试次数尝试重新下载页面。</li>
+<li>在需要的时候设置用户代理或隐藏真实IP，否则可能无法访问页面。</li>
+<li>对获取的页面进行必要的解码操作然后抓取出需要的信息。</li>
+<li>在获取的页面中通过某种方式（如正则表达式）抽取出页面中的链接信息。</li>
+<li>对链接进行进一步的处理（获取页面并重复上面的动作）。</li>
+<li>将有用的信息进行持久化以备后续的处理。</li>
+</ol>
+<p>下面的例子给出了一个从“搜狐体育”上获取NBA新闻标题和链接的爬虫。</p>
+<pre><code class="Python">import re
+from collections import deque
+from urllib.parse import urljoin
+
+import requests
+
+LI_A_PATTERN = re.compile(r&#39;&lt;li class=&quot;item&quot;&gt;.*?&lt;/li&gt;&#39;)
+A_TEXT_PATTERN = re.compile(r&#39;&lt;a\s+[^&gt;]*?&gt;(.*?)&lt;/a&gt;&#39;)
+A_HREF_PATTERN = re.compile(r&#39;&lt;a\s+[^&gt;]*?href=&quot;(.*?)&quot;\s*[^&gt;]*?&gt;&#39;)
+
+
+def decode_page(page_bytes, charsets):
+    &quot;&quot;&quot;通过指定的字符集对页面进行解码&quot;&quot;&quot;
+    for charset in charsets:
+        try:
+            return page_bytes.decode(charset)
+        except UnicodeDecodeError:
+            pass
+
+
+def get_matched_parts(content_string, pattern):
+    &quot;&quot;&quot;从字符串中提取所有跟正则表达式匹配的内容&quot;&quot;&quot;
+    return pattern.findall(content_string, re.I) \
+        if content_string else []
+
+
+def get_matched_part(content_string, pattern, group_no=1):
+    &quot;&quot;&quot;从字符串中提取跟正则表达式匹配的内容&quot;&quot;&quot;
+    match = pattern.search(content_string)
+    if match:
+        return match.group(group_no)
+
+
+def get_page_html(seed_url, *, charsets=(&#39;utf-8&#39;, )):
+    &quot;&quot;&quot;获取页面的HTML代码&quot;&quot;&quot;
+    resp = requests.get(seed_url)
+    if resp.status_code == 200:
+        return decode_page(resp.content, charsets)
+
+
+def repair_incorrect_href(current_url, href):
+    &quot;&quot;&quot;修正获取的href属性&quot;&quot;&quot;
+    if href.startswith(&#39;//&#39;):
+        href = urljoin(&#39;http://&#39;, href)
+    elif href.startswith(&#39;/&#39;):
+        href = urljoin(current_url, href)
+    return href if href.startswith(&#39;http&#39;) else &#39;&#39;
+
+
+def start_crawl(seed_url, pattern, *, max_depth=-1):
+    &quot;&quot;&quot;开始爬取数据&quot;&quot;&quot;
+    new_urls, visited_urls = deque(), set()
+    new_urls.append((seed_url, 0))
+    while new_urls:
+        current_url, depth = new_urls.popleft()
+        if depth != max_depth:
+            page_html = get_page_html(current_url, charsets=(&#39;utf-8&#39;, &#39;gbk&#39;))
+            contents = get_matched_parts(page_html, pattern)
+            for content in contents:
+                text = get_matched_part(content, A_TEXT_PATTERN)
+                href = get_matched_part(content, A_HREF_PATTERN)
+                if href:
+                    href = repair_incorrect_href(href)
+                print(text, href)
+                if href and href not in visited_urls:
+                    new_urls.append((href, depth + 1))
+
+
+def main():
+    &quot;&quot;&quot;主函数&quot;&quot;&quot;
+    start_crawl(
+        seed_url=&#39;http://sports.sohu.com/nba_a.shtml&#39;,
+        pattern=LI_A_PATTERN,
+        max_depth=2
+    )
+
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<h3 id="爬虫注意事项"><a href="#爬虫注意事项" class="headerlink" title="爬虫注意事项"></a>爬虫注意事项</h3><p>通过上面的例子，我们对爬虫已经有了一个感性的认识，在编写爬虫时有以下一些注意事项：</p>
+<ol>
+<li><p>上面的代码使用了<code>requests</code>三方库来获取网络资源，这是一个非常优质的三方库，关于它的用法可以参考它的<a target="_blank" rel="noopener" href="https://requests.readthedocs.io/zh_CN/latest/">官方文档</a>。</p>
+</li>
+<li><p>上面的代码中使用了双端队列（<code>deque</code>）来保存待爬取的URL。双端队列相当于是使用链式存储结构的<code>list</code>，在双端队列的头尾添加和删除元素性能都比较好，刚好可以用来构造一个FIFO（先进先出）的队列结构。</p>
+</li>
+<li><p>处理相对路径。有的时候我们从页面中获取的链接不是一个完整的绝对链接而是一个相对链接，这种情况下需要将其与URL前缀进行拼接（<code>urllib.parse</code>中的<code>urljoin()</code>函数可以完成此项操作）。</p>
+</li>
+<li><p>设置代理服务。有些网站会限制访问的区域（例如美国的Netflix屏蔽了很多国家的访问），有些爬虫需要隐藏自己的身份，在这种情况下可以设置使用代理服务器，代理服务器有免费的服务器和付费的商业服务器，但后者稳定性和可用性都更好，强烈建议在商业项目中使用付费的商业代理服务器。如果使用<code>requests</code>三方库，可以在请求方法中添加<code>proxies</code>参数来指定代理服务器；如果使用标准库，可以通过修改<code>urllib.request</code>中的<code>ProxyHandler</code>来为请求设置代理服务器。</p>
+</li>
+<li><p>限制下载速度。如果我们的爬虫获取网页的速度过快，可能就会面临被封禁或者产生“损害动产”的风险（这个可能会导致吃官司且败诉），可以在两次获取页面数据之间添加延时从而对爬虫进行限速。</p>
+</li>
+<li><p>避免爬虫陷阱。有些网站会动态生成页面内容，这会导致产生无限多的页面（例如在线万年历通常会有无穷无尽的链接）。可以通过记录到达当前页面经过了多少个链接（链接深度）来解决该问题，当达到事先设定的最大深度时，爬虫就不再像队列中添加该网页中的链接了。</p>
+</li>
+<li><p>避开蜜罐链接。网站上的有些链接是浏览器中不可见的，这种链接通常是故意诱使爬虫去访问的蜜罐，一旦访问了这些链接，服务器就会判定请求是来自于爬虫的，这样可能会导致被服务器封禁IP地址。如何避开这些蜜罐链接我们在后面为大家进行讲解。</p>
+</li>
+<li><p>SSL相关问题。如果使用标准库的<code>urlopen</code>打开一个HTTPS链接时会验证一次SSL证书，如果不做出处理会产生错误提示“SSL: CERTIFICATE_VERIFY_FAILED”，可以通过以下两种方式加以解决：</p>
+<ul>
+<li><p>使用未经验证的上下文</p>
+<pre><code class="Python">import ssl
+
+request = urllib.request.Request(url=&#39;...&#39;, headers=&#123;...&#125;) 
+context = ssl._create_unverified_context()
+web_page = urllib.request.urlopen(request, context=context)
+</code></pre>
+</li>
+<li><p>设置全局性取消证书验证</p>
+<pre><code class="Python">import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%92%8C%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7"><span class="toc-text">网络爬虫和相关工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">网络爬虫的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%88%AC%E8%99%AB%E7%9A%84%E5%BA%94%E7%94%A8%E9%A2%86%E5%9F%9F"><span class="toc-text">爬虫的应用领域</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%88%E6%B3%95%E6%80%A7%E5%92%8C%E8%83%8C%E6%99%AF%E8%B0%83%E7%A0%94"><span class="toc-text">合法性和背景调研</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%88%AC%E8%99%AB%E5%90%88%E6%B3%95%E6%80%A7%E6%8E%A2%E8%AE%A8"><span class="toc-text">爬虫合法性探讨</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Robots-txt%E6%96%87%E4%BB%B6"><span class="toc-text">Robots.txt文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D"><span class="toc-text">相关工具介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP%E5%8D%8F%E8%AE%AE"><span class="toc-text">HTTP协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7"><span class="toc-text">相关工具</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%88%AC%E8%99%AB"><span class="toc-text">一个简单的爬虫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%AC%E8%99%AB%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">爬虫注意事项</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/2021/10/17/Python-100-Days-master/Day61-65/61.网络爬虫和相关工具/">http://example.com/2021/10/17/Python-100-Days-master/Day61-65/61.网络爬虫和相关工具/</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2021/10/17/Python-100-Days-master/Day61-65/62.%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E5%92%8C%E8%A7%A3%E6%9E%90/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/10/17/Python-100-Days-master/Day56-60/56-60.%E7%94%A8FastAPI%E5%BC%80%E5%8F%91%E6%95%B0%E6%8D%AE%E6%8E%A5%E5%8F%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+      
+      
+        
+
+
+
+
+
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> Recent</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E4%BB%AC%E8%B8%A9%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E8%8B%B1%E8%AF%AD%E9%9D%A2%E8%AF%95/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%9F%A5%E4%B9%8E%E9%97%AE%E9%A2%98%E5%9B%9E%E7%AD%94/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%94%A8%E5%87%BD%E6%95%B0%E8%BF%98%E6%98%AF%E7%94%A8%E5%A4%8D%E6%9D%82%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%8E%A9%E8%BD%ACPyCharm/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/PEP8/" style="font-size: 10px;">PEP8</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-classify"></i> Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> Archive</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021年10月</a><span class="archive-list-count">173</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019年08月</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/PEP8/" rel="tag">PEP8</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> Blogroll</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example1.com/">site-name1</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example2.com/">site-name2</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example3.com/">site-name3</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">Site Map</a>
+        <span> | </span><a href="/atom.xml">Subscribe to this site</a>
+        <span> | </span><a href="/about/">Contact the blogger</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2021 John Doe.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+<script src="/localshare/js/social-share.js"></script>
+
+  
+<script src="/localshare/js/qrcode.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>
