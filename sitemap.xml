@@ -44,14 +44,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day01-15/02.%E8%AF%AD%E8%A8%80%E5%85%83%E7%B4%A0/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day01-15/03.%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day01-15/03.%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day01-15/02.%E8%AF%AD%E8%A8%80%E5%85%83%E7%B4%A0/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -114,6 +114,13 @@
   </url>
   
   <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day56-60/56-60.%E7%94%A8FastAPI%E5%BC%80%E5%8F%91%E6%95%B0%E6%8D%AE%E6%8E%A5%E5%8F%A3/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/Day41-55/43.%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E5%92%8CAjax%E8%AF%B7%E6%B1%82/</loc>
     
     <lastmod>2021-04-05</lastmod>
@@ -170,13 +177,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day41-55/53.%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/Day41-55/54.%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</loc>
     
     <lastmod>2021-04-05</lastmod>
@@ -184,7 +184,42 @@
   </url>
   
   <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day41-55/53.%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/Day41-55/55.%E9%A1%B9%E7%9B%AE%E4%B8%8A%E7%BA%BF/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day66-70/69.%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day66-70/68.Pandas%E7%9A%84%E5%BA%94%E7%94%A8/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day66-70/70.%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day61-65/62.%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E5%92%8C%E8%A7%A3%E6%9E%90/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -205,42 +240,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day61-65/62.%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E5%92%8C%E8%A7%A3%E6%9E%90/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day56-60/56-60.%E7%94%A8FastAPI%E5%BC%80%E5%8F%91%E6%95%B0%E6%8D%AE%E6%8E%A5%E5%8F%A3/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/Day61-65/65.%E8%A7%A3%E6%9E%90%E5%8A%A8%E6%80%81%E5%86%85%E5%AE%B9/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day66-70/68.Pandas%E7%9A%84%E5%BA%94%E7%94%A8/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day66-70/69.%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day66-70/70.%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -268,6 +268,13 @@
   </url>
   
   <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day71-85/76.K-%E5%9D%87%E5%80%BC%E8%81%9A%E7%B1%BB/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/Day71-85/74.%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB/</loc>
     
     <lastmod>2021-04-05</lastmod>
@@ -276,13 +283,6 @@
   
   <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/Day71-85/75.%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day71-85/76.K-%E5%9D%87%E5%80%BC%E8%81%9A%E7%B1%BB/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -310,13 +310,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day71-85/80.Tensorflow%E5%AE%9E%E6%88%98/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/Day71-85/81.Kaggle%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/</loc>
     
     <lastmod>2021-04-05</lastmod>
@@ -324,7 +317,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day71-85/83.%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E5%AE%9E%E6%88%98-1/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day71-85/80.Tensorflow%E5%AE%9E%E6%88%98/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -345,21 +338,14 @@
   </url>
   
   <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day71-85/83.%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E5%AE%9E%E6%88%98-1/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/Day71-85/85.%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E5%AE%9E%E6%88%98-3/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day86-90/86.%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A6%82%E8%BF%B0/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day86-90/87.Hive%E6%9F%A5%E8%AF%A2/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -373,21 +359,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day86-90/88.PySpark%E5%92%8C%E7%A6%BB%E7%BA%BF%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day86-90/90.%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day86-90/89.Flink%E5%92%8C%E6%B5%81%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day91-100/93.MySQL%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -395,13 +367,6 @@
   
   <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/Day91-100/94.%E7%BD%91%E7%BB%9CAPI%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day91-100/93.MySQL%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -422,6 +387,41 @@
   </url>
   
   <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day86-90/86.%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A6%82%E8%BF%B0/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day86-90/88.PySpark%E5%92%8C%E7%A6%BB%E7%BA%BF%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day86-90/89.Flink%E5%92%8C%E6%B5%81%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day86-90/90.%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day86-90/87.Hive%E6%9F%A5%E8%AF%A2/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/PEP8%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97/</loc>
     
     <lastmod>2021-04-05</lastmod>
@@ -436,13 +436,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/Python%E5%8F%82%E8%80%83%E4%B9%A6%E7%B1%8D/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%88%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
     
     <lastmod>2021-04-05</lastmod>
@@ -451,6 +444,13 @@
   
   <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/Python%E7%BC%96%E7%A8%8B%E6%83%AF%E4%BE%8B/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/Python%E5%8F%82%E8%80%83%E4%B9%A6%E7%B1%8D/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -485,13 +485,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%94%A8%E5%87%BD%E6%95%B0%E8%BF%98%E6%98%AF%E7%94%A8%E5%A4%8D%E6%9D%82%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%9F%A5%E4%B9%8E%E9%97%AE%E9%A2%98%E5%9B%9E%E7%AD%94/</loc>
     
     <lastmod>2021-04-05</lastmod>
@@ -500,6 +493,13 @@
   
   <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E8%8B%B1%E8%AF%AD%E9%9D%A2%E8%AF%95/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/%E7%95%AA%E5%A4%96%E7%AF%87/%E7%94%A8%E5%87%BD%E6%95%B0%E8%BF%98%E6%98%AF%E7%94%A8%E5%A4%8D%E6%9D%82%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -541,14 +541,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/%E5%85%AC%E5%BC%80%E8%AF%BE/%E6%96%87%E6%A1%A3/%E7%AC%AC04%E6%AC%A1%E5%85%AC%E5%BC%80%E8%AF%BE-%E5%A5%BD%E7%8E%A9%E7%9A%84Python/%E5%A5%BD%E7%8E%A9%E7%9A%84Python/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/%E5%85%AC%E5%BC%80%E8%AF%BE/%E6%96%87%E6%A1%A3/%E7%AC%AC06%E6%AC%A1%E5%85%AC%E5%BC%80%E8%AF%BE-%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%972-%E5%9C%A8%E6%B0%B4%E4%B8%80%E6%96%B9/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%972%20-%20%E5%9C%A8%E6%B0%B4%E4%B8%80%E6%96%B9/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/%E5%85%AC%E5%BC%80%E8%AF%BE/%E6%96%87%E6%A1%A3/%E7%AC%AC06%E6%AC%A1%E5%85%AC%E5%BC%80%E8%AF%BE-%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%972-%E5%9C%A8%E6%B0%B4%E4%B8%80%E6%96%B9/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%972%20-%20%E5%9C%A8%E6%B0%B4%E4%B8%80%E6%96%B9/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/%E5%85%AC%E5%BC%80%E8%AF%BE/%E6%96%87%E6%A1%A3/%E7%AC%AC04%E6%AC%A1%E5%85%AC%E5%BC%80%E8%AF%BE-%E5%A5%BD%E7%8E%A9%E7%9A%84Python/%E5%A5%BD%E7%8E%A9%E7%9A%84Python/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -569,161 +569,35 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example01/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/html+css/example/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example04/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/html+css/form_and_table/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example03/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/html+css/classical_layout/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example02/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/html+css/qq_link/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example05/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example06/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example07/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example08/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example09/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example10/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example11/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example12/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework01/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework02/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework04/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework03/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework05/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework06/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework08/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework07/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/index/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/message/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/css_practice_1.result/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/css_practice_1/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -737,7 +611,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/css_practice_1/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/css_practice_1.result/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -786,6 +660,13 @@
   </url>
   
   <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/example_of_css_2/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/example_of_css_1/</loc>
     
     <lastmod>2021-04-05</lastmod>
@@ -793,7 +674,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/example_of_css_2/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/example_of_css_3/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -814,20 +695,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/example_of_css_3/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/example_of_iframe/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/example_of_form/</loc>
     
     <lastmod>2021-04-05</lastmod>
@@ -836,6 +703,13 @@
   
   <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/example_of_jquery_1/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/example_of_iframe/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -884,21 +758,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/example_of_js_4/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/example_of_js_5/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/example_of_js_3/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/example_of_js_4/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -912,7 +779,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/example_of_js_7/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/example_of_js_5/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -934,6 +801,13 @@
   
   <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/example_of_vue_element/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/example_of_js_7/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -968,14 +842,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/js_practice_5/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/js_practice_4/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/js_practice_4/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/js_practice_5/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -989,28 +863,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/html+css/classical_layout/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/js_practice_7/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/shopping_cart/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/html+css/example/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -1024,14 +877,154 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/html+css/form_and_table/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/new/web1901/shopping_cart/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/html+css/qq_link/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example01/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example02/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example04/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example05/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example03/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example08/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example07/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example06/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example10/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example09/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example11/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/example12/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework01/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework02/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework03/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework04/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework05/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework06/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework07/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/homework08/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/index/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -1045,14 +1038,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/README/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/code/old/javascript/message/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/21-30.Web%E5%89%8D%E7%AB%AF%E6%A6%82%E8%BF%B0/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/README/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -1087,7 +1080,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day41-55/41.Django%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day21-30/21-30.Web%E5%89%8D%E7%AB%AF%E6%A6%82%E8%BF%B0/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day36-40/39-40.NoSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -1095,6 +1095,13 @@
   
   <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/Day41-55/42.%E6%B7%B1%E5%85%A5%E6%A8%A1%E5%9E%8B/</loc>
+    
+    <lastmod>2021-04-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day41-55/41.Django%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
@@ -1122,13 +1129,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day36-40/39-40.NoSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://example.com/2021/10/17/Python-100-Days-master/Day91-100/91.%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
     
     <lastmod>2021-04-05</lastmod>
@@ -1136,14 +1136,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day91-100/98.%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E4%B8%8A%E7%BA%BF%E5%92%8C%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day91-100/97.%E7%94%B5%E5%95%86%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF%E8%A6%81%E7%82%B9%E5%89%96%E6%9E%90/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day91-100/97.%E7%94%B5%E5%95%86%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF%E8%A6%81%E7%82%B9%E5%89%96%E6%9E%90/</loc>
+    <loc>http://example.com/2021/10/17/Python-100-Days-master/Day91-100/98.%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E4%B8%8A%E7%BA%BF%E5%92%8C%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98/</loc>
     
     <lastmod>2021-04-05</lastmod>
     
